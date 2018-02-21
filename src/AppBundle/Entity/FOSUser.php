@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * FOSUser
  *
- * @ORM\Table(name="f_o_s_user")
+ * @ORM\Table(name="fos_user")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\FOSUserRepository")
  */
 class FOSUser extends BaseUser
@@ -16,7 +16,7 @@ class FOSUser extends BaseUser
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(name="fos_id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
@@ -25,16 +25,16 @@ class FOSUser extends BaseUser
     /**
      * @var string
      *
-     * @ORM\Column(name="identifiant", type="string", length=40)
+     * @ORM\Column(name="fos_identifiant", type="string", length=50)
      */
     protected $identifiant;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="password", type="string", length=60)
+     * @ORM\Column(name="fos_mot_de_passe", type="string", length=50)
      */
-    protected $password;
+    protected $MotDePasse;
 
 
     /**
@@ -72,27 +72,27 @@ class FOSUser extends BaseUser
     }
 
     /**
-     * Set password
+     * Set MotDePasse
      *
-     * @param string $password
+     * @param string $MotDePasse
      *
      * @return FOSUser
      */
-    public function setPassword($password)
+    public function setMotDePasse($MotDePasse)
     {
-        $this->password = $password;
+        $this->MotDePasse = $MotDePasse;
 
         return $this;
     }
 
     /**
-     * Get password
+     * Get MotDePasse
      *
      * @return string
      */
-    public function getPassword()
+    public function getMotDePasse()
     {
-        return $this->password;
+        return $this->MotDePasse;
     }
 }
 
