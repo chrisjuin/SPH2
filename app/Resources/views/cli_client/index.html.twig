@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+    {% block title %}Enregistrer un client{% endblock %}
+
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-ms-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Numero client</th>
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Provenance</th>
+                        <th>Email</th>
+                        <th>Adresse</th>
+                        <th>Codepostal</th>
+                        <th>Ville</th>
+                        <th>Note</th>
+                        <th>Telephone</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+        </div>
+    </div>
+            {% for cli_client in cli_clients %}
+                <tr>
+                    <td><a href="{{ path('fiche_client_show', { 'id': cli_client.id }) }}">{{ cli_client.id }}</a></td>
+                    <td>{{ cli_client.nom }}</td>
+                    <td>{{ cli_client.prenom }}</td>
+                    <td>{{ cli_client.provenance }}</td>
+                    <td>{{ cli_client.email }}</td>
+                    <td>{{ cli_client.adresse }}</td>
+                    <td>{{ cli_client.codePostal }}</td>
+                    <td>{{ cli_client.ville }}</td>
+                    <td>{{ cli_client.note }}</td>
+                <td>{{ cli_client.telephone }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('fiche_client_show', { 'id': cli_client.id }) }}"></a>
+                        </li>
+                        <li>
+                            <a href="{{ path('fiche_client_edit', { 'id': cli_client.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <ul>
+            <li>
+                <button class="btn btn-success" type="button">Enregistrer les modifications
+                <a href="{{ path('fiche_client_new') }}"></a>
+                </button>
+            </li>
+
+            <li>
+                <button class="btn btn-warning" type="button">Ajouter Chantier
+                
+                </button>
+            </li>
+        </ul>
+</div>
+{% endblock %}
