@@ -30,6 +30,12 @@ class Pho_photo
 
 
     /**
+     * @ORM\ManyToOne(targetEntity="tra_travail")
+     * @ORM\JoinColumn(name="tra_id" , referencedColumnName="tra_id")
+     */
+    private $traTravaux; 
+
+    /**
      * Get id
      *
      * @return int

@@ -35,17 +35,11 @@ class Cli_client
      */
     private $prenom;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="cli_numero", type="string", length=10)
-     */
-    private $numero;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="cli_provenance", type="integer")
+     * @ORM\Column(name="cli_provenance", type="string" , length=15)
      */
     private $provenance;
 

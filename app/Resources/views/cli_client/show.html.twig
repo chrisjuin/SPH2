@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Cli_client</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ cli_client.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ cli_client.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ cli_client.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Provenance</th>
+                <td>{{ cli_client.provenance }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ cli_client.email }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ cli_client.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Codepostal</th>
+                <td>{{ cli_client.codePostal }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ cli_client.ville }}</td>
+            </tr>
+            <tr>
+                <th>Note</th>
+                <td>{{ cli_client.note }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ cli_client.telephone }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('fiche_client_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('fiche_client_edit', { 'id': cli_client.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

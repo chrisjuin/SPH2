@@ -100,6 +100,18 @@ class TRA_travail
 
 
     /**
+     * @ORM\ManyToOne(targetEntity="cli_client")
+     * @ORM\JoinColumn(name="cli_id" , referencedColumnName="cli_id")
+     */
+    private $cliClient; 
+
+    /**
+     * @ORM\ManyToOne(targetEntity="uti_utilisateur")
+     * @ORM\JoinColumn(name="uti_id", referencedColumnName="uti_id")
+     */
+    private $utiUtilisateur;
+
+    /**
      * Get id
      *
      * @return int

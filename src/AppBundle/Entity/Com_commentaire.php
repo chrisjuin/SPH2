@@ -39,6 +39,19 @@ class Com_commentaire
         return $this->id;
     }
 
+    
+    /**
+     * @ORM\ManytoOne(targetEntity="uti_utilisateur")
+     * @ORM\JoinColumn(name="uti_id" , referencedColumnName="uti_id")
+     */
+    private $utiUtilisateur; 
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="tra_travail")
+     * @ORM\JoinColumn(name="tra_id" , referencedColumnName="tra_id")
+     */
+    private $traTravail; 
+
     /**
      * Set commentaire
      *
