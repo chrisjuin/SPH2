@@ -6,21 +6,21 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class Cli_clientType extends AbstractType
+class TRA_travailType extends AbstractType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')->add('prenom')->add('provenance')->add('email')->add('adresse')->add('codePostal')->add('ville')->add('note')->add('telephone');
+        $builder->add('titre')->add('description')->add('prix')->add('dateDebut')->add('dateRappel')->add('modePaiment')->add('lieux')->add('garantie')->add('devis')->add('processVerbal')->add('facture')->add('cliClient')->add('utiUtilisateur');
     }/**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Cli_client'
+            'data_class' => 'AppBundle\Entity\TRA_travail'
         ));
     }
 
@@ -29,7 +29,7 @@ class Cli_clientType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_cli_client';
+        return 'appbundle_tra_travail';
     }
 
 
