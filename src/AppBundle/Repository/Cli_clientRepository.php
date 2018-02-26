@@ -10,4 +10,5 @@ namespace AppBundle\Repository;
  */
 class Cli_clientRepository extends \Doctrine\ORM\EntityRepository
 {
+
 }
