@@ -13,7 +13,7 @@ class TRA_travailType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('titre')->add('description')->add('prix')->add('dateDebut')->add('dateRappel')->add('modePaiment')->add('lieux')->add('garantie')->add('devis')->add('processVerbal')->add('facture')->add('cliClient')->add('utiUtilisateur');
+        $builder->add('titre')->add('description')->add('prix')->add('dateDebut')->add('dateRappel')->add('modePaiment')->add('lieux')->add('garantie')->add('devis')->add('processVerbal')->add('facture');
     }/**
      * {@inheritdoc}
      */

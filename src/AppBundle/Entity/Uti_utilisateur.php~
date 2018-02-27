@@ -35,6 +35,10 @@ class Uti_utilisateur
      */
     private $prenom;
 
+    /**
+     * @ORM\OneToMany(targetEntity="TRA_travail", mappedBy="uti_utilisateur")
+     */
+    private $traTravail;
 
     /**
      * Get id
@@ -92,5 +96,46 @@ class Uti_utilisateur
     public function getPrenom()
     {
         return $this->prenom;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->traTravail = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add traTravail
+     *
+     * @param \AppBundle\Entity\Tra_travail $traTravail
+     *
+     * @return Uti_utilisateur
+     */
+    public function addTraTravail(\AppBundle\Entity\Tra_travail $traTravail)
+    {
+        $this->traTravail[] = $traTravail;
+
+        return $this;
+    }
+
+    /**
+     * Remove traTravail
+     *
+     * @param \AppBundle\Entity\Tra_travail $traTravail
+     */
+    public function removeTraTravail(\AppBundle\Entity\Tra_travail $traTravail)
+    {
+        $this->traTravail->removeElement($traTravail);
+    }
+
+    /**
+     * Get traTravail
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTraTravail()
+    {
+        return $this->traTravail;
     }
 }

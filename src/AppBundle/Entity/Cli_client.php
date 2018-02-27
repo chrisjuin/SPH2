@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Cli_client
@@ -84,6 +85,16 @@ class Cli_client
      * @ORM\Column(name="cli_telephone", type="string", length=10)
      */
     private $telephone;
+
+    /**
+     * @ORM\OneToMany(targetEntity="TRA_travail" ,mappedBy="cli_client")
+     */
+    private $traTravails;
+
+    public function __construct()
+    {
+        $this->traTravails = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -309,5 +320,39 @@ class Cli_client
     public function getTelephone()
     {
         return $this->telephone;
+    }
+
+    /**
+     * Add traTravail
+     *
+     * @param \AppBundle\Entity\Tra_travail $traTravail
+     *
+     * @return Cli_client
+     */
+    public function addTraTravail(\AppBundle\Entity\Tra_travail $traTravail)
+    {
+        $this->traTravail[] = $traTravail;
+
+        return $this;
+    }
+
+    /**
+     * Remove traTravail
+     *
+     * @param \AppBundle\Entity\Tra_travail $traTravail
+     */
+    public function removeTraTravail(\AppBundle\Entity\Tra_travail $traTravail)
+    {
+        $this->traTravail->removeElement($traTravail);
+    }
+
+    /**
+     * Get traTravail
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTraTravail()
+    {
+        return $this->traTravail;
     }
 }

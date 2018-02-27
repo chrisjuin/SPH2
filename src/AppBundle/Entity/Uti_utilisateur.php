@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Uti_utilisateur
@@ -35,6 +36,15 @@ class Uti_utilisateur
      */
     private $prenom;
 
+    /**
+     * @ORM\OneToMany(targetEntity="TRA_travail", mappedBy="uti_utilisateur")
+     */
+    private $traTravails;
+
+    public function __construct()
+    {
+        $this->traTravails = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -92,5 +102,39 @@ class Uti_utilisateur
     public function getPrenom()
     {
         return $this->prenom;
+    }
+    
+    /**
+     * Add traTravail
+     *
+     * @param \AppBundle\Entity\Tra_travail $traTravail
+     *
+     * @return Uti_utilisateur
+     */
+    public function addTraTravail(\AppBundle\Entity\Tra_travail $traTravail)
+    {
+        $this->traTravail[] = $traTravail;
+
+        return $this;
+    }
+
+    /**
+     * Remove traTravail
+     *
+     * @param \AppBundle\Entity\Tra_travail $traTravail
+     */
+    public function removeTraTravail(\AppBundle\Entity\Tra_travail $traTravail)
+    {
+        $this->traTravail->removeElement($traTravail);
+    }
+
+    /**
+     * Get traTravail
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTraTravail()
+    {
+        return $this->traTravail;
     }
 }

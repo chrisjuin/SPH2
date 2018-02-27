@@ -5,7 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * TRA_travail
+ * Tra_travail
  *
  * @ORM\Table(name="tra_travail")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\TRA_travailRepository")
@@ -99,15 +99,15 @@ class TRA_travail
     private $facture; 
     
     /**
-     * @ORM\ManyToOne(targetEntity="cli_client")
-     * @ORM\JoinColumn(name="cli_id" , referencedColumnName="cli_id")
+     * @ORM\ManyToOne(targetEntity="Cli_client" ,inversedBy="tra_travail")
+     * @ORM\JoinColumn(name="cli_id", referencedColumnName="cli_id")
      */
     private $cliClient;
 
-     /**    
-      * @ORM\ManyToOne(targetEntity="uti_utilisateur")
-      * @ORM\JoinColumn(name="uti_id", referencedColumnName="uti_id")
-      */
+    /**    
+     * @ORM\ManyToOne(targetEntity="Uti_utilisateur" ,inversedBy="tra_travail")
+     * @ORM\JoinColumn(name="uti_id", referencedColumnName="uti_id")
+     */
     private $utiUtilisateur;
 
     /**
@@ -406,5 +406,29 @@ class TRA_travail
     public function getCliClient()
     {
         return $this->cliClient;
+    }
+
+    /**
+     * Set utiUtilisateur
+     *
+     * @param \AppBundle\Entity\uti_utilisateur $utiUtilisateur
+     *
+     * @return TRA_travail
+     */
+    public function setUtiUtilisateur(\AppBundle\Entity\uti_utilisateur $utiUtilisateur = null)
+    {
+        $this->utiUtilisateur = $utiUtilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Get utiUtilisateur
+     *
+     * @return \AppBundle\Entity\uti_utilisateur
+     */
+    public function getUtiUtilisateur()
+    {
+        return $this->utiUtilisateur;
     }
 }
