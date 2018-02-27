@@ -86,6 +86,11 @@ class Cli_client
     private $telephone;
 
     /**
+     * @ORM\OneToMany(targetEntity="TRA_travail" ,mappedBy="cli_client")
+     */
+    private $traTravail;
+
+    /**
      * Get id
      *
      * @return int
@@ -309,5 +314,46 @@ class Cli_client
     public function getTelephone()
     {
         return $this->telephone;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->traTravail = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add traTravail
+     *
+     * @param \AppBundle\Entity\Tra_travail $traTravail
+     *
+     * @return Cli_client
+     */
+    public function addTraTravail(\AppBundle\Entity\Tra_travail $traTravail)
+    {
+        $this->traTravail[] = $traTravail;
+
+        return $this;
+    }
+
+    /**
+     * Remove traTravail
+     *
+     * @param \AppBundle\Entity\Tra_travail $traTravail
+     */
+    public function removeTraTravail(\AppBundle\Entity\Tra_travail $traTravail)
+    {
+        $this->traTravail->removeElement($traTravail);
+    }
+
+    /**
+     * Get traTravail
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTraTravail()
+    {
+        return $this->traTravail;
     }
 }
