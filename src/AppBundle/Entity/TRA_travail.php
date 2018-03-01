@@ -45,14 +45,14 @@ class TRA_travail
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="tra_date_debut", type="datetime")
+     * @ORM\Column(name="tra_date_debut", type="date")
      */
     private $dateDebut;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="tra_date_rappel", type="datetime")
+     * @ORM\Column(name="tra_date_rappel", type="date")
      */
     private $dateRappel;
 

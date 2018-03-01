@@ -1,16 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Cli_client creation</h1>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
+<div class="container">
+        <table class="table table-bordered" id= "Tableau_4">
+                {{ form_widget(form) }}
+        </table>
+</div>
+
         <input type="submit" value="Create" />
-    {{ form_end(form) }}
-
     <ul>
         <li>
             <a href="{{ path('fiche_client_index') }}">Back to the list</a>
         </li>
     </ul>
+</div>
+
 {% endblock %}
