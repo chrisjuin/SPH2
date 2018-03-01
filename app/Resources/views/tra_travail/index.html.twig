@@ -1,64 +1,68 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Tra_travails list</h1>
+    
+<div class="container">
+    <h2>Liste des Chantier</h2>
+        <div class="row">
+            <table class="table table-bordered" id="liste_chantier">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Titre</th>
+                        <th>Description</th>
+                        <th>Prix</th>
+                        <th>Datedebut</th>
+                        <th>Daterappel</th>
+                        <th>Modepaiment</th>
+                        <th>Lieux</th>
+                        <th>Garantie</th>
+                        <th>Devis</th>
+                        <th>Processverbal</th>
+                        <th>Facture</th>
+                        <th>Actions</th>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Titre</th>
-                <th>Description</th>
-                <th>Prix</th>
-                <th>Datedebut</th>
-                <th>Daterappel</th>
-                <th>Modepaiment</th>
-                <th>Lieux</th>
-                <th>Garantie</th>
-                <th>Devis</th>
-                <th>Processverbal</th>
-                <th>Facture</th>
-                <th>Actions</th>
-        
-            </tr>
-        </thead>
-        <tbody>
-        {% for tRA_travail in tRA_travails %}
-            <tr>
-                <td><a href="{{ path('fiche_chantier_show', { 'id': tRA_travail.id }) }}">{{ tRA_travail.id }}</a></td>
-                <td>{{ tRA_travail.titre }}</td>
-                <td>{{ tRA_travail.description }}</td>
-                <td>{{ tRA_travail.prix }}</td>
-                <td>{% if tRA_travail.dateDebut %}{{ tRA_travail.dateDebut|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{% if tRA_travail.dateRappel %}{{ tRA_travail.dateRappel|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ tRA_travail.modePaiment }}</td>
-                <td>{{ tRA_travail.lieux }}</td>
-                <td>{{ tRA_travail.garantie }}</td>
-                <td>{{ tRA_travail.devis }}</td>
-                <td>{{ tRA_travail.processVerbal }}</td>
-                <td>{{ tRA_travail.facture }}</td>
-            
+                    </tr>
+                </thead>
+        </div>        
                 
+                <div class="row">
+                    <tbody>
+                {% for tRA_travail in tRA_travails %}
+                        <tr>
+                            <td><a href="{{ path('fiche_chantier_show', { 'id': tRA_travail.id }) }}">{{ tRA_travail.id }}</a></td>
+                            <td>{{ tRA_travail.titre }}</td>
+                            <td>{{ tRA_travail.description }}</td>
+                            <td>{{ tRA_travail.prix }}</td>
+                            <td>{% if tRA_travail.dateDebut %}{{ tRA_travail.dateDebut|date('Y-m-d') }}{% endif %}</td>
+                            <td>{% if tRA_travail.dateRappel %}{{ tRA_travail.dateRappel|date('Y-m-d:s') }}{% endif %}</td>
+                            <td>{{ tRA_travail.modePaiment }}</td>
+                            <td>{{ tRA_travail.lieux }}</td>
+                            <td>{{ tRA_travail.garantie }}</td>
+                            <td>{{ tRA_travail.devis }}</td>
+                            <td>{{ tRA_travail.processVerbal }}</td>
+                            <td>{{ tRA_travail.facture }}</td>
 
 
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('fiche_chantier_show', { 'id': tRA_travail.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('fiche_chantier_edit', { 'id': tRA_travail.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <a href="{{ path('fiche_chantier_show', { 'id': tRA_travail.id }) }}">show</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('fiche_chantier_edit', { 'id': tRA_travail.id }) }}">edit</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                {% endfor %}
+                </div>
+                    </tbody>
+                </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('fiche_chantier_new') }}">Create a new tRA_travail</a>
-        </li>
-    </ul>
+                <ul>
+                    <li>
+                        <a href="{{ path('fiche_chantier_new') }}">Create a new tRA_travail</a>
+                    </li>
+                </ul>
 {% endblock %}

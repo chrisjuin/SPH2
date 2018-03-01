@@ -23,21 +23,6 @@ class FOSUser extends BaseUser
     protected $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="fos_identifiant", type="string", length=50)
-     */
-    protected $identifiant;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="fos_mot_de_passe", type="string", length=50)
-     */
-    protected $MotDePasse;
-
-
-    /**
      * Get id
      *
      * @return int
@@ -47,51 +32,9 @@ class FOSUser extends BaseUser
         return $this->id;
     }
 
-    /**
-     * Set identifiant
-     *
-     * @param string $identifiant
-     *
-     * @return FOSUser
-     */
-    public function setIdentifiant($identifiant)
+    public function __construct()
     {
-        $this->identifiant = $identifiant;
-
-        return $this;
+        parent::__construct();
     }
-
-    /**
-     * Get identifiant
-     *
-     * @return string
-     */
-    public function getIdentifiant()
-    {
-        return $this->identifiant;
-    }
-
-    /**
-     * Set MotDePasse
-     *
-     * @param string $MotDePasse
-     *
-     * @return FOSUser
-     */
-    public function setMotDePasse($MotDePasse)
-    {
-        $this->MotDePasse = $MotDePasse;
-
-        return $this;
-    }
-
-    /**
-     * Get MotDePasse
-     *
-     * @return string
-     */
-    public function getMotDePasse()
-    {
-        return $this->MotDePasse;
-    }
+    
 }
