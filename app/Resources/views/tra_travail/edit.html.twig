@@ -4,16 +4,16 @@
     
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+        <input type="submit" value="Enregister les modifications" class="btn btn-success" />
     {{ form_end(edit_form) }}
 
     <ul>
         <li>
-            <a href="{{ path('fiche_chantier_index') }}">Back to the list</a>
+            <a href="{{ path('fiche_chantier_index') }}" class="btn btn-warning">Retour</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Supprimer" class="btn btn-danger ">
             {{ form_end(delete_form) }}
         </li>
     </ul>

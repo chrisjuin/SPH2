@@ -36,3 +36,8 @@ h2 {
     font-style: oblique; 
 }
 
+
+th {
+    padding-left: 40px;
+    padding-right: 40px;
+}
