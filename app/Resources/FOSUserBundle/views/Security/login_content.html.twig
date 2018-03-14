@@ -11,9 +11,10 @@
 
 {% block body %}
 
+
 <div class="container , line">
-    <div class="row">
-        <img src="{{ asset('web/Logo_SPH.png') }}" alt="Logo SPH">    
+    <div class="row , bottom">
+        <img src="{{ asset('Logo SPH.png') }}" />
     </div> 
         
     <div class="col-sm-4 col-sm-offset-4">
@@ -28,11 +29,11 @@
                     {% endif %}
                     
                     <div>
-                        <input class="form-control , bottom" type="text" id="username" placeholder="identifiant" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
+                        <input class="form-control , bottom" type="text" id="username" placeholder="Identifiant" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
                     </div>
                     
                     <div>
-                        <input class="form-control , bottom" type="password" id="password" placeholder="mot de passe" name="_password" required="required" autocomplete="current-password" />
+                        <input class="form-control , bottom" type="password" id="password" placeholder="Mot de passe" name="_password" required="required" autocomplete="current-password" />
                     </div>
                     
                     <div>
@@ -40,7 +41,8 @@
                     </div>
                 </form>
             </div>
-
+        </div>
+    </div>
 </div
 
 {% endblock %}
