@@ -1,10 +1,11 @@
+
 <section class="container">
     <nav class="navbar navbar-default navbar-static-top" role="navigation">
         <!-- logo renvoyant vers la liste des chantiers -->
         <ul class="col-lg-1  nav navbar-nav">
                 <li>  
-                    <a class="navbar-brand" href="?p=liste_chantier">
-                        <img id="logo_navbar" alt="logo SPH" src="assets/web/image/logo_sph.png">
+                    <a class="navbar-brand " href="?p=liste_chantier">
+                        <img src="{{ asset('Logo navBar SPH.png') }}" />
                     </a>
                 </li>
 
@@ -22,7 +23,7 @@
         <!-- contenu de la navbar -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="hover"><a  href="?p=nouveau_client">Ajouter un client</a></li>
+                <li class="hover"><a href="{{ path('fiche_client_new') }}">Ajouter un client</a></li>
                 <li>
         <!-- formulaire de recherche pour large device -->
                 <form class="navbar-form navbar-default col-lg-3"  method="POST" action="?p=recherche_client">

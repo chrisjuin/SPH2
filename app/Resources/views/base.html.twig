@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
         <link rel="stylesheet" href="{{ asset('css/fiche_client.css')}}">
         {% endblock %}
-        <link rel="icon" type="image/x-icon" href= "{{ asset('Logo_SPH.ico') }}" >
+        
     </head>
     
     {% include "navBar.html.twig" %}
@@ -18,8 +18,8 @@
         
 
         {% block body %}{% endblock %}
-        {% block javascripts %}
         
+        {% block javascripts %}
         <script src="{{ asset('js/jquery.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.js') }}"></script>
         <script src="{{ asset('js/dataTables.bootstrap.min.js') }}"></script>
@@ -27,6 +27,7 @@
         <script>
             $('#liste_client').dataTable();
             $('#detail_client').dataTable();
+            $('#detail_client2').dataTable();
             $('#liste_chantier').dataTable();
             $('#details_chantier').dataTable();
         </script>
