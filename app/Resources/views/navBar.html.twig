@@ -4,7 +4,7 @@
         <!-- logo renvoyant vers la liste des chantiers -->
             <div class="col-lg-1  nav navbar-nav">
                 <a href="{{ path('fiche_chantier_index') }}">
-                    <img src="{{ asset('Logo navBar SPH.png') }}" />
+                    <img class="padding" src="{{ asset('Logo navBar SPH.png') }}" />
                 </a>
             </div>
         
@@ -27,8 +27,8 @@
                 <li>
         <!-- formulaire de recherche pour large device -->
                 <form class="navbar-form navbar-default col-lg-3"  method="POST" action="?p=recherche_client">
-                    <input type="text" class="form-control hidden-xs" size="30" placeholder="Rechercher un client par son nom"  id="recherche" name="recherche"/>
-                    <button type="submit" class="btn btn-success hidden-xs"><i class="glyphicon glyphicon-search"></i></button>
+                        <input type="search" class="form-control hidden-xs" size="30" placeholder="Rechercher un client par son nom" aria-controls="liste_client" id="recherche" name="recherche"/>
+                        <button type="submit" class="btn btn-success hidden-xs"><i class="glyphicon glyphicon-search"></i></button>
                 </form>
         <!-- formulaire de recherche pour small device -->
                 <form class="navbar-form navbar-right"  method="POST" action="?p=recherche_client">
