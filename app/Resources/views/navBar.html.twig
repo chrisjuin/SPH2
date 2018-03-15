@@ -2,12 +2,12 @@
 <section class="container">
     <nav class="navbar navbar-default navbar-static-top" role="navigation">
         <!-- logo renvoyant vers la liste des chantiers -->
-        <ul class="col-lg-1  nav navbar-nav">
-                <li>  
-                    <a class="navbar-brand " href="?p=liste_chantier">
-                        <img src="{{ asset('Logo navBar SPH.png') }}" />
-                    </a>
-                </li>
+            <div class="col-lg-1  nav navbar-nav">
+                <a href="{{ path('fiche_chantier_index') }}">
+                    <img src="{{ asset('Logo navBar SPH.png') }}" />
+                </a>
+            </div>
+        
 
                 <!-- bouton pour navbar responsive   -->
                 <div class="navbar-header">
@@ -41,13 +41,14 @@
             </ul>
             
                 <form class="nav navbar-nav navbar-right list-inline">
-                <div class="dropdown show">
-                    <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="dropdown, right">
+                    <button class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Parametre
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <li><a id="hoverDeco" href="{{ path('fos_user_security_logout') }}">Se déconnecter</a></li>
-                    </div>
+                    </ul>
                 </div>
                 </form>
 
