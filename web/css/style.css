@@ -52,6 +52,7 @@ th {
     margin-top: 5px;
 }
 
-.item {
-    align-items: center;
-}
+.padding {
+    padding-left: 10px; 
+    padding-right: 5px;
+}   
