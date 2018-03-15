@@ -45,10 +45,8 @@
                     <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Parametre
                     </a>
-
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><a id="hoverDeco" href="?p=deconnexion">Se déconnecter</a></li>
-                        <li><?= $admin ?></li>
+                        <li><a id="hoverDeco" href="{{ path('fos_user_security_logout') }}">Se déconnecter</a></li>
                     </div>
                 </div>
                 </form>
