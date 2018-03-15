@@ -22,7 +22,6 @@
                             <th>Code postal</th>
                             <th>Ville</th>
                             <th>Note</th>
-                            <th>Actions</th>
                         </tr>
                     </thead>
             </div>
@@ -32,15 +31,15 @@
                         {% for cli_client in cli_clients %}
                             <tr>
                                 <td><a href="{{ path('fiche_client_show', { 'id': cli_client.id }) }}">{{ cli_client.id }}</a></td>
-                                <td>{{ cli_client.nom }}</td>
-                                <td>{{ cli_client.prenom }}</td>
-                            <td>{{ cli_client.telephone }}</td>
-                                <td>{{ cli_client.email }}</td>
-                                <td>{{ cli_client.provenance }}</td>
-                                <td>{{ cli_client.adresse }}</td>
-                                <td>{{ cli_client.codePostal }}</td>
-                                <td>{{ cli_client.ville }}</td>
-                                <td>{{ cli_client.note }}</td>
+                                <td><a href="{{ path('fiche_client_show', { 'id': cli_client.id }) }}">{{ cli_client.nom }}</a></td>
+                                <td><a href="{{ path('fiche_client_show', { 'id': cli_client.id }) }}">{{ cli_client.prenom }}</a></td>
+                                <td><a href="{{ path('fiche_client_show', { 'id': cli_client.id }) }}">{{ cli_client.telephone }}</a></td>
+                                <td><a href="{{ path('fiche_client_show', { 'id': cli_client.id }) }}">{{ cli_client.email }}</a></td>
+                                <td><a href="{{ path('fiche_client_show', { 'id': cli_client.id }) }}">{{ cli_client.provenance }}</a></td>
+                                <td><a href="{{ path('fiche_client_show', { 'id': cli_client.id }) }}">{{ cli_client.adresse }}</a></td>
+                                <td><a href="{{ path('fiche_client_show', { 'id': cli_client.id }) }}">{{ cli_client.codePostal }}</a></td>
+                                <td><a href="{{ path('fiche_client_show', { 'id': cli_client.id }) }}">{{ cli_client.ville }}</a></td>
+                                <td><a href="{{ path('fiche_client_show', { 'id': cli_client.id }) }}">{{ cli_client.note }}</a></td>
                             </tr>
                         {% endfor %}
                     </tbody>

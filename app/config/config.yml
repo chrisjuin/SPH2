@@ -99,7 +99,7 @@ assetic:
                 - "%kernel.root_dir%/../vendor/components/jquery/jquery.min.js"            
             filters: [?yui_js]
             output: js/jquery.min.js
-           
+        
         bootstrap_css:
             inputs:
                 - "%kernel.root_dir%/../vendor/twbs/bootstrap/less/bootstrap.less"
