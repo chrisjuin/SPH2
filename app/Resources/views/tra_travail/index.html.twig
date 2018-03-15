@@ -20,8 +20,7 @@
                         <th>Devis</th>
                         <th>Process verbal</th>
                         <th>Facture</th>
-                        <th>Actions</th>
-
+                        
                     </tr>
                 </thead>
         </div>        
@@ -31,17 +30,17 @@
                 {% for tRA_travail in tRA_travails %}
                         <tr>
                             <td><a href="{{ path('fiche_chantier_show', { 'id': tRA_travail.id }) }}">{{ tRA_travail.id }}</a></td>
-                            <td>{{ tRA_travail.titre }}</td>
-                            <td>{{ tRA_travail.description }}</td>
-                            <td>{{ tRA_travail.prix }}</td>
-                            <td>{% if tRA_travail.dateDebut %}{{ tRA_travail.dateDebut|date('Y-m-d') }}{% endif %}</td>
-                            <td>{% if tRA_travail.dateRappel %}{{ tRA_travail.dateRappel|date('Y-m-d:s') }}{% endif %}</td>
-                            <td>{{ tRA_travail.modePaiment }}</td>
-                            <td>{{ tRA_travail.lieux }}</td>
-                            <td>{{ tRA_travail.garantie }}</td>
-                            <td>{{ tRA_travail.devis }}</td>
-                            <td>{{ tRA_travail.processVerbal }}</td>
-                            <td>{{ tRA_travail.facture }}</td>
+                            <td><a href="{{ path('fiche_chantier_show', { 'id': tRA_travail.id }) }}">{{ tRA_travail.titre }}</a></td>
+                            <td><a href="{{ path('fiche_chantier_show', { 'id': tRA_travail.id }) }}">{{ tRA_travail.description }}</a></td>
+                            <td><a href="{{ path('fiche_chantier_show', { 'id': tRA_travail.id }) }}">{{ tRA_travail.prix }}</a></td>
+                            <td><a href="{{ path('fiche_chantier_show', { 'id': tRA_travail.id }) }}">{% if tRA_travail.dateDebut %}{{ tRA_travail.dateDebut|date('Y-m-d') }}{% endif %}</a></td>
+                            <td><a href="{{ path('fiche_chantier_show', { 'id': tRA_travail.id }) }}">{% if tRA_travail.dateRappel %}{{ tRA_travail.dateRappel|date('Y-m-d') }}{% endif %}</a></td>
+                            <td><a href="{{ path('fiche_chantier_show', { 'id': tRA_travail.id }) }}">{{ tRA_travail.modePaiment }}</a></td>
+                            <td><a href="{{ path('fiche_chantier_show', { 'id': tRA_travail.id }) }}">{{ tRA_travail.lieux }}</a></td>
+                            <td><a href="{{ path('fiche_chantier_show', { 'id': tRA_travail.id }) }}">{{ tRA_travail.garantie }}</a></td>
+                            <td><a href="{{ path('fiche_chantier_show', { 'id': tRA_travail.id }) }}">{{ tRA_travail.devis }}</a></td>
+                            <td><a href="{{ path('fiche_chantier_show', { 'id': tRA_travail.id }) }}">{{ tRA_travail.processVerbal }}</a></td>
+                            <td><a href="{{ path('fiche_chantier_show', { 'id': tRA_travail.id }) }}">{{ tRA_travail.facture }}</a></td>
 
 
                             {# <td>
