@@ -46,3 +46,12 @@ th {
     margin-bottom: 15px; 
 }
 
+
+.right {
+    margin-right: 25px;
+    margin-top: 5px;
+}
+
+.item {
+    align-items: center;
+}
