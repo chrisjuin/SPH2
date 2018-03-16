@@ -3,17 +3,73 @@
 {% block body %}
 
     <div class="container">
-        {{ form_start(form) }}
-            {{ form_widget(form) }} 
-            <input type="submit" value="Créer" class="btn btn-success"  />
-        {{ form_end(form) }} 
+        <form>
+            <div class="row">
+                <div class="col-xs-6 col-sm-4   ">
+                    <label for="nom">NOM :</label>
+                    <input type="text" class="form-control" id="nom">
+                </div>
+            
+                <div class="col-xs-6 col-sm-4">
+                    <label for="prenom">PRENOM :</label>
+                    <input type="text" class="form-control" id="prenom">
+                </div>
+            
+                <div class="col-xs-6 col-sm-4">
+                    <label for="provenance">PROVENANCE :</label>
+                    <select type="text" class="form-control" id="provenance"></select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-8">
+                    <label for="adrs">ADRESSE :</label>
+                    <input type="text" class="form-control" id="adrs">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-6 col-sm-4   ">
+                    <label for="cp">CODE POSTAL :</label>
+                    <input type="text" class="form-control" id="cp">
+                </div>
+            
+                <div class="col-xs-6 col-sm-4">
+                    <label for="ville">VILLE :</label>
+                    <input type="text" class="form-control" id="ville">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-6 col-sm-4   ">
+                    <label for="telephone">TELEPHONE :</label>
+                    <input type="text" class="form-control" id="telephone">
+                </div>
+            
+                <div class="col-xs-6 col-sm-4">
+                    <label for="email">EMAIL :</label>
+                    <input type="text" class="form-control" id="email">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-8">
+                    <label for="note">NOTE :</label>
+                    <textarea class="form-control" rows='10'></textarea>
+                </div>
+            </div>
+            <div class="col-md-offset-10">
+                <input type="submit" value="Créer" class="btn btn-success" />
+            </div>
+        </form>
     </div>
+            
 
     <ul>
         <li>
             <a href="{{ path('fiche_client_index') }}" class="btn btn-warning">Retour</a>
         </li>
     </ul>
-</div>
+
 
 {% endblock %}

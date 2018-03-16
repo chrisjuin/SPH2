@@ -5,7 +5,9 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Cli_client;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Console\Input\Input;
 
 /**
  * Cli_client controller.
@@ -37,6 +39,7 @@ class Cli_clientController extends Controller
      * @Route("/new", name="fiche_client_new")
      * @Method({"GET", "POST"})
      */
+
     public function newAction(Request $request)
     {
         $cli_client = new Cli_client();
