@@ -56,3 +56,11 @@ th {
     padding-left: 10px; 
     padding-right: 5px;
 }   
+
+.top {
+    margin-top: 15px; 
+}
+
+.push{
+    margin-bottom: 2%;  
+}

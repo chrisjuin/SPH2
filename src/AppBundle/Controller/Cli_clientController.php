@@ -37,7 +37,7 @@ class Cli_clientController extends Controller
      * Creates a new cli_client entity.
      *
      * @Route("/new", name="fiche_client_new")
-     * @Method({"GET", "POST"})
+     * @Method({"GET" , "POST"})
      */
 
     public function newAction(Request $request)
