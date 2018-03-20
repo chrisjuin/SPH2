@@ -21,7 +21,7 @@
             <div class="col-md-6 col-md-4">
                 {{ form_label(form.provenance , 'PROVENANCE :') }}
                 {{ form_errors(form.provenance) }}
-                {{ form_widget(form.provenance, { 'attr': { 'select':'class', 'class': 'form-control'} }) }}
+                {{ form_widget(form.provenance, { 'attr': { 'select':'name' ,'name': 'provenance', 'class': 'form-control'} }) }}
             </div>
         </div>
 

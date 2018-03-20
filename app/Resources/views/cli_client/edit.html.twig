@@ -4,24 +4,76 @@
 
 {% block body %}
     <div class="container">
-                {{ form_start(edit_form) }}
-                    {{form_widget(edit_form)}}
-                    <input type="submit" value="Enregister les modifications" class="btn btn-success" />
-                {{ form_end(edit_form) }}
+        {{ form_start(edit_form) }}
+                    <div class="row">
+            <div class="col-md-6 col-md-4">
+                {{ form_label(edit_form.nom, 'NOM :') }}
+                {{ form_errors(edit_form.nom) }}
+                {{ form_widget(edit_form.nom, { 'attr': {'class': 'form-control', 'placeholder' : 'Nom'} }) }}
             </div>
-        </div>    
+            <div class="col-md-6 col-md-4">
+                {{ form_label(edit_form.prenom, 'PRENOM :') }}
+                {{ form_errors(edit_form.prenom) }}
+                {{ form_widget(edit_form.prenom, { 'attr': {'class': 'form-control', 'placeholder' : 'Prenom'} }) }}
+            </div>
         
-            <div class="col-md-12" 
-                <ul>
-                    <li>
-                        <a href="{{ path('fiche_client_index') }}" class="btn btn-warning ">Retour</a>
-                    </li>
-                    <li>
-                        {{ form_start(delete_form) }}
-                            <input type="submit" value="Supprimer" class="btn btn-danger">
-                        {{ form_end(delete_form) }}
-                    </li>
-                </ul>
-            </div>  
+            <div class="col-md-6 col-md-4">
+                {{ form_label(edit_form.provenance , 'PROVENANCE :') }}
+                {{ form_errors(edit_form.provenance) }}
+                {{ form_widget(edit_form.provenance, { 'attr': { 'select':'name' ,'name': 'provenance', 'class': 'form-control'} }) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                {{ form_label(edit_form.adresse, 'ADRESSE :') }}
+                {{ form_errors(edit_form.adresse) }}
+                {{ form_widget(edit_form.adresse, { 'attr': {'class': 'form-control', 'placeholder' : 'Adresse'} }) }}
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 col-md-4">
+                {{ form_label(edit_form.codePostal, 'CODE POSTAL :') }}
+                {{ form_errors(edit_form.codePostal) }}
+                {{ form_widget(edit_form.codePostal, { 'attr': {'class': 'form-control', 'placeholder' : 'Code postal'} }) }}
+            </div>
+        
+            <div class="col-md-6 col-md-4">
+                {{ form_label(edit_form.ville, 'VILLE :') }}
+                {{ form_errors(edit_form.ville) }}
+                {{ form_widget(edit_form.ville, { 'attr': {'class': 'form-control', 'placeholder' : 'Ville'} }) }}
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 col-md-4">
+                {{ form_label(edit_form.telephone, 'TELEPHONE :') }}
+                {{ form_errors(edit_form.telephone) }}
+                {{ form_widget(edit_form.telephone, { 'attr': {'class': 'form-control', 'placeholder' : 'n° Telephone'} }) }}
+            </div>
+        
+            <div class="col-md-6 col-md-4">
+                {{ form_label(edit_form.email, 'EMAIL :') }}
+                {{ form_errors(edit_form.email) }}
+                {{ form_widget(edit_form.email, { 'attr': {'class': 'form-control', 'placeholder' : 'Email'} }) }}
+            </div>
+        </div>
+        
+        <div class="row, push">
+            <div class="col-md-8">
+                {{ form_label(edit_form.note, 'NOTE :') }}
+                {{ form_errors(edit_form.note) }}
+                {{ form_widget(edit_form.note, { 'attr': { 'textarea':'rows', 'rows':'10', 'class': 'form-control'} }) }}
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-offset-9">
+                <input type="submit" value="Enregister les modifications" class="btn btn-success btn-block" />         
+                <a href="{{ path('fiche_client_index') }}" class="btn btn-warning btn-block">Retour</a>
+            </div>
+        </div>
+        {{ form_end(edit_form) }}
     </div>
 {% endblock %}
