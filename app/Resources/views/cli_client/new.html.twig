@@ -2,68 +2,81 @@
 
 {% block body %}
 
+
+
 <div class="container">
-    <form method="POST" action="{{ path('fiche_client_new')}}">
+    {{ form_start(form) }}
         <div class="row">
             <div class="col-md-6 col-md-4">
-                <label for="nom">NOM :</label>
-                <input type="text" placeholder="Nom" class="form-control" id="nom">
+                {{ form_label(form.nom, 'NOM :') }}
+                {{ form_errors(form.nom) }}
+                {{ form_widget(form.nom, { 'attr': {'class': 'form-control', 'placeholder' : 'Nom'} }) }}
+            </div>
+            <div class="col-md-6 col-md-4">
+                {{ form_label(form.prenom, 'PRENOM :') }}
+                {{ form_errors(form.prenom) }}
+                {{ form_widget(form.prenom, { 'attr': {'class': 'form-control', 'placeholder' : 'Prenom'} }) }}
             </div>
         
             <div class="col-md-6 col-md-4">
-                <label for="prenom">PRENOM :</label>
-                <input type="text" placeholder="Prenom" class="form-control" id="prenom">
-            </div>
-        
-            <div class="col-md-6 col-md-4">
-                <label for="provenance">PROVENANCE :</label>
-                <select type="text" class="form-control" id="provenance">
-                    <option>WEB</option>
-                    <option>PROSPECTION</option>
-                </select>
+                {{ form_label(form.provenance , 'PROVENANCE :') }}
+                {{ form_errors(form.provenance) }}
+                {{ form_widget(form.provenance, { 'attr': { 'select':'class', 'class': 'form-control'} }) }}
             </div>
         </div>
+
         <div class="row">
             <div class="col-md-8">
-                <label for="adrs">ADRESSE :</label>
-                <input type="text" placeholder="Adresse" class="form-control" id="adrs">
+                {{ form_label(form.adresse, 'ADRESSE :') }}
+                {{ form_errors(form.adresse) }}
+                {{ form_widget(form.adresse, { 'attr': {'class': 'form-control', 'placeholder' : 'Adresse'} }) }}
             </div>
         </div>
+        
         <div class="row">
             <div class="col-md-6 col-md-4">
-                <label for="cp">CODE POSTAL :</label>
-                <input type="text" placeholder="Code Postal" class="form-control" id="cp">
+                {{ form_label(form.codePostal, 'CODE POSTAL :') }}
+                {{ form_errors(form.codePostal) }}
+                {{ form_widget(form.codePostal, { 'attr': {'class': 'form-control', 'placeholder' : 'Code postal'} }) }}
             </div>
         
             <div class="col-md-6 col-md-4">
-                <label for="ville">VILLE :</label>
-                <input type="text" placeholder="Ville" class="form-control" id="ville">
+                {{ form_label(form.ville, 'VILLE :') }}
+                {{ form_errors(form.ville) }}
+                {{ form_widget(form.ville, { 'attr': {'class': 'form-control', 'placeholder' : 'Ville'} }) }}
             </div>
         </div>
+        
         <div class="row">
             <div class="col-md-6 col-md-4">
-                <label for="telephone">TELEPHONE :</label>
-                <input type="text" placeholder="N° de Telephone" class="form-control" id="telephone">
+                {{ form_label(form.telephone, 'TELEPHONE :') }}
+                {{ form_errors(form.telephone) }}
+                {{ form_widget(form.telephone, { 'attr': {'class': 'form-control', 'placeholder' : 'n° Telephone'} }) }}
             </div>
         
             <div class="col-md-6 col-md-4">
-                <label for="email">EMAIL :</label>
-                <input type="text" placeholder="Email" class="form-control" id="email">
+                {{ form_label(form.email, 'EMAIL :') }}
+                {{ form_errors(form.email) }}
+                {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder' : 'Email'} }) }}
             </div>
         </div>
+        
         <div class="row, push">
             <div class="col-md-8">
-                <label for="note">NOTE :</label>
-                <textarea class="form-control" rows='10'></textarea>
+                {{ form_label(form.note, 'NOTE :') }}
+                {{ form_errors(form.note) }}
+                {{ form_widget(form.note, { 'attr': { 'textarea':'rows', 'rows':'10', 'class': 'form-control'} }) }}
+                
             </div>
         </div>
+        
         <div class="row">
             <div class="col-md-offset-9">
                 <input type="submit" value="Enregistrer client" class="btn btn-success btn-block" />
                 <a href="{{ path('fiche_client_index') }}" class="btn btn-warning btn-block">Retour</a>
             </div>
         </div>  
-    </form>
+    {{ form_end(form) }}
 </div>
     
 {% endblock %}
