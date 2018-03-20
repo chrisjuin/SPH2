@@ -20,7 +20,7 @@
             <div class="col-md-6 col-md-4">
                 {{ form_label(edit_form.provenance , 'PROVENANCE :') }}
                 {{ form_errors(edit_form.provenance) }}
-                {{ form_widget(edit_form.provenance, { 'attr': { 'select':'name' ,'name': 'provenance', 'class': 'form-control'} }) }}
+                {{ form_widget(edit_form.provenance, { 'attr': {'select':'option',  'option' : 'web', 'class': 'form-control' } }) }}
             </div>
         </div>
 
@@ -70,7 +70,7 @@
         
         <div class="row">
             <div class="col-md-offset-9">
-                <input type="submit" value="Enregister les modifications" class="btn btn-success btn-block" />         
+                <input type="submit" value="Enregister les Modifications" class="btn btn-success btn-block" />         
                 <a href="{{ path('fiche_client_index') }}" class="btn btn-warning btn-block">Retour</a>
             </div>
         </div>
