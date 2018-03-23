@@ -77,7 +77,7 @@ class __TwigTemplate_4d72311cce2ed40986c853291480f6c52475d28205259b5a17d1d1ddb48
                 </li>
             </ul>
             
-                <form class=\"nav navbar-nav navbar-right list-inline\">
+            <form class=\"nav navbar-nav navbar-right list-inline\">
                 <div class=\"dropdown, right\">
                     <button class=\"btn btn-success dropdown-toggle\" href=\"#\" role=\"button\" id=\"dropdownMenuLink\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
                         Parametre
@@ -90,7 +90,7 @@ class __TwigTemplate_4d72311cce2ed40986c853291480f6c52475d28205259b5a17d1d1ddb48
         echo "\">Se déconnecter</a></li>
                     </ul>
                 </div>
-                </form>
+            </form>
 
 
                 
@@ -168,7 +168,7 @@ class __TwigTemplate_4d72311cce2ed40986c853291480f6c52475d28205259b5a17d1d1ddb48
                 </li>
             </ul>
             
-                <form class=\"nav navbar-nav navbar-right list-inline\">
+            <form class=\"nav navbar-nav navbar-right list-inline\">
                 <div class=\"dropdown, right\">
                     <button class=\"btn btn-success dropdown-toggle\" href=\"#\" role=\"button\" id=\"dropdownMenuLink\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
                         Parametre
@@ -178,7 +178,7 @@ class __TwigTemplate_4d72311cce2ed40986c853291480f6c52475d28205259b5a17d1d1ddb48
                         <li><a id=\"hoverDeco\" href=\"{{ path('fos_user_security_logout') }}\">Se déconnecter</a></li>
                     </ul>
                 </div>
-                </form>
+            </form>
 
 
                 
