@@ -69,13 +69,14 @@
         <li>
             <a href="{{ path('fiche_chantier_new') }}" class="btn btn-primary" >Créer un chantier</a>
         </li>
-        <li>
-            <a href="{{ path('fiche_client_index') }}" class="btn btn-warning">Retour</a>
-        </li>
+        
         <li>
             <a href="{{ path('fiche_client_edit', { 'id': cli_client.id }) }}" class="btn btn-success">Modifier</a>
         </li>
         
+        <li>
+            <a href="{{ path('fiche_client_index') }}" class="btn btn-warning">Retour</a>
+        </li>
         
         <li>
             {{ form_start(delete_form) }}
