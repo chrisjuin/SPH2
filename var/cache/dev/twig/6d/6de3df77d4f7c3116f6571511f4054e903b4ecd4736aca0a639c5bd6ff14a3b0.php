@@ -61,6 +61,9 @@ class __TwigTemplate_4d72311cce2ed40986c853291480f6c52475d28205259b5a17d1d1ddb48
         </div>
         <button type=\"submit\" class=\"btn btn-default\">Submit</button>
     </form>
+    <ul class=\"nav navbar-right\">
+        <li class=\"btn btn-default\"><a href=\"#\">deconnexion</a>
+    </ul>
     </div>
 </nav> 
 
@@ -102,6 +105,9 @@ class __TwigTemplate_4d72311cce2ed40986c853291480f6c52475d28205259b5a17d1d1ddb48
         </div>
         <button type=\"submit\" class=\"btn btn-default\">Submit</button>
     </form>
+    <ul class=\"nav navbar-right\">
+        <li class=\"btn btn-default\"><a href=\"#\">deconnexion</a>
+    </ul>
     </div>
 </nav> 
 
