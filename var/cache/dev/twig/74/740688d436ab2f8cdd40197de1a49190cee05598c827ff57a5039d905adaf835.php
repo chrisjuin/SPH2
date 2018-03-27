@@ -205,7 +205,7 @@ class __TwigTemplate_d86013a7e954c937e9157b42d70fc411802c0b057d3c64e0434a4184086
         
         <div class=\"row\">
             <div class=\"col-md-offset-9\">
-                <input type=\"submit\" value=\"Enregistrer client\" class=\"btn btn-success btn-block\" />
+                <input type=\"submit\" value=\"Enregistrer Client\" class=\"btn btn-success btn-block\" />
                 <a href=\"";
         // line 76
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fiche_client_index");
@@ -318,7 +318,7 @@ class __TwigTemplate_d86013a7e954c937e9157b42d70fc411802c0b057d3c64e0434a4184086
         
         <div class=\"row\">
             <div class=\"col-md-offset-9\">
-                <input type=\"submit\" value=\"Enregistrer client\" class=\"btn btn-success btn-block\" />
+                <input type=\"submit\" value=\"Enregistrer Client\" class=\"btn btn-success btn-block\" />
                 <a href=\"{{ path('fiche_client_index') }}\" class=\"btn btn-warning btn-block\">Retour</a>
             </div>
         </div>  
@@ -326,6 +326,6 @@ class __TwigTemplate_d86013a7e954c937e9157b42d70fc411802c0b057d3c64e0434a4184086
 </div>
     
 {% endblock %}
-", "cli_client/new.html.twig", "/home/chris/symfony-projet/SPH2/app/Resources/views/cli_client/new.html.twig");
+", "cli_client/new.html.twig", "/home/simplon/projet-symfony/SPH2/app/Resources/views/cli_client/new.html.twig");
     }
 }

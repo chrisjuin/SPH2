@@ -236,6 +236,6 @@ class __TwigTemplate_c5ae71d48ee83377135d554e01b122684fc22848dba25c8f35cc04b8ab7
         {% endblock %}
     </body>
 </html>
-", "base.html.twig", "/home/chris/symfony-projet/SPH2/app/Resources/views/base.html.twig");
+", "base.html.twig", "/home/simplon/projet-symfony/SPH2/app/Resources/views/base.html.twig");
     }
 }
