@@ -261,6 +261,6 @@ class __TwigTemplate_84401b68ccd30bb4e028aedd947fba0af1eee80ccc92e1e97e6a7652975
                 </div>
 
 {% endblock %}
-", "tra_travail/index.html.twig", "/home/chris/symfony-projet/SPH2/app/Resources/views/tra_travail/index.html.twig");
+", "tra_travail/index.html.twig", "/home/simplon/projet-symfony/SPH2/app/Resources/views/tra_travail/index.html.twig");
     }
 }

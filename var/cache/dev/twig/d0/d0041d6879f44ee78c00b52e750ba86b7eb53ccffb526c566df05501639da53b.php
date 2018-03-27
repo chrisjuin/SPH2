@@ -244,6 +244,6 @@ class __TwigTemplate_a5cc352cc78836b1ff6c2674036a90a103e788ba00212426688df22dd16
             </table>
 </div>
 {% endblock %}
-", "cli_client/index.html.twig", "/home/chris/symfony-projet/SPH2/app/Resources/views/cli_client/index.html.twig");
+", "cli_client/index.html.twig", "/home/simplon/projet-symfony/SPH2/app/Resources/views/cli_client/index.html.twig");
     }
 }

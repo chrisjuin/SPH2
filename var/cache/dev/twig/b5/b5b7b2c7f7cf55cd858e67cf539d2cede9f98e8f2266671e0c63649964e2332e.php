@@ -82,6 +82,6 @@ class __TwigTemplate_fba93437ae70699c854a483e7ec2ee348181e30f69acfec79fbc7c21f32
         return new Twig_Source("{% extends \"@FOSUser/layout.html.twig\" %}
 {% block fos_user_content %}
     {{ include('@FOSUser/Security/login_content.html.twig') }}
-{% endblock fos_user_content %}", "@FOSUser/Security/login.html.twig", "/home/chris/symfony-projet/SPH2/app/Resources/FOSUserBundle/views/Security/login.html.twig");
+{% endblock fos_user_content %}", "@FOSUser/Security/login.html.twig", "/home/simplon/projet-symfony/SPH2/app/Resources/FOSUserBundle/views/Security/login.html.twig");
     }
 }
