@@ -31,3 +31,9 @@ dac688,127.0.0.1,GET,http://localhost:8000/fiche_client/,1522163357,,200
 ba0182,127.0.0.1,GET,http://localhost:8000/fiche_client/,1522163423,,200
 ff7804,127.0.0.1,GET,http://localhost:8000/fonts/glyphicons-halflings-regular.woff2,1522163423,6ea010,200
 6ea010,127.0.0.1,GET,http://localhost:8000/fonts/glyphicons-halflings-regular.woff2,1522163423,,404
+60ccf2,127.0.0.1,GET,http://localhost:8000/fiche_client/,1522163859,,200
+dfb7fc,127.0.0.1,GET,http://localhost:8000/fonts/glyphicons-halflings-regular.woff2,1522163860,903c87,200
+903c87,127.0.0.1,GET,http://localhost:8000/fonts/glyphicons-halflings-regular.woff2,1522163860,,404
+52e849,127.0.0.1,GET,http://localhost:8000/fiche_client/,1522163892,,200
+52461a,127.0.0.1,GET,http://localhost:8000/fonts/glyphicons-halflings-regular.woff2,1522163892,f4eb5a,200
+f4eb5a,127.0.0.1,GET,http://localhost:8000/fonts/glyphicons-halflings-regular.woff2,1522163892,,404
