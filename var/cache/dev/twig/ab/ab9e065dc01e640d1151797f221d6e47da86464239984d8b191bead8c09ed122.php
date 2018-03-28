@@ -53,12 +53,9 @@ class __TwigTemplate_36cb8f3c23318fc234bfe3cea10d0b58e04bb5c9d6bb82825908f4f66b8
             ";
         } else {
             // line 14
-            echo "                <a href=\"";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_security_login");
-            echo "\">";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("layout.login", array(), "FOSUserBundle"), "html", null, true);
-            echo "</a>
-            ";
+            echo "                ";
+            // line 15
+            echo "            ";
         }
         // line 16
         echo "        </div>
@@ -149,7 +146,7 @@ class __TwigTemplate_36cb8f3c23318fc234bfe3cea10d0b58e04bb5c9d6bb82825908f4f66b8
 
     public function getDebugInfo()
     {
-        return array (  131 => 30,  122 => 29,  109 => 31,  107 => 29,  103 => 27,  100 => 26,  94 => 25,  85 => 22,  80 => 21,  75 => 20,  70 => 19,  68 => 18,  64 => 16,  56 => 14,  50 => 11,  46 => 10,  41 => 9,  39 => 8,  30 => 1,);
+        return array (  128 => 30,  119 => 29,  106 => 31,  104 => 29,  100 => 27,  97 => 26,  91 => 25,  82 => 22,  77 => 21,  72 => 20,  67 => 19,  65 => 18,  61 => 16,  58 => 15,  56 => 14,  50 => 11,  46 => 10,  41 => 9,  39 => 8,  30 => 1,);
     }
 
     public function getSourceContext()
@@ -167,7 +164,7 @@ class __TwigTemplate_36cb8f3c23318fc234bfe3cea10d0b58e04bb5c9d6bb82825908f4f66b8
                     {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
                 </a>
             {% else %}
-                <a href=\"{{ path('fos_user_security_login') }}\">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                {# <a href=\"{{ path('fos_user_security_login') }}\">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a> #}
             {% endif %}
         </div>
 

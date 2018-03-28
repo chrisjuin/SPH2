@@ -65,3 +65,7 @@ th {
     margin-bottom: 2%;  
 }
 
+.noPadding {
+    padding-left: 0%; 
+    margin-bottom: 0%; 
+}
