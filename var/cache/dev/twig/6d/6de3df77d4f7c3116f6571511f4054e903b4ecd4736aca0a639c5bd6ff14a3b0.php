@@ -45,28 +45,54 @@ class __TwigTemplate_4d72311cce2ed40986c853291480f6c52475d28205259b5a17d1d1ddb48
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 2
-        echo "<nav class=\"navbar navbar-inverse\">
-    <div class=\"container-fluid\">
+        echo "<div class=\"container\">
+    <nav class=\"navbar navbar-default\">
         <div class=\"navbar-header\">
-            <a class=\"navbar-brand\" href=\"#\">WebSiteName</a>
-    </div>
-    <ul class=\"nav navbar-nav\">
-        <li class=\"active\"><a href=\"#\">Home</a></li>
-        <li><a href=\"#\">Page 1</a></li>
-        <li><a href=\"#\">Page 2</a></li>
-    </ul>
-    <form class=\"navbar-form navbar-left\" action=\"/action_page.php\">
-        <div class=\"form-group\">
-            <input type=\"text\" class=\"form-control\" placeholder=\"Search\">
+            <div class=\"noPadding\">
+                <a href=\"";
+        // line 6
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fiche_chantier_index");
+        echo "\">
+                    <img src=\"";
+        // line 7
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("sph.ico"), "html", null, true);
+        echo "\"></a>
+            </div>
         </div>
-        <button type=\"submit\" class=\"btn btn-default\">Submit</button>
-    </form>
-    <ul class=\"nav navbar-right\">
-        <li class=\"btn btn-default\"><a href=\"#\">deconnexion</a>
-    </ul>
-    </div>
-</nav> 
-
+        
+            
+        <div class=\"col-xs-2\">
+            <div class=\"nav navbar-nav\">
+                <li class=\"hover\"><a href=\"";
+        // line 14
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fiche_client_new");
+        echo "\">Ajouter client</a></li>
+            </div>
+        </div>
+        
+            <form class=\"navbar-form navbar-left\" action=\"/action_page.php\">
+                <div class=\"form-group\">
+                    <input type=\"text\" class=\"form-control\" size=\"30\" placeholder=\"Recherche\">
+                </div>
+                <button type=\"submit\" class=\"btn btn-success\"><i class=\"glyphicon glyphicon-search\"></i></button>
+            </form>
+        
+        <div class=\"navbar-form navbar-right\">
+            <div class=\"dropdown\">
+                <button class=\"btn btn-success btn btn-block dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                    Parametres 
+                    <span class=\"caret\"></span>
+                </button>
+                <ul class=\"dropdown-menu\">
+                    <li><a href=\"";
+        // line 32
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_security_logout");
+        echo "\">Deconnexion</a></li>
+                </ul>  
+            </div>
+        </div>
+    </nav> 
+</div>  
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -83,34 +109,48 @@ class __TwigTemplate_4d72311cce2ed40986c853291480f6c52475d28205259b5a17d1d1ddb48
 
     public function getDebugInfo()
     {
-        return array (  48 => 2,  30 => 1,);
+        return array (  89 => 32,  68 => 14,  58 => 7,  54 => 6,  48 => 2,  30 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Twig_Source("{% block body %}
-<nav class=\"navbar navbar-inverse\">
-    <div class=\"container-fluid\">
+<div class=\"container\">
+    <nav class=\"navbar navbar-default\">
         <div class=\"navbar-header\">
-            <a class=\"navbar-brand\" href=\"#\">WebSiteName</a>
-    </div>
-    <ul class=\"nav navbar-nav\">
-        <li class=\"active\"><a href=\"#\">Home</a></li>
-        <li><a href=\"#\">Page 1</a></li>
-        <li><a href=\"#\">Page 2</a></li>
-    </ul>
-    <form class=\"navbar-form navbar-left\" action=\"/action_page.php\">
-        <div class=\"form-group\">
-            <input type=\"text\" class=\"form-control\" placeholder=\"Search\">
+            <div class=\"noPadding\">
+                <a href=\"{{ path('fiche_chantier_index') }}\">
+                    <img src=\"{{ asset('sph.ico')}}\"></a>
+            </div>
         </div>
-        <button type=\"submit\" class=\"btn btn-default\">Submit</button>
-    </form>
-    <ul class=\"nav navbar-right\">
-        <li class=\"btn btn-default\"><a href=\"#\">deconnexion</a>
-    </ul>
-    </div>
-</nav> 
-
+        
+            
+        <div class=\"col-xs-2\">
+            <div class=\"nav navbar-nav\">
+                <li class=\"hover\"><a href=\"{{ path('fiche_client_new') }}\">Ajouter client</a></li>
+            </div>
+        </div>
+        
+            <form class=\"navbar-form navbar-left\" action=\"/action_page.php\">
+                <div class=\"form-group\">
+                    <input type=\"text\" class=\"form-control\" size=\"30\" placeholder=\"Recherche\">
+                </div>
+                <button type=\"submit\" class=\"btn btn-success\"><i class=\"glyphicon glyphicon-search\"></i></button>
+            </form>
+        
+        <div class=\"navbar-form navbar-right\">
+            <div class=\"dropdown\">
+                <button class=\"btn btn-success btn btn-block dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                    Parametres 
+                    <span class=\"caret\"></span>
+                </button>
+                <ul class=\"dropdown-menu\">
+                    <li><a href=\"{{ path('fos_user_security_logout') }}\">Deconnexion</a></li>
+                </ul>  
+            </div>
+        </div>
+    </nav> 
+</div>  
 {% endblock   %}", "navBar.html.twig", "/home/simplon/projet-symfony/SPH2/app/Resources/views/navBar.html.twig");
     }
 }
