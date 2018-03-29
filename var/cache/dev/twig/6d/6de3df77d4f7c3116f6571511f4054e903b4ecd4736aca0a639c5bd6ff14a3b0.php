@@ -1,6 +1,6 @@
 <?php
 
-/* navBar.html.twig */
+/* ::navBar.html.twig */
 class __TwigTemplate_4d72311cce2ed40986c853291480f6c52475d28205259b5a17d1d1ddb48bc7f3 extends Twig_Template
 {
     private $source;
@@ -21,10 +21,10 @@ class __TwigTemplate_4d72311cce2ed40986c853291480f6c52475d28205259b5a17d1d1ddb48
     protected function doDisplay(array $context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "navBar.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::navBar.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "navBar.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::navBar.html.twig"));
 
         // line 1
         $this->displayBlock('body', $context, $blocks);
@@ -77,7 +77,7 @@ class __TwigTemplate_4d72311cce2ed40986c853291480f6c52475d28205259b5a17d1d1ddb48
                 <button type=\"submit\" class=\"btn btn-success\"><i class=\"glyphicon glyphicon-search\"></i></button>
             </form>
         
-        <div class=\"navbar-form navbar-right\">
+        <div class=\"navbar-form  navbar-right\">
             <div class=\"dropdown\">
                 <button class=\"btn btn-success btn btn-block dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
                     Parametres 
@@ -104,7 +104,7 @@ class __TwigTemplate_4d72311cce2ed40986c853291480f6c52475d28205259b5a17d1d1ddb48
 
     public function getTemplateName()
     {
-        return "navBar.html.twig";
+        return "::navBar.html.twig";
     }
 
     public function getDebugInfo()
@@ -138,7 +138,7 @@ class __TwigTemplate_4d72311cce2ed40986c853291480f6c52475d28205259b5a17d1d1ddb48
                 <button type=\"submit\" class=\"btn btn-success\"><i class=\"glyphicon glyphicon-search\"></i></button>
             </form>
         
-        <div class=\"navbar-form navbar-right\">
+        <div class=\"navbar-form  navbar-right\">
             <div class=\"dropdown\">
                 <button class=\"btn btn-success btn btn-block dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
                     Parametres 
@@ -151,6 +151,6 @@ class __TwigTemplate_4d72311cce2ed40986c853291480f6c52475d28205259b5a17d1d1ddb48
         </div>
     </nav> 
 </div>  
-{% endblock   %}", "navBar.html.twig", "/home/simplon/projet-symfony/SPH2/app/Resources/views/navBar.html.twig");
+{% endblock   %}", "::navBar.html.twig", "/home/simplon/projet-symfony/SPH2/app/Resources/views/navBar.html.twig");
     }
 }

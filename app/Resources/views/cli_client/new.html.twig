@@ -21,7 +21,7 @@
             <div class="col-md-6 col-md-4">
                 {{ form_label(form.provenance , 'PROVENANCE :') }}
                 {{ form_errors(form.provenance) }}
-                {{ form_widget(form.provenance, { 'attr': { 'select':'name' ,'name': 'provenance', 'class': 'form-control'} }) }}
+                {{ form_widget(form.provenance, { 'attr': { 'class': 'form-control' } }) }}
             </div>
         </div>
 
@@ -43,7 +43,7 @@
             <div class="col-md-6 col-md-4">
                 {{ form_label(form.ville, 'VILLE :') }}
                 {{ form_errors(form.ville) }}
-                {{ form_widget(form.ville, { 'attr': {'class': 'form-control', 'placeholder' : 'Ville'} }) }}
+                {{ form_widget(form.ville, { 'attr': {'class': 'form-control'} }) }}
             </div>
         </div>
         

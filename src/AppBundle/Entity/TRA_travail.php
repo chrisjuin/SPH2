@@ -99,6 +99,20 @@ class TRA_travail
     private $facture; 
     
     /**
+     * @var string
+     * 
+     * @ORM\Column(name="tra_date_devis", type="date")
+     */
+    private $dateDevis; 
+    
+    /**
+     * @var string
+     * 
+     * @ORM\Column(name="tra_note", type="text")
+     */
+    private $note; 
+
+     /**
      * @ORM\ManyToOne(targetEntity="Cli_client" ,inversedBy="tra_travail")
      * @ORM\JoinColumn(name="cli_id", referencedColumnName="cli_id")
      */
@@ -385,6 +399,31 @@ class TRA_travail
     }
 
     /**
+     * Set dateDevis
+     *
+     * @param \DateTime $dateDevis
+     *
+     * @return TRA_travail
+     */
+    public function setDateDevis($dateDevis)
+    {
+        $this->dateDevis = $dateDevis;
+
+        return $this;
+    }
+
+    /**
+     * Get dateDevis
+     *
+     * @return \DateTime
+     */
+    public function getDateDevis()
+    {
+        return $this->dateDevis;
+    }
+    
+
+    /**
      * Set cliClient
      *
      * @param \AppBundle\Entity\cli_client $cliClient
@@ -431,4 +470,6 @@ class TRA_travail
     {
         return $this->utiUtilisateur;
     }
+
 }
+
