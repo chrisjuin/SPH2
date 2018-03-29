@@ -1,6 +1,6 @@
 <?php
 
-/* cli_client/new.html.twig */
+/* :cli_client:new.html.twig */
 class __TwigTemplate_d86013a7e954c937e9157b42d70fc411802c0b057d3c64e0434a418408631d70 extends Twig_Template
 {
     private $source;
@@ -12,7 +12,7 @@ class __TwigTemplate_d86013a7e954c937e9157b42d70fc411802c0b057d3c64e0434a4184086
         $this->source = $this->getSourceContext();
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", "cli_client/new.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", ":cli_client:new.html.twig", 1);
         $this->blocks = array(
             'body' => array($this, 'block_body'),
         );
@@ -26,10 +26,10 @@ class __TwigTemplate_d86013a7e954c937e9157b42d70fc411802c0b057d3c64e0434a4184086
     protected function doDisplay(array $context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "cli_client/new.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":cli_client:new.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "cli_client/new.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":cli_client:new.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
@@ -99,7 +99,7 @@ class __TwigTemplate_d86013a7e954c937e9157b42d70fc411802c0b057d3c64e0434a4184086
         echo "
                 ";
         // line 24
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 24, $this->source); })()), "provenance", array()), 'widget', array("attr" => array("select" => "name", "name" => "provenance", "class" => "form-control")));
+        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 24, $this->source); })()), "provenance", array()), 'widget', array("attr" => array("class" => "form-control")));
         echo "
             </div>
         </div>
@@ -148,7 +148,7 @@ class __TwigTemplate_d86013a7e954c937e9157b42d70fc411802c0b057d3c64e0434a4184086
         echo "
                 ";
         // line 46
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 46, $this->source); })()), "ville", array()), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "Ville")));
+        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 46, $this->source); })()), "ville", array()), 'widget', array("attr" => array("class" => "form-control")));
         echo "
             </div>
         </div>
@@ -229,7 +229,7 @@ class __TwigTemplate_d86013a7e954c937e9157b42d70fc411802c0b057d3c64e0434a4184086
 
     public function getTemplateName()
     {
-        return "cli_client/new.html.twig";
+        return ":cli_client:new.html.twig";
     }
 
     public function isTraitable()
@@ -267,7 +267,7 @@ class __TwigTemplate_d86013a7e954c937e9157b42d70fc411802c0b057d3c64e0434a4184086
             <div class=\"col-md-6 col-md-4\">
                 {{ form_label(form.provenance , 'PROVENANCE :') }}
                 {{ form_errors(form.provenance) }}
-                {{ form_widget(form.provenance, { 'attr': { 'select':'name' ,'name': 'provenance', 'class': 'form-control'} }) }}
+                {{ form_widget(form.provenance, { 'attr': { 'class': 'form-control' } }) }}
             </div>
         </div>
 
@@ -289,7 +289,7 @@ class __TwigTemplate_d86013a7e954c937e9157b42d70fc411802c0b057d3c64e0434a4184086
             <div class=\"col-md-6 col-md-4\">
                 {{ form_label(form.ville, 'VILLE :') }}
                 {{ form_errors(form.ville) }}
-                {{ form_widget(form.ville, { 'attr': {'class': 'form-control', 'placeholder' : 'Ville'} }) }}
+                {{ form_widget(form.ville, { 'attr': {'class': 'form-control'} }) }}
             </div>
         </div>
         
@@ -326,6 +326,6 @@ class __TwigTemplate_d86013a7e954c937e9157b42d70fc411802c0b057d3c64e0434a4184086
 </div>
     
 {% endblock %}
-", "cli_client/new.html.twig", "/home/simplon/projet-symfony/SPH2/app/Resources/views/cli_client/new.html.twig");
+", ":cli_client:new.html.twig", "/home/simplon/projet-symfony/SPH2/app/Resources/views/cli_client/new.html.twig");
     }
 }

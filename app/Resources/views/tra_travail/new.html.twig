@@ -5,49 +5,48 @@
     <div class="container">
         {{ form_start(form) }}
             <div class="row">
-                <div class="col-sm-4 text-center">
-                    {{ form_label(form.description, 'Description :') }}  
-                    {{ form_errors(form.description) }}    
-                    {{ form_widget(form.description, {'attr': {'class': 'form-control', 'placeholder': 'Natures des travaux' } } ) }}
+                <div class="col-sm-4 , line">
+                    {{ form_label(form.titre, 'Natures des travaux :') }}  
+                    {{ form_errors(form.titre) }}    
+                    {{ form_widget(form.titre, {'attr': {'class': 'form-control', 'placeholder': 'Natures des travaux' } } ) }}
                 </div>
                 
-                <div class="col-sm-2 col-xs-12 text-center">
-                    {{ form_label(form.devis, 'Date Devis :') }}  
-                    {{ form_errors(form.devis) }}    
-                    {{ form_widget(form.devis) }}
-                    <input type="date" class="form-control text-right" id="date_devis"  name="date_devis" value="<?= $date_mtn ?>">
+                <div class="col-sm-2 col-xs-12 , line">
+                    {{ form_label(form.dateDevis, 'Date Devis :') }}  
+                    {{ form_errors(form.dateDevis) }}    
+                    {{ form_widget(form.dateDevis, {'attr': {'class': 'form-control' , 'type': 'date'}}) }}
+                    {# <input type="date" class="form-control text-right" id="date_devis"  name="date_devis" value="<?= $date_mtn ?>"> #}
                 </div>
                 
-                <div class="col-sm-2 col-xs-12 text-center">
-                    <label for="date">Date Travaux:</label>
-                    <input type="date" class="form-control text-right" id="date"  name="date" value="<?= $date_mtn ?>">
+                <div class="col-sm-2 col-xs-12 , line">
+                    {{ form_label(form.dateDebut, 'Date de debut :') }}  
+                    {{ form_errors(form.dateDebut) }}    
+                    {{ form_widget(form.dateDebut, {'attr': {'class': 'form-control'}}) }}
                 </div>
                 
-                <div class="col-sm-2 col-xs-6 text-center">
-                    <div class="form-group">
-                        <label for="montant">Montant :</label>
-                        <div class="input-group">
-                        <input required min="0" step="0.01" name="montant" type="number" class="form-control text-right" id="montant">   
-                        <div class="input-group-addon">€</div>
-                        </div>
-                    </div>
+                <div class="col-sm-2 col-xs-6 , line">
+                    {{ form_label(form.prix, 'Montant :')}}
+                    {{ form_errors(form.prix) }}
+                    {{ form_widget(form.prix, {'attr': {'class': 'form-control'}} )}}
                 </div>
                 
-                <div class="col-sm-2 col-xs-12 text-center">
-                    <label for="mode_de_paiment">Moyen de paiement :</label>
-                    <input type="text"  class="form-control" id="mode_de_paiment"  name="mode_de_paiment"></div>
+                <div class="col-sm-2 col-xs-12 , line">
+                    {{ form_label(form.modePaiment, 'Moyen de paiment :') }}
+                    {{ form_errors(form.modePaiment) }}
+                    {{form_widget(form.modePaiment, { 'attr': {'class': 'form-control', 'placeholder': 'Moyen de paiment'} } )}}
                 </div>
-                
-                <div class ="row">
-                    <div class="col-xs-12">
-                        <label for="notes">Notes :</label>
-                        <textarea class="form-control" id="notes" name="notes" rows="8"></textarea> 
-                        </div>
-                        </div>
-                        <br />
-                        <input class="btn btn-success" type="submit" value="envoyer"></div>                     
-                    </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-xs-12">
+                    {{ form_label(form.description, 'NOTE :') }}
+                    {{ form_errors(form.description) }}
+                    {{ form_widget(form.description, { 'attr': { 'textarea':'rows', 'rows':'10', 'class': 'form-control'} }) }}
                 </div>
+            </div>
+
+            <div class="row, top">       
+                <input type="submit" value="Enregistrer" class="btn btn-success">
             </div>
         {{ form_end(form) }}
     </div> 

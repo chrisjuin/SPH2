@@ -42,18 +42,6 @@
                             <td><a href="{{ path('fiche_chantier_show', { 'id': tRA_travail.id }) }}">{{ tRA_travail.processVerbal }}</a></td>
                             <td><a href="{{ path('fiche_chantier_show', { 'id': tRA_travail.id }) }}">{{ tRA_travail.facture }}</a></td>
 
-
-                            {# <td>
-                                <ul>
-                                    <li>
-                                        <a href="{{ path('fiche_chantier_show', { 'id': tRA_travail.id }) }}">show</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ path('fiche_chantier_edit', { 'id': tRA_travail.id }) }}">Modifier </a>
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr> #}
                 {% endfor %}
                         </tbody>
                     </table>
