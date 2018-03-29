@@ -4,28 +4,20 @@ namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\RegisterBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class TRA_travailType extends AbstractType
 {
+    
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('titre')->add('description')->add('prix')->add('dateDebut')->add('dateRappel')->add('modePaiment')->add('lieux')->add('garantie')->add('devis')->add('processVerbal')->add('facture')
-        ->add('dateDevis');
-    }
+        $builder->add('titre')->add('description')->add('prix')->add('dateDebut')->add('dateRappel')->add('modePaiment')->add('lieux')->add('garantie')->add('devis')->add('processVerbal')->add('facture')->add('dateDevis');
     
-    /**
-     * {@inheritdoc}
-     */
-    public function buildRegister(RegisterBuilderInterface $builder, array $options )
-    {
-        $builder->add('titre')->add('dateDevis')->add('dateDebut')->add('prix')->add('modePaiment')->add('description');
     }
-    
+
     /**
      * {@inheritdoc}
      */

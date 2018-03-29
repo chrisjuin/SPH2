@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    
+{% block body %}     
     <div class="container">
         {{ form_start(form) }}
             <div class="row">
@@ -14,20 +13,19 @@
                 <div class="col-sm-2 col-xs-12 , line">
                     {{ form_label(form.dateDevis, 'Date Devis :') }}  
                     {{ form_errors(form.dateDevis) }}    
-                    {{ form_widget(form.dateDevis, {'attr': {'class': 'form-control' , 'type': 'date'}}) }}
-                    {# <input type="date" class="form-control text-right" id="date_devis"  name="date_devis" value="<?= $date_mtn ?>"> #}
+                    {{ form_widget(form.dateDevis) }}
                 </div>
                 
                 <div class="col-sm-2 col-xs-12 , line">
                     {{ form_label(form.dateDebut, 'Date de debut :') }}  
                     {{ form_errors(form.dateDebut) }}    
-                    {{ form_widget(form.dateDebut, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_widget(form.dateDebut) }}
                 </div>
                 
-                <div class="col-sm-2 col-xs-6 , line">
-                    {{ form_label(form.prix, 'Montant :')}}
+                <div class="col-sm-2 col-xs-12 , line">
+                    {{ form_label(form.prix, 'Montant € :')}}
                     {{ form_errors(form.prix) }}
-                    {{ form_widget(form.prix, {'attr': {'class': 'form-control'}} )}}
+                    {{ form_widget(form.prix, {'attr': {'class': 'form-control', 'input-group-addon': '€'}} )}}
                 </div>
                 
                 <div class="col-sm-2 col-xs-12 , line">
@@ -43,10 +41,13 @@
                     {{ form_errors(form.description) }}
                     {{ form_widget(form.description, { 'attr': { 'textarea':'rows', 'rows':'10', 'class': 'form-control'} }) }}
                 </div>
-            </div>
-
+            </div> 
+    
             <div class="row, top">       
-                <input type="submit" value="Enregistrer" class="btn btn-success">
+                <div class="col-xs-2">
+                    <input type="submit" value="Enregistrer" class="btn btn-success btn-block">
+                    <a href="{{ path('fiche_client_index') }}" class="btn btn-warning">Retour</a>
+                </div>
             </div>
         {{ form_end(form) }}
     </div> 
