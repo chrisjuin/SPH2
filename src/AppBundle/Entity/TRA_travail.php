@@ -52,7 +52,7 @@ class TRA_travail
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="tra_date_rappel", type="date")
+     * @ORM\Column(name="tra_date_rappel", type="date", nullable=true)
      */
     private $dateRappel;
 
@@ -66,35 +66,35 @@ class TRA_travail
     /**
      * @var string
      *
-     * @ORM\Column(name="tra_lieux", type="string", length=60)
+     * @ORM\Column(name="tra_lieux", type="string", length=60, nullable=true)
      */
     private $lieux;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="tra_garantie", type="text")
+     * @ORM\Column(name="tra_garantie", type="text", nullable=true)
      */
     private $garantie;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="tra_devis", type="text")
+     * @ORM\Column(name="tra_devis", type="text", nullable=true)
      */
     private $devis;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="tra_process_verbal", type="text")
+     * @ORM\Column(name="tra_process_verbal", type="text", nullable=true)
      */
     private $processVerbal;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="tra_facture", type="text")
+     * @ORM\Column(name="tra_facture", type="text", nullable=true)
      */
     private $facture; 
     
@@ -105,13 +105,6 @@ class TRA_travail
      */
     private $dateDevis; 
     
-    /**
-     * @var string
-     * 
-     * @ORM\Column(name="tra_note", type="text")
-     */
-    private $note; 
-
      /**
      * @ORM\ManyToOne(targetEntity="Cli_client" ,inversedBy="tra_travail")
      * @ORM\JoinColumn(name="cli_id", referencedColumnName="cli_id")
