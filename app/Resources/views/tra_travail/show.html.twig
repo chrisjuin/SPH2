@@ -1,68 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    
-
+        
 <div class="container">
-    <h2>Details Du Chantier</h2>
-        <div classe="row">
-            <div class="col-md-12">
-                <table class="table table-bordered" id="details_chantier">
-                    <tbody>
-                        <tr>
-                            <th>Id</th>
-                            <td>{{ tRA_travail.id }}</td>
-                        </tr>
-                        <tr>
-                            <th>Titre</th>
-                            <td>{{ tRA_travail.titre }}</td>
-                        </tr>
-                        <tr>
-                            <th>Description</th>
-                            <td>{{ tRA_travail.description }}</td>
-                        </tr>
-                        <tr>
-                            <th>Prix</th>
-                            <td>{{ tRA_travail.prix }}</td>
-                        </tr>
-                        <tr>
-                            <th>Datedebut</th>
-                            <td>{% if tRA_travail.dateDebut %}{{ tRA_travail.dateDebut|date('Y-m-d') }}{% endif %}</td>
-                        </tr>
-                        <tr>
-                            <th>Daterappel</th>
-                            <td>{% if tRA_travail.dateRappel %}{{ tRA_travail.dateRappel|date('Y-m-d') }}{% endif %}</td>
-                        </tr>
-                        <tr>
-                            <th>Modepaiment</th>
-                            <td>{{ tRA_travail.modePaiment }}</td>
-                        </tr>
-                        <tr>
-                            <th>Lieux</th>
-                            <td>{{ tRA_travail.lieux }}</td>
-                        </tr>
-                        <tr>
-                            <th>Garantie</th>
-                            <td>{{ tRA_travail.garantie }}</td>
-                        </tr>
-                        <tr>
-                            <th>Devis</th>
-                            <td>{{ tRA_travail.devis }}</td>
-                        </tr>
-                        <tr>
-                            <th>Processverbal</th>
-                            <td>{{ tRA_travail.processVerbal }}</td>
-                        </tr>
-                        <tr>
-                            <th>Facture</th>
-                            <td>{{ tRA_travail.facture }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-</div>
-    
     <ul>
         <li>
             <a href="{{ path('fiche_chantier_index') }}" class="btn btn-warning">Retour</a>
@@ -72,8 +12,76 @@
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="supprimer" class="btn btn-danger">
+                <input type="submit" value="Supprimer" class="btn btn-danger">
             {{ form_end(delete_form) }}
         </li>
     </ul>
+
+    <section class="col-sm-12 contour">
+        <ul class="list-inline col-sm-12">
+            <li class="list-group-item">Numero client : </li>
+            <li class="list-group-item">Nom client : </li>
+            <li class="list-group-item">Prenom : </li>
+        </ul> 
+        
+        <ul class="list-group col-sm-2 hidden-xs">
+            <li class="list-group-item">Nature des travaux</li>
+            <li class="list-group-item">Prix</li>
+            <li class="list-group-item">Date Devis</li>
+            <li class="list-group-item">Date Travaux</li>            
+            <li class="list-group-item">Moyen de paiement</li>
+        </ul>
+        
+        <ul class="list-group col-sm-4 col-xs-12">
+            <li class="list-group-item text-uppercase" id="titre">{{ tRA_travail.titre }}</li>
+            <li class="list-group-item" id="prix">{{ tRA_travail.prix }}</li>
+            <li class="list-group-item" id="dateDevis">{% if tRA_travail.dateDevis %}{{ tRA_travail.dateDevis|date('Y-m-d') }}{% endif %}</li>
+            <li class="list-group-item" id="dateDebut">{% if tRA_travail.dateDebut %}{{ tRA_travail.dateDebut|date('Y-m-d') }}{% endif %}</li>            
+            <li class="list-group-item" id="paiement">{{ tRA_travail.modePaiment }}</li>
+        </ul> 
+        
+        <ul class="list-group list-unstyled col-sm-6 col-xs-12">
+            <li><label for="note">Note</label></li>        
+            <li><textarea disabled id="note" class="list-group-item col-xs-12" rows="8">{{ tRA_travail.description }}</textarea></li>
+        </ul> 
+    </section>
+    
+    <section class="col-sm-12 contour">
+        <ul class="list-group col-sm-2 hidden-xs">
+            <li class="list-group-item">Garantie</li>
+            <li class="list-group-item">Devis</li>
+            <li class="list-group-item">ProcessVerbal</li>
+            <li class="list-group-item">Facture</li>  
+        </ul>
+        
+        <ul class="list-group col-sm-4 col-xs-8">
+            <li class="list-group-item text-uppercase" id="garantie">{{ tRA_travail.garantie }}</li>
+            <li class="list-group-item" id="devis">{{ tRA_travail.devis }}</li>
+            <li class="list-group-item" id="processVerbal">{{ tRA_travail.processVerbal }}</li>
+            <li class="list-group-item" id="facture">{{ tRA_travail.facture }}</li>            
+        </ul> 
+        
+        <ul class="list-inline text-left">
+            <li class="list-group-item col-sm-2 col-xs-12 text-uppercase">photos</li>
+            <li class="list-group-item"><a class=" btn btn-success" href="photo">Accéder aux photos</a></li>
+        </ul> 
+        
+        <form action="" method="post">
+            <ul class="list-group list-unstyled col-sm-6 col-xs-12">
+                <li><label for="commentaire">Ajouter un commentaire</label></li>
+                <li><textarea id="commentaire" class="list-group-item col-xs-12" rows="5" name="commentaire"></textarea></li>
+                <li><input class="btn btn-success" type="submit" value="Enregistrer le commentaire"></li>
+            </ul> 
+        </form>
+    </section>
+    
+    <section class="col-sm-12 contour">     
+        <ul class="list-inline list-unstyled col-xs-12">
+            <li class="list-group-item col-xs-2">'.$value["uti_pseudo"].'</li>
+            <li class="list-group-item col-xs-10">'.$value["com_commentaire"].'</li>';
+        </ul>
+    </section>
+</div>
+
+
 {% endblock %}
