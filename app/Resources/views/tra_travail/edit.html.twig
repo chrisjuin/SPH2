@@ -2,20 +2,54 @@
 
 {% block body %}
     
-    {{ form_start(edit_form) }}
-        
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Enregister les modifications" class="btn btn-success" />
-    {{ form_end(edit_form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('fiche_chantier_index') }}" class="btn btn-warning">Retour</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Supprimer" class="btn btn-danger ">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    <div class="container">
+        {{ form_start(edit_form) }}
+            <div class="row">
+                <div class="col-sm-4 , line">
+                    {{ form_label(edit_form.titre, 'Natures des travaux :') }}  
+                    {{ form_errors(edit_form.titre) }}    
+                    {{ form_widget(edit_form.titre, {'attr': {'class': 'form-control', 'placeholder': 'Natures des travaux' } } ) }}
+                </div>
+                
+                <div class="col-sm-2 col-xs-12 , line">
+                    {{ form_label(edit_form.dateDevis, 'Date Devis :') }}  
+                    {{ form_errors(edit_form.dateDevis) }}    
+                    {{ form_widget(edit_form.dateDevis) }}
+                </div>
+                
+                <div class="col-sm-2 col-xs-12 , line">
+                    {{ form_label(edit_form.dateDebut, 'Date de debut :') }}  
+                    {{ form_errors(edit_form.dateDebut) }}    
+                    {{ form_widget(edit_form.dateDebut) }}
+                </div>
+                
+                <div class="col-sm-2 col-xs-12 , line">
+                    {{ form_label(edit_form.prix, 'Montant € :')}}
+                    {{ form_errors(edit_form.prix) }}
+                    {{ form_widget(edit_form.prix, {'attr': {'class': 'form-control', 'placeholder': '€'}} )}}
+                </div>
+                
+                <div class="col-sm-2 col-xs-12 , line">
+                    {{ form_label(edit_form.modePaiment, 'Moyen de paiment :') }}
+                    {{ form_errors(edit_form.modePaiment) }}
+                    {{form_widget(edit_form.modePaiment, { 'attr': {'class': 'form-control', 'placeholder': 'Moyen de paiment'} } )}}
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-xs-12">
+                    {{ form_label(edit_form.description, 'NOTE :') }}
+                    {{ form_errors(edit_form.description) }}
+                    {{ form_widget(edit_form.description, { 'attr': { 'textarea':'rows', 'rows':'10', 'class': 'form-control'} }) }}
+                </div>
+            </div> 
+    
+            <div class="row, top">       
+                <div class="col-sm-3 col-xs-12">
+                    <input type="submit" value="Enregistrer les modifications" class="btn btn-success btn-block">
+                    <a href="{{ path('fiche_chantier_index') }}" class="btn btn-warning btn-block">Retour</a>
+                </div>
+            </div>
+        {{ form_end(edit_form) }}
+    </div> 
 {% endblock %}
