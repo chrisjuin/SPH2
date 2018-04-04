@@ -84,6 +84,10 @@ class TRA_travailController extends Controller
         $deleteForm = $this->createDeleteForm($tRA_travail);
         $editForm = $this->createForm('AppBundle\Form\TRA_travailType', $tRA_travail);
         $editForm->handleRequest($request);
+        // $form = $formFactory->create('new_form', 
+        // $model,
+        //     array('fiche_chantier_edit'=>'true')
+        // ); 
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
