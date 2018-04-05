@@ -602,7 +602,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-50"/>
-      <argument type="service" id="service_locator.782c66823da5b13a970d129c347304a7"/>
+      <argument type="service" id="service_locator.ecfbdf0afe248650840162e0d41b24d4"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-100"/>
@@ -749,7 +749,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>u67tkPkcWWZW2EvaY-3esl</argument>
+      <argument>q06ICXWvI8WY5cLYxxWpdL</argument>
       <argument>/home/simplon/projet-symfony/SPH2/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -759,7 +759,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>u67tkPkcWWZW2EvaY-3esl</argument>
+      <argument>q06ICXWvI8WY5cLYxxWpdL</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -3154,12 +3154,12 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
-      <argument>5ac5f82a140df5.03615554</argument>
+      <argument>5ac62a9a4a73c4.09643157</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-      <argument>5ac5f82a140df5.03615554</argument>
+      <argument>5ac62a9a4a73c4.09643157</argument>
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -4764,12 +4764,6 @@
       <tag name="container.service_locator"/>
       <argument type="collection"/>
     </service>
-    <service id="service_locator.c9e5c8c276ccfcd36cc0f28c473d6113" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="cli_client" type="service" id="autowired.AppBundle\Entity\Cli_client"/>
-      </argument>
-    </service>
     <service id="service_locator.a50ba87a6f55cb39707a851feca1f0c2" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -4796,18 +4790,18 @@
         <argument key="tRA_travail" type="service" id="autowired.AppBundle\Entity\TRA_travail"/>
       </argument>
     </service>
-    <service id="service_locator.782c66823da5b13a970d129c347304a7" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.ecfbdf0afe248650840162e0d41b24d4" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="AppBundle\Controller\Cli_clientController:deleteAction" type="service" id="service_locator.a50ba87a6f55cb39707a851feca1f0c2"/>
         <argument key="AppBundle\Controller\Cli_clientController:editAction" type="service" id="service_locator.a50ba87a6f55cb39707a851feca1f0c2"/>
-        <argument key="AppBundle\Controller\Cli_clientController:showAction" type="service" id="service_locator.c9e5c8c276ccfcd36cc0f28c473d6113"/>
+        <argument key="AppBundle\Controller\Cli_clientController:showAction" type="service" id="service_locator.a50ba87a6f55cb39707a851feca1f0c2"/>
         <argument key="AppBundle\Controller\TRA_travailController:deleteAction" type="service" id="service_locator.aa65ea26d4b4044f6c0010c6a214202f"/>
         <argument key="AppBundle\Controller\TRA_travailController:editAction" type="service" id="service_locator.aa65ea26d4b4044f6c0010c6a214202f"/>
         <argument key="AppBundle\Controller\TRA_travailController:showAction" type="service" id="service_locator.00d0aa308dfa00167d842d46485a3c8c"/>
         <argument key="AppBundle\Controller\Cli_clientController::deleteAction" type="service" id="service_locator.a50ba87a6f55cb39707a851feca1f0c2"/>
         <argument key="AppBundle\Controller\Cli_clientController::editAction" type="service" id="service_locator.a50ba87a6f55cb39707a851feca1f0c2"/>
-        <argument key="AppBundle\Controller\Cli_clientController::showAction" type="service" id="service_locator.c9e5c8c276ccfcd36cc0f28c473d6113"/>
+        <argument key="AppBundle\Controller\Cli_clientController::showAction" type="service" id="service_locator.a50ba87a6f55cb39707a851feca1f0c2"/>
         <argument key="AppBundle\Controller\TRA_travailController::deleteAction" type="service" id="service_locator.aa65ea26d4b4044f6c0010c6a214202f"/>
         <argument key="AppBundle\Controller\TRA_travailController::editAction" type="service" id="service_locator.aa65ea26d4b4044f6c0010c6a214202f"/>
         <argument key="AppBundle\Controller\TRA_travailController::showAction" type="service" id="service_locator.00d0aa308dfa00167d842d46485a3c8c"/>
@@ -5071,7 +5065,7 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>olgrhqyaL5</argument>
       <argument>0</argument>
-      <argument>u67tkPkcWWZW2EvaY-3esl</argument>
+      <argument>q06ICXWvI8WY5cLYxxWpdL</argument>
       <argument>/home/simplon/projet-symfony/SPH2/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -5079,7 +5073,7 @@
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>feJoeFDtHF</argument>
       <argument>0</argument>
-      <argument>u67tkPkcWWZW2EvaY-3esl</argument>
+      <argument>q06ICXWvI8WY5cLYxxWpdL</argument>
       <argument>/home/simplon/projet-symfony/SPH2/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -5087,7 +5081,7 @@
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>d9h5zjCELF</argument>
       <argument>0</argument>
-      <argument>u67tkPkcWWZW2EvaY-3esl</argument>
+      <argument>q06ICXWvI8WY5cLYxxWpdL</argument>
       <argument>/home/simplon/projet-symfony/SPH2/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -5095,7 +5089,7 @@
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>PczYotxhS1</argument>
       <argument>0</argument>
-      <argument>u67tkPkcWWZW2EvaY-3esl</argument>
+      <argument>q06ICXWvI8WY5cLYxxWpdL</argument>
       <argument>/home/simplon/projet-symfony/SPH2/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>

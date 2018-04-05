@@ -17,10 +17,10 @@
             </div>
             
             <div class="col-sm-4 col-xs-12">
-                <input id="id" name="id" class="list-group-item col-xs-12" value="{{ cli_client.id }}">
-                <input id="ville" name="ville" class="list-group-item col-xs-12" value="{{ cli_client.nom }}">
-                <input id="tel" name="tel" class="list-group-item col-xs-12" value="{{ cli_client.prenom }}">
-                <input id="pro" name="pro" class="list-group-item col-xs-12" value="{{ cli_client.provenance }}">
+                <input id="id" name="id" disabled="disabled" class="list-group-item col-xs-12" value="{{ cli_client.id }}">
+                <input id="nom" name="nom" disabled="disabled" class="list-group-item col-xs-12" value="{{ cli_client.nom }}">
+                <input id="prenom" name="prenom" disabled="disabled" class="list-group-item col-xs-12" value="{{ cli_client.prenom }}">
+                <input id="provenance" name="provenance" disabled="disabled" class="list-group-item col-xs-12" value="{{ cli_client.provenance }}">
             </div>
         </div>
         
@@ -34,23 +34,23 @@
             </div>
             
             <div class="col-sm-4 col-xs-12, top">
-                    <input id="tel" name="tel" class="list-group-item col-xs-12" value="{{ cli_client.telephone }}">
-                    <input id="adresse" name="adresse" class="list-group-item col-xs-12" value="{{ cli_client.adresse }}">
-                    <input id="cp" name="cp" class="list-group-item col-xs-12" value="{{ cli_client.codePostal }}">
-                    <input id="ville" name="ville" class="list-group-item col-xs-12" value="{{ cli_client.ville }}">
-                    <input id="email" name="email" class="list-group-item col-xs-12" value="{{ cli_client.email }}">
+                    <input id="tel" name="tel" disabled="disabled" class="list-group-item col-xs-12" value="{{ cli_client.telephone }}">
+                    <input id="adresse" name="adresse" disabled="disabled" class="list-group-item col-xs-12" value="{{ cli_client.adresse }}">
+                    <input id="cp" name="cp" disabled="disabled" class="list-group-item col-xs-12" value="{{ cli_client.codePostal }}">
+                    <input id="ville" name="ville" disabled="disabled" class="list-group-item col-xs-12" value="{{ cli_client.ville }}">
+                    <input id="email" name="email" disabled="disabled" class="list-group-item col-xs-12" value="{{ cli_client.email }}">
             </div>
             
             <div class="col-sm-6 col-xs-12">
                 <label for="note">Note</label>
-                <textarea name="note" id="note" class="form-control"  rows="9">{{ cli_client.note }}</textarea>
+                <textarea name="note" id="note" disabled="disabled" class="form-control"  rows="9">{{ cli_client.note }}</textarea>
             </div>
         </div>
 
         
         <div class="col-sm-6 col-xs-12">
             <a class="btn btn-success" type="submit" href="{{ path('fiche_client_edit', {'id': cli_client.id })}} ">Modifier</a>
-            <a class="btn btn-primary" href="{{ path('fiche_chantier_new') }}">Ajouter un chantier</a>
+            <a class="btn btn-primary" href="{{ path('fiche_chantier_new',{'utilisateur_id': cli_client.id}) }}">Ajouter un chantier</a>
             <a href="{{ path('fiche_client_index') }}" class="btn btn-warning">Retour</a>
                 {{ form_start(delete_form) }}
                 <input type="submit" value="Supprimer" class="btn btn-danger">
@@ -70,6 +70,7 @@
                     <li class="list-group-item col-xs-3 text-right">"{{ form.prix }}" €</li>
                 </ul></a>'; #}
         </div>
+        {{ dump(travails)}}
     </form>
 </div>
 

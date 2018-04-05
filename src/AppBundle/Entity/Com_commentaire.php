@@ -46,7 +46,6 @@ class Com_commentaire
     }
 
     
-
     /**
      * Set commentaire
      *
