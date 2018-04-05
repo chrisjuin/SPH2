@@ -68,7 +68,7 @@ Symfony\Component\DependencyInjection\Compiler\ResolveDefinitionTemplatesPass: R
 Symfony\Component\DependencyInjection\Compiler\ResolveDefinitionTemplatesPass: Resolving inheritance for "monolog.logger.doctrine" (parent: monolog.logger_prototype).
 Symfony\Component\DependencyInjection\Compiler\ResolveDefinitionTemplatesPass: Resolving inheritance for "monolog.logger.assetic" (parent: monolog.logger_prototype).
 Symfony\Component\DependencyInjection\Compiler\AutowirePass: Cannot autowire service "service_locator.2229691a0452f6d1288fda61c66977f0": it references class "Symfony\Component\HttpFoundation\Request" but no such service exists. It cannot be auto-registered because it is from a different root namespace.
-Symfony\Component\DependencyInjection\Compiler\AutowirePass: Type "AppBundle\Entity\Cli_client" has been auto-registered for service "service_locator.c9e5c8c276ccfcd36cc0f28c473d6113".
+Symfony\Component\DependencyInjection\Compiler\AutowirePass: Type "AppBundle\Entity\Cli_client" has been auto-registered for service "service_locator.a50ba87a6f55cb39707a851feca1f0c2".
 Symfony\Component\DependencyInjection\Compiler\AutowirePass: Cannot autowire service "service_locator.a50ba87a6f55cb39707a851feca1f0c2": it references class "Symfony\Component\HttpFoundation\Request" but no such service exists. It cannot be auto-registered because it is from a different root namespace.
 Symfony\Component\DependencyInjection\Compiler\AutowirePass: Cannot autowire service "service_locator.4f8384c8862c511eefe34301cff90111": it references class "Symfony\Component\HttpFoundation\Request" but no such service exists. It cannot be auto-registered because it is from a different root namespace.
 Symfony\Component\DependencyInjection\Compiler\AutowirePass: Cannot autowire service "service_locator.74835ddc2a08bfcdf96d7da0da147dfd": it references class "Symfony\Component\HttpFoundation\Request" but no such service exists. It cannot be auto-registered because it is from a different root namespace.
@@ -310,7 +310,7 @@ Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Re
 Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service "abstract.instanceof.AppBundle\Form\Cli_clientType"; reason: abstract.
 Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service "instanceof.Symfony\Component\Form\FormTypeInterface.0.AppBundle\Form\TRA_travailType"; reason: abstract.
 Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service "abstract.instanceof.AppBundle\Form\TRA_travailType"; reason: abstract.
-Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "service_locator.782c66823da5b13a970d129c347304a7" to "argument_resolver.service".
+Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "service_locator.ecfbdf0afe248650840162e0d41b24d4" to "argument_resolver.service".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "templating.cache_warmer.template_paths" to "cache_warmer".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "assetic.asset_manager_cache_warmer" to "cache_warmer".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "validator.mapping.cache_warmer" to "cache_warmer".
@@ -628,7 +628,7 @@ Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Remo
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "service_locator.2229691a0452f6d1288fda61c66977f0"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "service_locator.4f8384c8862c511eefe34301cff90111"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "service_locator.74835ddc2a08bfcdf96d7da0da147dfd"; reason: unused.
-Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "service_locator.782c66823da5b13a970d129c347304a7"; reason: unused.
+Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "service_locator.ecfbdf0afe248650840162e0d41b24d4"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "service_locator.20ccd3ddf0f78b2202986f924e362585"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "service_locator.4ba06ce033c9dc1b57b0bd05c97c8adf"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "service_locator.6f24348b77840ec12a20c22a3f985cf7"; reason: unused.

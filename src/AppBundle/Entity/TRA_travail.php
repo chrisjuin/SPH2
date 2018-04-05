@@ -434,29 +434,5 @@ class TRA_travail
         return $this->cliClient;
     }
 
-    /**
-     * Set utiUtilisateur
-     *
-     * @param \AppBundle\Entity\uti_utilisateur $utiUtilisateur
-     *
-     * @return TRA_travail
-     */
-    public function setUtiUtilisateur(\AppBundle\Entity\uti_utilisateur $utiUtilisateur = null)
-    {
-        $this->utiUtilisateur = $utiUtilisateur;
-
-        return $this;
-    }
-
-    /**
-     * Get utiUtilisateur
-     *
-     * @return \AppBundle\Entity\uti_utilisateur
-     */
-    public function getUtiUtilisateur()
-    {
-        return $this->utiUtilisateur;
-    }
-
 }
 

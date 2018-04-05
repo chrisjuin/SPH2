@@ -331,7 +331,7 @@ class Cli_client
      */
     public function addTraTravail(\AppBundle\Entity\Tra_travail $traTravail)
     {
-        $this->traTravail[] = $traTravail;
+        $this->traTravails[] = $traTravail;
 
         return $this;
     }
@@ -347,12 +347,12 @@ class Cli_client
     }
 
     /**
-     * Get traTravail
+     * Get traTravails
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getTraTravail()
+    public function getTraTravails()
     {
-        return $this->traTravail;
+        return $this->traTravails;
     }
 }

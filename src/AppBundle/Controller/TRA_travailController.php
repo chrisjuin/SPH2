@@ -44,6 +44,11 @@ class TRA_travailController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // var_dump($request->get('utilisateur_id')); die();
+            $em = $this->getDoctrine()->getManager();
+            $cli_client = $em->getRepository('AppBundle:Cli_client')->find($request->get('utilisateur_id'));
+
+            $tRA_travail->setCliClient($cli_client);
             $em = $this->getDoctrine()->getManager();
             $em->persist($tRA_travail);
             $em->flush();

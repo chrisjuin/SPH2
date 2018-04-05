@@ -66,12 +66,17 @@ class Cli_clientController extends Controller
      * @Route("/{id}", name="fiche_client_show")
      * @Method("GET")
      */
-    public function showAction(Cli_client $cli_client)
+    public function showAction(Cli_client $cli_client, Request $request)
     {
         $deleteForm = $this->createDeleteForm($cli_client);
 
+            var_dump($request);
+            $em = $this->getDoctrine()->getManager();
+            $travails = $em->getRepository('AppBundle:TRA_travail')->find(1);
+
         return $this->render('cli_client/show.html.twig', array(
             'cli_client' => $cli_client,
+            'travails' => $travails,
             'delete_form' => $deleteForm->createView(),
         ));
     }
