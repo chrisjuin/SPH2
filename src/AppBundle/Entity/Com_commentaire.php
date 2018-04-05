@@ -28,11 +28,6 @@ class Com_commentaire
      */
     private $commentaire;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="uti_utilisateur")
-     * @ORM\JoinColumn(name="uti_id" , referencedColumnName="uti_id")
-     */
-    private $utiUtilisateur; 
     
     /**
      * @ORM\ManyToOne(targetEntity="tra_travail")
@@ -76,29 +71,7 @@ class Com_commentaire
         return $this->commentaire;
     }
 
-    /**
-     * Set utiUtilisateur
-     *
-     * @param \AppBundle\Entity\uti_utilisateur $utiUtilisateur
-     *
-     * @return Com_commentaire
-     */
-    public function setUtiUtilisateur(\AppBundle\Entity\uti_utilisateur $utiUtilisateur = null)
-    {
-        $this->utiUtilisateur = $utiUtilisateur;
-
-        return $this;
-    }
-
-    /**
-     * Get utiUtilisateur
-     *
-     * @return \AppBundle\Entity\uti_utilisateur
-     */
-    public function getUtiUtilisateur()
-    {
-        return $this->utiUtilisateur;
-    }
+    
 
     /**
      * Set traTravail

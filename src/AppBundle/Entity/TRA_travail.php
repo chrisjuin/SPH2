@@ -111,12 +111,6 @@ class TRA_travail
      */
     private $cliClient;
 
-    /**    
-     * @ORM\ManyToOne(targetEntity="Uti_utilisateur" ,inversedBy="tra_travail")
-     * @ORM\JoinColumn(name="uti_id", referencedColumnName="uti_id")
-     */
-    private $utiUtilisateur;
-
     /**
      * Get id
      *
