@@ -51,7 +51,7 @@ class Commentaire
      *
      * @param string $commentaire
      *
-     * @return Com_commentaire
+     * @return Commentaire
      */
     public function setCommentaire($commentaire)
     {
@@ -77,7 +77,7 @@ class Commentaire
      *
      * @param \AppBundle\Entity\travail $Travail
      *
-     * @return Com_commentaire
+     * @return Commentaire
      */
     public function setTravail(\AppBundle\Entity\travail $Travail = null)
     {
