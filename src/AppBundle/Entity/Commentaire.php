@@ -30,7 +30,7 @@ class Commentaire
 
     
     /**
-     * @ORM\ManyToOne(targetEntity="travail")
+     * @ORM\ManyToOne(targetEntity="Travail")
      * @ORM\JoinColumn(name="tra_id" , referencedColumnName="tra_id")
      */
     private $Travail; 

@@ -41,7 +41,7 @@
             <div class="col-md-6 col-md-4">
                 {{ form_label(form.ville, 'VILLE :') }}
                 {{ form_errors(form.ville) }}
-                {{ form_widget(form.ville, { 'attr': {'class': 'form-control'} }) }}
+                {{ form_widget(form.ville, { 'attr': {'class': 'form-control', 'placeholder' : 'Ville'} }) }}
             </div>
         </div>
         
@@ -70,7 +70,7 @@
         
         <div class="row">
             <div class="col-md-offset-9">
-                <input type="submit" value="Enregistrer Client" class="btn btn-success btn-block" />
+                <input type="submit" value="Enregistrer Client" class="btn btn-success btn-block">
                 <a href="{{ path('fiche_client_index') }}" class="btn btn-warning btn-block">Retour</a>
             </div>
         </div>  

@@ -87,13 +87,13 @@ class Client
     private $telephone;
 
     /**
-     * @ORM\OneToMany(targetEntity="Travail" ,mappedBy="cli_client")
+     * @ORM\OneToMany(targetEntity="Travail" ,mappedBy="client")
      */
-    private $travail;
+    private $travaux;
 
     public function __construct()
     {
-        $this->travail = new ArrayCollection();
+        $this->travaux = new ArrayCollection();
     }
 
     /**
@@ -331,7 +331,7 @@ class Client
      */
     public function addTravail(\AppBundle\Entity\Travail $travail)
     {
-        $this->travail = $travail;
+        $this->travaux[] = $travail;
 
         return $this;
     }
@@ -343,7 +343,7 @@ class Client
      */
     public function removeTravail(\AppBundle\Entity\Travail $travail)
     {
-        $this->travail->removeElement($travail);
+        $this->travaux->removeElement($travail);
     }
 
     /**
@@ -351,8 +351,8 @@ class Client
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getTravail()
+    public function getTravaux()
     {
-        return $this->travail;
+        return $this->travaux;
     }
 }
