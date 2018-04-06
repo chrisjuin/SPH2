@@ -8,7 +8,7 @@
             <a href="{{ path('fiche_chantier_index') }}" class="btn btn-warning">Retour</a>
         </li>
         <li>
-            <a href="{{ path('fiche_chantier_edit', { 'id': tRA_travail.id }) }}" class="btn btn-success">Modifier</a>
+            <a href="{{ path('fiche_chantier_edit', { 'id': travail.id }) }}" class="btn btn-success">Modifier</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
@@ -35,16 +35,16 @@
         </ul>
         
         <ul class="list-group col-sm-4 col-xs-12">
-            <li class="list-group-item text-uppercase" id="titre">{{ tRA_travail.titre }}</li>
-            <li class="list-group-item" id="prix">{{ tRA_travail.prix }}</li>
-            <li class="list-group-item" id="dateDevis">{% if tRA_travail.dateDevis %}{{ tRA_travail.dateDevis|date('Y-m-d') }}{% endif %}</li>
-            <li class="list-group-item" id="dateDebut">{% if tRA_travail.dateDebut %}{{ tRA_travail.dateDebut|date('Y-m-d') }}{% endif %}</li>            
-            <li class="list-group-item" id="paiement">{{ tRA_travail.modePaiment }}</li>
+            <li class="list-group-item text-uppercase" id="titre">{{ travail.titre }}</li>
+            <li class="list-group-item" id="prix">{{ travail.prix }}</li>
+            <li class="list-group-item" id="dateDevis">{% if travail.dateDevis %}{{ travail.dateDevis|date('Y-m-d') }}{% endif %}</li>
+            <li class="list-group-item" id="dateDebut">{% if travail.dateDebut %}{{ travail.dateDebut|date('Y-m-d') }}{% endif %}</li>            
+            <li class="list-group-item" id="paiement">{{ travail.modePaiment }}</li>
         </ul> 
         
         <ul class="list-group list-unstyled col-sm-6 col-xs-12">
             <li><label for="note">Note</label></li>        
-            <li><textarea disabled id="note" class="list-group-item col-xs-12" rows="8">{{ tRA_travail.description }}</textarea></li>
+            <li><textarea disabled id="note" class="list-group-item col-xs-12" rows="8">{{ travail.description }}</textarea></li>
         </ul> 
     </section>
     
@@ -57,10 +57,10 @@
         </ul>
         
         <ul class="list-group col-sm-4 col-xs-8">
-            <li class="list-group-item text-uppercase" id="garantie">{{ tRA_travail.garantie }}</li>
-            <li class="list-group-item" id="devis">{{ tRA_travail.devis }}</li>
-            <li class="list-group-item" id="processVerbal">{{ tRA_travail.processVerbal }}</li>
-            <li class="list-group-item" id="facture">{{ tRA_travail.facture }}</li>            
+            <li class="list-group-item text-uppercase" id="garantie">{{ travail.garantie }}</li>
+            <li class="list-group-item" id="devis">{{ travail.devis }}</li>
+            <li class="list-group-item" id="processVerbal">{{ travail.processVerbal }}</li>
+            <li class="list-group-item" id="facture">{{ travail.facture }}</li>            
         </ul> 
         
         <ul class="list-inline text-left">

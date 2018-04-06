@@ -28,7 +28,7 @@
         </div>
 
                 <tbody>
-                    {% for client in cli_clients | sort %}
+                    {% for client in clients | sort %}
                         <tr>
                             <td><a href="{{ path('fiche_client_show', { 'id': client.id }) }}">{{ client.id }}</a></td>
                             <td><a href="{{ path('fiche_client_show', { 'id': client.id }) }}">{{ client.nom }}</a></td>

@@ -29,7 +29,7 @@ class ClientController extends Controller
         $client = $em->getRepository('AppBundle:Client')->findAll();
 
         return $this->render('Client/index.html.twig', array(
-            'client' => $client,
+            'clients' => $client,
         ));
     }
 
@@ -54,7 +54,7 @@ class ClientController extends Controller
             return $this->redirectToRoute('fiche_client_show', array('id' => $client->getId()));
         }
 
-        return $this->render('client/new.html.twig', array(
+        return $this->render('Client/new.html.twig', array(
             'client' => $client,
             'form' => $form->createView(),
         ));
@@ -74,7 +74,7 @@ class ClientController extends Controller
             // $em = $this->getDoctrine()->getManager();
             // $travail = $em->getRepository('AppBundle:Travail')->find(1);
 
-        return $this->render('client/show.html.twig', array(
+        return $this->render('Client/show.html.twig', array(
             'client' => $client,
             // 'travail' => $travail,
             'delete_form' => $deleteForm->createView(),
@@ -99,7 +99,7 @@ class ClientController extends Controller
             return $this->redirectToRoute('fiche_client_edit', array('id' => $client->getId()));
         }
 
-        return $this->render('client/edit.html.twig', array(
+        return $this->render('Client/edit.html.twig', array(
             'client' => $client,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
