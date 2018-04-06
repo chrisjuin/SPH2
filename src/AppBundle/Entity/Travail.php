@@ -111,6 +111,11 @@ class Travail
      */
     private $client;
 
+     /**
+     * @ORM\OneToMany(targetEntity="Photo" ,mappedBy="travail")
+     */
+    private $photo;
+
     /**
      * Get id
      *

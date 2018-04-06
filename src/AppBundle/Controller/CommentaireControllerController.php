@@ -5,16 +5,18 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class PhotoController extends Controller
+class CommentaireControllerController extends Controller
 {
     /**
-     * @Route("photo")
+     * Commentaire Controller
+     * 
+     * @Route("commentaire")
      */
+
     public function indexAction()
     {
-        return $this->render('AppBundle:Photo:index.html.twig', array(
-            
+        return $this->render('AppBundle:Commentaire:index.html.twig', array(
+
         ));
     }
-
 }

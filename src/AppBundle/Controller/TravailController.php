@@ -44,10 +44,9 @@ class TravailController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // var_dump($request->get('utilisateur_id')); die();
             $em = $this->getDoctrine()->getManager();
             $client = $em->getRepository('AppBundle:Client')->find($request->get('utilisateur_id'));
-
+            
             $travail->setClient($client);
             $em = $this->getDoctrine()->getManager();
             $em->persist($travail);
@@ -71,9 +70,12 @@ class TravailController extends Controller
     public function showAction(Travail $travail)
     {
         $deleteForm = $this->createDeleteForm($travail);
+        $em = $this->getDoctrine()->getManager();
+        // $commentaire = $em->getRepository('AppBunble:Commentaire')->findAll();
 
         return $this->render('Travail/show.html.twig', array(
             'travail' => $travail,
+            // 'commantaire' => $commentaire, 
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -89,11 +91,7 @@ class TravailController extends Controller
         $deleteForm = $this->createDeleteForm($travail);
         $editForm = $this->createForm('AppBundle\Form\TravailType', $travail);
         $editForm->handleRequest($request);
-        // $form = $formFactory->create('new_form', 
-        // $model,
-        //     array('fiche_chantier_edit'=>'true')
-        // ); 
-
+        
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 

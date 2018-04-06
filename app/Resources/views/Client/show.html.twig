@@ -58,19 +58,24 @@
         </div>
         
         <div class="col-sm-offset-2 col-sm-6 col-xs-12">
-            <br />
-            <ul class="list-inline">
-                <li class="list-group-item col-xs-4">D. Travaux</li>                                   
-                <li class="list-group-item col-xs-5">Nature des travaux</li>
-                <li class="list-group-item col-xs-3 text-right">Prix</li>
-            </ul>
-                {# <a href="{{ tRA_travail.id }}"><ul class="list-inline">
-                    <li class="list-group-item col-xs-4">"{{ form.dateDebut }}"</li>                                   
-                    <li class="list-group-item col-xs-5">"{{ form.titre }}"</li>
-                    <li class="list-group-item col-xs-3 text-right">"{{ form.prix }}" €</li>
-                </ul></a>'; #}
+            <br/>
+            
+            <table class="table table-bordered">
+                <tr>
+                    <th>Debut Travaux</th>                                   
+                    <th>Nature des travaux</th>
+                    <th>Prix €</th>
+                </tr>
+            
+                {% for travail in client.travaux %}
+                <tr>
+                    <td>{% if travail.dateDebut %}{{ travail.dateDebut|date('Y-m-d') }}{% endif %}</td>
+                    <td>{{ travail.titre }}</td>
+                    <td>{{ travail.prix }}</td>
+                </tr>
+                {% endfor %}
+            </table>
         </div>
-        {# {{ dump(Travail)}} #}
     </form>
 </div>
 
