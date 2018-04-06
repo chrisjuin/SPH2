@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class Cli_clientType extends AbstractType
+class ClientType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -20,7 +20,7 @@ class Cli_clientType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Cli_client'
+            'data_class' => 'AppBundle\Entity\Client'
         ));
     }
 
@@ -29,7 +29,7 @@ class Cli_clientType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_cli_client';
+        return 'appbundle_client';
     }
 
 

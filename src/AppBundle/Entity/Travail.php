@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Tra_travail
+ * Travail
  *
- * @ORM\Table(name="tra_travail")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\TRA_travailRepository")
+ * @ORM\Table(name="Travail")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\TravailRepository")
  */
-class TRA_travail
+class Travail
 {
     /**
      * @var int
@@ -106,10 +106,10 @@ class TRA_travail
     private $dateDevis; 
     
      /**
-     * @ORM\ManyToOne(targetEntity="Cli_client" ,inversedBy="tra_travail")
+     * @ORM\ManyToOne(targetEntity="Client" ,inversedBy="travail")
      * @ORM\JoinColumn(name="cli_id", referencedColumnName="cli_id")
      */
-    private $cliClient;
+    private $client;
 
     /**
      * Get id
@@ -126,7 +126,7 @@ class TRA_travail
      *
      * @param string $titre
      *
-     * @return TRA_travail
+     * @return Travail
      */
     public function setTitre($titre)
     {
@@ -150,7 +150,7 @@ class TRA_travail
      *
      * @param string $description
      *
-     * @return TRA_travail
+     * @return Travail
      */
     public function setDescription($description)
     {
@@ -174,7 +174,7 @@ class TRA_travail
      *
      * @param float $prix
      *
-     * @return TRA_travail
+     * @return Travail
      */
     public function setPrix($prix)
     {
@@ -198,7 +198,7 @@ class TRA_travail
      *
      * @param \DateTime $dateDebut
      *
-     * @return TRA_travail
+     * @return Travail
      */
     public function setDateDebut($dateDebut)
     {
@@ -222,7 +222,7 @@ class TRA_travail
      *
      * @param \DateTime $dateRappel
      *
-     * @return TRA_travail
+     * @return Travail
      */
     public function setDateRappel($dateRappel)
     {
@@ -246,7 +246,7 @@ class TRA_travail
      *
      * @param string $modePaiment
      *
-     * @return TRA_travail
+     * @return Travail
      */
     public function setModePaiment($modePaiment)
     {
@@ -270,7 +270,7 @@ class TRA_travail
      *
      * @param string $lieux
      *
-     * @return TRA_travail
+     * @return Travail
      */
     public function setLieux($lieux)
     {
@@ -294,7 +294,7 @@ class TRA_travail
      *
      * @param string $garantie
      *
-     * @return TRA_travail
+     * @return Travail
      */
     public function setGarantie($garantie)
     {
@@ -318,7 +318,7 @@ class TRA_travail
      *
      * @param string $devis
      *
-     * @return TRA_travail
+     * @return Travail
      */
     public function setDevis($devis)
     {
@@ -342,7 +342,7 @@ class TRA_travail
      *
      * @param string $processVerbal
      *
-     * @return TRA_travail
+     * @return Travail
      */
     public function setProcessVerbal($processVerbal)
     {
@@ -366,7 +366,7 @@ class TRA_travail
      *
      * @param string $facture
      *
-     * @return TRA_travail
+     * @return Travail
      */
     public function setFacture($facture)
     {
@@ -390,7 +390,7 @@ class TRA_travail
      *
      * @param \DateTime $dateDevis
      *
-     * @return TRA_travail
+     * @return Travail
      */
     public function setDateDevis($dateDevis)
     {
@@ -411,27 +411,27 @@ class TRA_travail
     
 
     /**
-     * Set cliClient
+     * Set client
      *
-     * @param \AppBundle\Entity\cli_client $cliClient
+     * @param \AppBundle\Entity\client $client
      *
-     * @return TRA_travail
+     * @return Travail
      */
-    public function setCliClient(\AppBundle\Entity\cli_client $cliClient = null)
+    public function setClient(\AppBundle\Entity\client $client = null)
     {
-        $this->cliClient = $cliClient;
+        $this->client = $client;
 
         return $this;
     }
 
     /**
-     * Get cliClient
+     * Get client
      *
-     * @return \AppBundle\Entity\cli_client
+     * @return \AppBundle\Entity\client
      */
-    public function getCliClient()
+    public function getClient()
     {
-        return $this->cliClient;
+        return $this->client;
     }
 
 }

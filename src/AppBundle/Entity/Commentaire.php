@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Com_commentaire
+ * Commentaire
  *
- * @ORM\Table(name="com_commentaire")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\Com_commentaireRepository")
+ * @ORM\Table(name="Commentaire")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\CommentaireRepository")
  */
-class Com_commentaire
+class Commentaire
 {
     /**
      * @var int
@@ -30,10 +30,10 @@ class Com_commentaire
 
     
     /**
-     * @ORM\ManyToOne(targetEntity="tra_travail")
+     * @ORM\ManyToOne(targetEntity="travail")
      * @ORM\JoinColumn(name="tra_id" , referencedColumnName="tra_id")
      */
-    private $traTravail; 
+    private $Travail; 
 
     /**
      * Get id
@@ -73,26 +73,26 @@ class Com_commentaire
     
 
     /**
-     * Set traTravail
+     * Set travail
      *
-     * @param \AppBundle\Entity\tra_travail $traTravail
+     * @param \AppBundle\Entity\travail $Travail
      *
      * @return Com_commentaire
      */
-    public function setTraTravail(\AppBundle\Entity\tra_travail $traTravail = null)
+    public function setTravail(\AppBundle\Entity\travail $Travail = null)
     {
-        $this->traTravail = $traTravail;
+        $this->travail = $Travail;
 
         return $this;
     }
 
     /**
-     * Get traTravail
+     * Get travail
      *
-     * @return \AppBundle\Entity\tra_travail
+     * @return \AppBundle\Entity\travail
      */
-    public function getTraTravail()
+    public function getTravail()
     {
-        return $this->traTravail;
+        return $this->travail;
     }
 }
