@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Photo
  *
- * @ORM\Table(name="photo")
+ * @ORM\Table(name="Photo")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PhotoRepository")
  */
 class Photo
@@ -33,7 +33,7 @@ class Photo
      * @ORM\ManyToOne(targetEntity="travail")
      * @ORM\JoinColumn(name="tra_id" , referencedColumnName="tra_id")
      */
-    private $travaux; 
+    private $travail; 
 
     /**
      * Get id
@@ -72,13 +72,13 @@ class Photo
     /**
      * Set travaux
      *
-     * @param \AppBundle\Entity\travail $travaux
+     * @param \AppBundle\Entity\travail $travail
      *
      * @return Photo
      */
-    public function setTravail(\AppBundle\Entity\travail $travaux = null)
+    public function setTravail(\AppBundle\Entity\travail $travail = null)
     {
-        $this->travail = $travaux;
+        $this->travail = $travail;
 
         return $this;
     }
@@ -88,7 +88,7 @@ class Photo
      *
      * @return \AppBundle\Entity\travail
      */
-    public function getTraTravaux()
+    public function getTraTravail()
     {
         return $this->travail;
     }
