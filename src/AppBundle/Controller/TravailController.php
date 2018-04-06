@@ -24,10 +24,10 @@ class TravailController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $tRA_travails = $em->getRepository('AppBundle:Travail')->findAll();
+        $travails = $em->getRepository('AppBundle:Travail')->findAll();
 
         return $this->render('travail/index.html.twig', array(
-            'tRA_travails' => $tRA_travails,
+            'travails' => $travails,
         ));
     }
 
@@ -46,7 +46,7 @@ class TravailController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             // var_dump($request->get('utilisateur_id')); die();
             $em = $this->getDoctrine()->getManager();
-            $cli_client = $em->getRepository('AppBundle:Cli_client')->find($request->get('utilisateur_id'));
+            $cli_client = $em->getRepository('AppBundle:Client')->find($request->get('utilisateur_id'));
 
             $travail->setCliClient($cli_client);
             $em = $this->getDoctrine()->getManager();
