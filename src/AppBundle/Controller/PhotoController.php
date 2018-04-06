@@ -12,7 +12,7 @@ class PhotoController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('AppBundle:photo:index.html.twig', array(
+        return $this->render('AppBundle:Photo:index.html.twig', array(
             
             
 

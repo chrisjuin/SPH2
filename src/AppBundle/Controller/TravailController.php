@@ -24,10 +24,10 @@ class TravailController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $travails = $em->getRepository('AppBundle:Travail')->findAll();
+        $travail = $em->getRepository('AppBundle:Travail')->findAll();
 
-        return $this->render('travail/index.html.twig', array(
-            'travails' => $travails,
+        return $this->render('Travail/index.html.twig', array(
+            'travails' => $travail,
         ));
     }
 
@@ -39,16 +39,16 @@ class TravailController extends Controller
      */
     public function newAction(Request $request)
     {
-        $travail = new Tra_travail();
+        $travail = new Travail();
         $form = $this->createForm('AppBundle\Form\TravailType', $travail);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             // var_dump($request->get('utilisateur_id')); die();
             $em = $this->getDoctrine()->getManager();
-            $cli_client = $em->getRepository('AppBundle:Client')->find($request->get('utilisateur_id'));
+            $client = $em->getRepository('AppBundle:Client')->find($request->get('utilisateur_id'));
 
-            $travail->setCliClient($cli_client);
+            $travail->setClient($client);
             $em = $this->getDoctrine()->getManager();
             $em->persist($travail);
             $em->flush();
@@ -56,7 +56,7 @@ class TravailController extends Controller
             return $this->redirectToRoute('fiche_chantier_show', array('id' => $travail->getId()));
         }
 
-        return $this->render('travail/new.html.twig', array(
+        return $this->render('Travail/new.html.twig', array(
             'travail' => $travail,
             'form' => $form->createView(),
         ));
@@ -72,7 +72,7 @@ class TravailController extends Controller
     {
         $deleteForm = $this->createDeleteForm($travail);
 
-        return $this->render('travail/show.html.twig', array(
+        return $this->render('Travail/show.html.twig', array(
             'travail' => $travail,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -100,7 +100,7 @@ class TravailController extends Controller
             return $this->redirectToRoute('fiche_chantier_edit', array('id' => $travail->getId()));
         }
 
-        return $this->render('travail/edit.html.twig', array(
+        return $this->render('Travail/edit.html.twig', array(
             'travail' => $travail,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

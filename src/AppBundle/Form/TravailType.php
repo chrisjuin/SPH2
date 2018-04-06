@@ -51,7 +51,7 @@ class TravailType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\TRA_travail'
+            'data_class' => 'AppBundle\Entity\Travail'
         ));
     }
 
