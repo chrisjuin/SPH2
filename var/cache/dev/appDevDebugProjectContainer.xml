@@ -568,22 +568,22 @@
   <services>
     <service id="service_container" class="Symfony\Component\DependencyInjection\ContainerInterface" synthetic="true"/>
     <service id="AppBundle\AppBundle" class="AppBundle\AppBundle" public="false" autowire="true" autoconfigure="true"/>
-    <service id="AppBundle\Controller\Cli_clientController" class="AppBundle\Controller\Cli_clientController" autowire="true" autoconfigure="true">
+    <service id="AppBundle\Controller\ClientController" class="AppBundle\Controller\ClientController" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
     <service id="AppBundle\Controller\DefaultController" class="AppBundle\Controller\DefaultController" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
-    <service id="AppBundle\Controller\TRA_travailController" class="AppBundle\Controller\TRA_travailController" autowire="true" autoconfigure="true">
+    <service id="AppBundle\Controller\PhotoController" class="AppBundle\Controller\PhotoController" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
-    <service id="AppBundle\Controller\pho_photoController" class="AppBundle\Controller\pho_photoController" autowire="true" autoconfigure="true">
+    <service id="AppBundle\Controller\TravailController" class="AppBundle\Controller\TravailController" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
-    <service id="AppBundle\Form\Cli_clientType" class="AppBundle\Form\Cli_clientType" public="false" autowire="true" autoconfigure="true">
+    <service id="AppBundle\Form\ClientType" class="AppBundle\Form\ClientType" public="false" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
-    <service id="AppBundle\Form\TRA_travailType" class="AppBundle\Form\TRA_travailType" public="false" autowire="true" autoconfigure="true">
+    <service id="AppBundle\Form\TravailType" class="AppBundle\Form\TravailType" public="false" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
@@ -602,7 +602,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-50"/>
-      <argument type="service" id="service_locator.ecfbdf0afe248650840162e0d41b24d4"/>
+      <argument type="service" id="service_locator.f6169b9fbdb3737a654aead6e9ed6e14"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-100"/>
@@ -749,7 +749,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>q06ICXWvI8WY5cLYxxWpdL</argument>
+      <argument>IY-ZA7YcEMj5H1AR9f7WPF</argument>
       <argument>/home/simplon/projet-symfony/SPH2/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -759,7 +759,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>q06ICXWvI8WY5cLYxxWpdL</argument>
+      <argument>IY-ZA7YcEMj5H1AR9f7WPF</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -875,7 +875,7 @@
       <argument type="service" id="form.resolved_type_factory"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id="service_locator.4ba06ce033c9dc1b57b0bd05c97c8adf"/>
+      <argument type="service" id="service_locator.1fef43f266756da74981d695ce1d2c3b"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.http_foundation"/>
@@ -3154,12 +3154,12 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
-      <argument>5ac62a9a4a73c4.09643157</argument>
+      <argument>5ac72996ed7ee6.36880978</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-      <argument>5ac62a9a4a73c4.09643157</argument>
+      <argument>5ac72996ed7ee6.36880978</argument>
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -4748,63 +4748,63 @@
     <service id="web_server.command.server_status" class="Symfony\Bundle\WebServerBundle\Command\ServerStatusCommand" public="false">
       <tag name="console.command"/>
     </service>
-    <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\Cli_clientController" class="AppBundle\Controller\Cli_clientController" autowire="true" abstract="true"/>
-    <service id="abstract.instanceof.AppBundle\Controller\Cli_clientController" class="AppBundle\Controller\Cli_clientController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\ClientController" class="AppBundle\Controller\ClientController" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.AppBundle\Controller\ClientController" class="AppBundle\Controller\ClientController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\DefaultController" class="AppBundle\Controller\DefaultController" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Controller\DefaultController" class="AppBundle\Controller\DefaultController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\TRA_travailController" class="AppBundle\Controller\TRA_travailController" autowire="true" abstract="true"/>
-    <service id="abstract.instanceof.AppBundle\Controller\TRA_travailController" class="AppBundle\Controller\TRA_travailController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\pho_photoController" class="AppBundle\Controller\pho_photoController" autowire="true" abstract="true"/>
-    <service id="abstract.instanceof.AppBundle\Controller\pho_photoController" class="AppBundle\Controller\pho_photoController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.AppBundle\Form\Cli_clientType" class="AppBundle\Form\Cli_clientType" public="false" autowire="true" abstract="true"/>
-    <service id="abstract.instanceof.AppBundle\Form\Cli_clientType" class="AppBundle\Form\Cli_clientType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.AppBundle\Form\TRA_travailType" class="AppBundle\Form\TRA_travailType" public="false" autowire="true" abstract="true"/>
-    <service id="abstract.instanceof.AppBundle\Form\TRA_travailType" class="AppBundle\Form\TRA_travailType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id="service_locator.2229691a0452f6d1288fda61c66977f0" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\PhotoController" class="AppBundle\Controller\PhotoController" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.AppBundle\Controller\PhotoController" class="AppBundle\Controller\PhotoController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\TravailController" class="AppBundle\Controller\TravailController" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.AppBundle\Controller\TravailController" class="AppBundle\Controller\TravailController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.AppBundle\Form\ClientType" class="AppBundle\Form\ClientType" public="false" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.AppBundle\Form\ClientType" class="AppBundle\Form\ClientType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.AppBundle\Form\TravailType" class="AppBundle\Form\TravailType" public="false" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.AppBundle\Form\TravailType" class="AppBundle\Form\TravailType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="service_locator.af26ae59beb82c5efd3fab68155fe17b" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection"/>
     </service>
-    <service id="service_locator.a50ba87a6f55cb39707a851feca1f0c2" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.9969491af692b9ad8390bfe47a7b241b" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="cli_client" type="service" id="autowired.AppBundle\Entity\Cli_client"/>
+        <argument key="client" type="service" id="autowired.AppBundle\Entity\Client"/>
       </argument>
     </service>
     <service id="service_locator.4f8384c8862c511eefe34301cff90111" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection"/>
     </service>
-    <service id="service_locator.74835ddc2a08bfcdf96d7da0da147dfd" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.a888e0b5a8b7c3a7d13b5d006baa2a12" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection"/>
     </service>
-    <service id="service_locator.00d0aa308dfa00167d842d46485a3c8c" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.e90e77043f7a41dd72f8678d7bf84230" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="tRA_travail" type="service" id="autowired.AppBundle\Entity\TRA_travail"/>
+        <argument key="travail" type="service" id="autowired.AppBundle\Entity\Travail"/>
       </argument>
     </service>
-    <service id="service_locator.aa65ea26d4b4044f6c0010c6a214202f" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.606e276c49df59b600c784f67b6617a8" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="tRA_travail" type="service" id="autowired.AppBundle\Entity\TRA_travail"/>
+        <argument key="travail" type="service" id="autowired.AppBundle\Entity\Travail"/>
       </argument>
     </service>
-    <service id="service_locator.ecfbdf0afe248650840162e0d41b24d4" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.f6169b9fbdb3737a654aead6e9ed6e14" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="AppBundle\Controller\Cli_clientController:deleteAction" type="service" id="service_locator.a50ba87a6f55cb39707a851feca1f0c2"/>
-        <argument key="AppBundle\Controller\Cli_clientController:editAction" type="service" id="service_locator.a50ba87a6f55cb39707a851feca1f0c2"/>
-        <argument key="AppBundle\Controller\Cli_clientController:showAction" type="service" id="service_locator.a50ba87a6f55cb39707a851feca1f0c2"/>
-        <argument key="AppBundle\Controller\TRA_travailController:deleteAction" type="service" id="service_locator.aa65ea26d4b4044f6c0010c6a214202f"/>
-        <argument key="AppBundle\Controller\TRA_travailController:editAction" type="service" id="service_locator.aa65ea26d4b4044f6c0010c6a214202f"/>
-        <argument key="AppBundle\Controller\TRA_travailController:showAction" type="service" id="service_locator.00d0aa308dfa00167d842d46485a3c8c"/>
-        <argument key="AppBundle\Controller\Cli_clientController::deleteAction" type="service" id="service_locator.a50ba87a6f55cb39707a851feca1f0c2"/>
-        <argument key="AppBundle\Controller\Cli_clientController::editAction" type="service" id="service_locator.a50ba87a6f55cb39707a851feca1f0c2"/>
-        <argument key="AppBundle\Controller\Cli_clientController::showAction" type="service" id="service_locator.a50ba87a6f55cb39707a851feca1f0c2"/>
-        <argument key="AppBundle\Controller\TRA_travailController::deleteAction" type="service" id="service_locator.aa65ea26d4b4044f6c0010c6a214202f"/>
-        <argument key="AppBundle\Controller\TRA_travailController::editAction" type="service" id="service_locator.aa65ea26d4b4044f6c0010c6a214202f"/>
-        <argument key="AppBundle\Controller\TRA_travailController::showAction" type="service" id="service_locator.00d0aa308dfa00167d842d46485a3c8c"/>
+        <argument key="AppBundle\Controller\ClientController:deleteAction" type="service" id="service_locator.9969491af692b9ad8390bfe47a7b241b"/>
+        <argument key="AppBundle\Controller\ClientController:editAction" type="service" id="service_locator.9969491af692b9ad8390bfe47a7b241b"/>
+        <argument key="AppBundle\Controller\ClientController:showAction" type="service" id="service_locator.9969491af692b9ad8390bfe47a7b241b"/>
+        <argument key="AppBundle\Controller\TravailController:deleteAction" type="service" id="service_locator.606e276c49df59b600c784f67b6617a8"/>
+        <argument key="AppBundle\Controller\TravailController:editAction" type="service" id="service_locator.606e276c49df59b600c784f67b6617a8"/>
+        <argument key="AppBundle\Controller\TravailController:showAction" type="service" id="service_locator.e90e77043f7a41dd72f8678d7bf84230"/>
+        <argument key="AppBundle\Controller\ClientController::deleteAction" type="service" id="service_locator.9969491af692b9ad8390bfe47a7b241b"/>
+        <argument key="AppBundle\Controller\ClientController::editAction" type="service" id="service_locator.9969491af692b9ad8390bfe47a7b241b"/>
+        <argument key="AppBundle\Controller\ClientController::showAction" type="service" id="service_locator.9969491af692b9ad8390bfe47a7b241b"/>
+        <argument key="AppBundle\Controller\TravailController::deleteAction" type="service" id="service_locator.606e276c49df59b600c784f67b6617a8"/>
+        <argument key="AppBundle\Controller\TravailController::editAction" type="service" id="service_locator.606e276c49df59b600c784f67b6617a8"/>
+        <argument key="AppBundle\Controller\TravailController::showAction" type="service" id="service_locator.e90e77043f7a41dd72f8678d7bf84230"/>
       </argument>
     </service>
     <service id="service_locator.20ccd3ddf0f78b2202986f924e362585" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -4823,11 +4823,11 @@
         <argument key="translation.loader.yml" type="service" id="translation.loader.yml"/>
       </argument>
     </service>
-    <service id="service_locator.4ba06ce033c9dc1b57b0bd05c97c8adf" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.1fef43f266756da74981d695ce1d2c3b" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="AppBundle\Form\Cli_clientType" type="service" id="AppBundle\Form\Cli_clientType"/>
-        <argument key="AppBundle\Form\TRA_travailType" type="service" id="AppBundle\Form\TRA_travailType"/>
+        <argument key="AppBundle\Form\ClientType" type="service" id="AppBundle\Form\ClientType"/>
+        <argument key="AppBundle\Form\TravailType" type="service" id="AppBundle\Form\TravailType"/>
         <argument key="FOS\UserBundle\Form\Type\ChangePasswordFormType" type="service" id="fos_user.change_password.form.type"/>
         <argument key="FOS\UserBundle\Form\Type\ProfileFormType" type="service" id="fos_user.profile.form.type"/>
         <argument key="FOS\UserBundle\Form\Type\RegistrationFormType" type="service" id="fos_user.registration.form.type"/>
@@ -5040,8 +5040,8 @@
         <argument key="twig" type="service" id="twig"/>
       </argument>
     </service>
-    <service id="autowired.AppBundle\Entity\Cli_client" class="AppBundle\Entity\Cli_client" public="false" autowire="true"/>
-    <service id="autowired.AppBundle\Entity\TRA_travail" class="AppBundle\Entity\TRA_travail" public="false" autowire="true"/>
+    <service id="autowired.AppBundle\Entity\Client" class="AppBundle\Entity\Client" public="false" autowire="true"/>
+    <service id="autowired.AppBundle\Entity\Travail" class="AppBundle\Entity\Travail" public="false" autowire="true"/>
     <service id="service_locator.39e66930232432ca5ba91e98fdd8a17b" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5065,7 +5065,7 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>olgrhqyaL5</argument>
       <argument>0</argument>
-      <argument>q06ICXWvI8WY5cLYxxWpdL</argument>
+      <argument>IY-ZA7YcEMj5H1AR9f7WPF</argument>
       <argument>/home/simplon/projet-symfony/SPH2/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -5073,7 +5073,7 @@
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>feJoeFDtHF</argument>
       <argument>0</argument>
-      <argument>q06ICXWvI8WY5cLYxxWpdL</argument>
+      <argument>IY-ZA7YcEMj5H1AR9f7WPF</argument>
       <argument>/home/simplon/projet-symfony/SPH2/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -5081,7 +5081,7 @@
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>d9h5zjCELF</argument>
       <argument>0</argument>
-      <argument>q06ICXWvI8WY5cLYxxWpdL</argument>
+      <argument>IY-ZA7YcEMj5H1AR9f7WPF</argument>
       <argument>/home/simplon/projet-symfony/SPH2/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -5089,7 +5089,7 @@
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>PczYotxhS1</argument>
       <argument>0</argument>
-      <argument>q06ICXWvI8WY5cLYxxWpdL</argument>
+      <argument>IY-ZA7YcEMj5H1AR9f7WPF</argument>
       <argument>/home/simplon/projet-symfony/SPH2/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>

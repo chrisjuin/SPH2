@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class TRA_travailType extends AbstractType
+class TravailType extends AbstractType
 {
     
     /**
@@ -60,7 +60,7 @@ class TRA_travailType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_tra_travail';
+        return 'appbundle_travail';
     }
 
 

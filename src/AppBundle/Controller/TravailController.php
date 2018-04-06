@@ -2,20 +2,20 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\TRA_travail;
+use AppBundle\Entity\Travail;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Tra_travail controller.
+ * Travail controller.
  *
  * @Route("fiche_chantier")
  */
-class TRA_travailController extends Controller
+class TravailController extends Controller
 {
     /**
-     * Lists all tRA_travail entities.
+     * Lists all travail entities.
      *
      * @Route("/", name="fiche_chantier_index")
      * @Method("GET")
@@ -24,23 +24,23 @@ class TRA_travailController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $tRA_travails = $em->getRepository('AppBundle:TRA_travail')->findAll();
+        $tRA_travails = $em->getRepository('AppBundle:Travail')->findAll();
 
-        return $this->render('tra_travail/index.html.twig', array(
+        return $this->render('travail/index.html.twig', array(
             'tRA_travails' => $tRA_travails,
         ));
     }
 
     /**
-     * Creates a new tRA_travail entity.
+     * Creates a new travail entity.
      *
      * @Route("/new", name="fiche_chantier_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
     {
-        $tRA_travail = new Tra_travail();
-        $form = $this->createForm('AppBundle\Form\TRA_travailType', $tRA_travail);
+        $travail = new Tra_travail();
+        $form = $this->createForm('AppBundle\Form\TravailType', $travail);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -48,46 +48,46 @@ class TRA_travailController extends Controller
             $em = $this->getDoctrine()->getManager();
             $cli_client = $em->getRepository('AppBundle:Cli_client')->find($request->get('utilisateur_id'));
 
-            $tRA_travail->setCliClient($cli_client);
+            $travail->setCliClient($cli_client);
             $em = $this->getDoctrine()->getManager();
-            $em->persist($tRA_travail);
+            $em->persist($travail);
             $em->flush();
 
-            return $this->redirectToRoute('fiche_chantier_show', array('id' => $tRA_travail->getId()));
+            return $this->redirectToRoute('fiche_chantier_show', array('id' => $travail->getId()));
         }
 
-        return $this->render('tra_travail/new.html.twig', array(
-            'tRA_travail' => $tRA_travail,
+        return $this->render('travail/new.html.twig', array(
+            'travail' => $travail,
             'form' => $form->createView(),
         ));
     }
 
     /**
-     * Finds and displays a tRA_travail entity.
+     * Finds and displays a travail entity.
      *
      * @Route("/{id}", name="fiche_chantier_show")
      * @Method("GET")
      */
-    public function showAction(TRA_travail $tRA_travail)
+    public function showAction(Travail $travail)
     {
-        $deleteForm = $this->createDeleteForm($tRA_travail);
+        $deleteForm = $this->createDeleteForm($travail);
 
-        return $this->render('tra_travail/show.html.twig', array(
-            'tRA_travail' => $tRA_travail,
+        return $this->render('travail/show.html.twig', array(
+            'travail' => $travail,
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-     * Displays a form to edit an existing tRA_travail entity.
+     * Displays a form to edit an existing travail entity.
      *
      * @Route("/{id}/edit", name="fiche_chantier_edit")
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, TRA_travail $tRA_travail)
+    public function editAction(Request $request, Travail $travail)
     {
-        $deleteForm = $this->createDeleteForm($tRA_travail);
-        $editForm = $this->createForm('AppBundle\Form\TRA_travailType', $tRA_travail);
+        $deleteForm = $this->createDeleteForm($travail);
+        $editForm = $this->createForm('AppBundle\Form\TravailType', $travail);
         $editForm->handleRequest($request);
         // $form = $formFactory->create('new_form', 
         // $model,
@@ -97,30 +97,30 @@ class TRA_travailController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('fiche_chantier_edit', array('id' => $tRA_travail->getId()));
+            return $this->redirectToRoute('fiche_chantier_edit', array('id' => $travail->getId()));
         }
 
-        return $this->render('tra_travail/edit.html.twig', array(
-            'tRA_travail' => $tRA_travail,
+        return $this->render('travail/edit.html.twig', array(
+            'travail' => $travail,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-     * Deletes a tRA_travail entity.
+     * Deletes a travail entity.
      *
      * @Route("/{id}", name="fiche_chantier_delete")
      * @Method("DELETE")
      */
-    public function deleteAction(Request $request, TRA_travail $tRA_travail)
+    public function deleteAction(Request $request, Travail $travail)
     {
-        $form = $this->createDeleteForm($tRA_travail);
+        $form = $this->createDeleteForm($travail);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->remove($tRA_travail);
+            $em->remove($travail);
             $em->flush();
         }
 
@@ -128,16 +128,16 @@ class TRA_travailController extends Controller
     }
 
     /**
-     * Creates a form to delete a tRA_travail entity.
+     * Creates a form to delete a travail entity.
      *
-     * @param TRA_travail $tRA_travail The tRA_travail entity
+     * @param Travail $travail The travail entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(TRA_travail $tRA_travail)
+    private function createDeleteForm(Travail $travail)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('fiche_chantier_delete', array('id' => $tRA_travail->getId())))
+            ->setAction($this->generateUrl('fiche_chantier_delete', array('id' => $travail->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;

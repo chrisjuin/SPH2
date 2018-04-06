@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Pho_photo
+ * Photo
  *
- * @ORM\Table(name="pho_photo")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\Pho_photoRepository")
+ * @ORM\Table(name="photo")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\PhotoRepository")
  */
-class Pho_photo
+class Photo
 {
     /**
      * @var int
@@ -30,10 +30,10 @@ class Pho_photo
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="tra_travail")
+     * @ORM\ManyToOne(targetEntity="travail")
      * @ORM\JoinColumn(name="tra_id" , referencedColumnName="tra_id")
      */
-    private $traTravaux; 
+    private $travaux; 
 
     /**
      * Get id
@@ -50,7 +50,7 @@ class Pho_photo
      *
      * @param string $url
      *
-     * @return Pho_photo
+     * @return Photo
      */
     public function setUrl($url)
     {
@@ -70,26 +70,26 @@ class Pho_photo
     }
 
     /**
-     * Set traTravaux
+     * Set travaux
      *
-     * @param \AppBundle\Entity\tra_travail $traTravaux
+     * @param \AppBundle\Entity\travail $travaux
      *
-     * @return Pho_photo
+     * @return Photo
      */
-    public function setTraTravaux(\AppBundle\Entity\tra_travail $traTravaux = null)
+    public function setTravail(\AppBundle\Entity\travail $travaux = null)
     {
-        $this->traTravaux = $traTravaux;
+        $this->travail = $travaux;
 
         return $this;
     }
 
     /**
-     * Get traTravaux
+     * Get travail
      *
-     * @return \AppBundle\Entity\tra_travail
+     * @return \AppBundle\Entity\travail
      */
     public function getTraTravaux()
     {
-        return $this->traTravaux;
+        return $this->travail;
     }
 }

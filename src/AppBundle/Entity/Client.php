@@ -6,12 +6,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * Cli_client
+ * Client
  *
- * @ORM\Table(name="cli_client")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\Cli_clientRepository")
+ * @ORM\Table(name="Client")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ClientRepository")
  */
-class Cli_client
+class Client
 {
     /**
      * @var int
@@ -87,13 +87,13 @@ class Cli_client
     private $telephone;
 
     /**
-     * @ORM\OneToMany(targetEntity="TRA_travail" ,mappedBy="cli_client")
+     * @ORM\OneToMany(targetEntity="Travail" ,mappedBy="cli_client")
      */
-    private $traTravails;
+    private $travail;
 
     public function __construct()
     {
-        $this->traTravails = new ArrayCollection();
+        $this->travail = new ArrayCollection();
     }
 
     /**
@@ -111,7 +111,7 @@ class Cli_client
      *
      * @param string $nom
      *
-     * @return Cli_client
+     * @return Client
      */
     public function setNom($nom)
     {
@@ -135,7 +135,7 @@ class Cli_client
      *
      * @param string $prenom
      *
-     * @return Cli_client
+     * @return Client
      */
     public function setPrenom($prenom)
     {
@@ -159,7 +159,7 @@ class Cli_client
      *
      * @param string $provenance
      *
-     * @return Cli_client
+     * @return Client
      */
     public function setProvenance($provenance)
     {
@@ -183,7 +183,7 @@ class Cli_client
      *
      * @param string $email
      *
-     * @return Cli_client
+     * @return Client
      */
     public function setEmail($email)
     {
@@ -207,7 +207,7 @@ class Cli_client
      *
      * @param string $adresse
      *
-     * @return Cli_client
+     * @return Client
      */
     public function setAdresse($adresse)
     {
@@ -231,7 +231,7 @@ class Cli_client
      *
      * @param string $codePostal
      *
-     * @return Cli_client
+     * @return Client
      */
     public function setCodePostal($codePostal)
     {
@@ -255,7 +255,7 @@ class Cli_client
      *
      * @param string $ville
      *
-     * @return Cli_client
+     * @return Client
      */
     public function setVille($ville)
     {
@@ -279,7 +279,7 @@ class Cli_client
      *
      * @param string $note
      *
-     * @return Cli_client
+     * @return Client
      */
     public function setNote($note)
     {
@@ -303,7 +303,7 @@ class Cli_client
      *
      * @param string $telephone
      *
-     * @return Cli_client
+     * @return Client
      */
     public function setTelephone($telephone)
     {
@@ -323,36 +323,36 @@ class Cli_client
     }
 
     /**
-     * Add traTravail
+     * Add travail
      *
-     * @param \AppBundle\Entity\Tra_travail $traTravail
+     * @param \AppBundle\Entity\Travail $travail
      *
-     * @return Cli_client
+     * @return Client
      */
-    public function addTraTravail(\AppBundle\Entity\Tra_travail $traTravail)
+    public function addTravail(\AppBundle\Entity\Travail $travail)
     {
-        $this->traTravails[] = $traTravail;
+        $this->travail = $travail;
 
         return $this;
     }
 
     /**
-     * Remove traTravail
+     * Remove travail
      *
-     * @param \AppBundle\Entity\Tra_travail $traTravail
+     * @param \AppBundle\Entity\Travail $travail
      */
-    public function removeTraTravail(\AppBundle\Entity\Tra_travail $traTravail)
+    public function removeTravail(\AppBundle\Entity\Travail $travail)
     {
-        $this->traTravail->removeElement($traTravail);
+        $this->travail->removeElement($travail);
     }
 
     /**
-     * Get traTravails
+     * Get travail
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getTraTravails()
+    public function getTravail()
     {
-        return $this->traTravails;
+        return $this->travail;
     }
 }
