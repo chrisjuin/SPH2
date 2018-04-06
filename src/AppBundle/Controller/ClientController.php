@@ -26,10 +26,10 @@ class ClientController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $clients = $em->getRepository('AppBundle:Client')->findAll();
+        $client = $em->getRepository('AppBundle:Client')->findAll();
 
-        return $this->render('client/index.html.twig', array(
-            'clients' => $clients,
+        return $this->render('Client/index.html.twig', array(
+            'client' => $client,
         ));
     }
 
@@ -72,11 +72,11 @@ class ClientController extends Controller
 
             // var_dump($request);
             // $em = $this->getDoctrine()->getManager();
-            // $travail = $em->getRepository('AppBundle:TRA_travail')->find(1);
+            // $travail = $em->getRepository('AppBundle:Travail')->find(1);
 
         return $this->render('client/show.html.twig', array(
             'client' => $client,
-            // 'tra_travail' => $tra_travail,
+            // 'travail' => $travail,
             'delete_form' => $deleteForm->createView(),
         ));
     }
