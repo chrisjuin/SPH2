@@ -5,10 +5,13 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Travail;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Console\Input\Input;
+
 
 /**
- * Travail controller.
+ * Travail controller
  *
  * @Route("fiche_chantier")
  */
@@ -45,7 +48,7 @@ class TravailController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $client = $em->getRepository('AppBundle:Client')->find($request->get('utilisateur_id'));
+            $client = $em->getRepository('AppBundle:Client')->find($request->get('client_id'));
             
             $travail->setClient($client);
             $em = $this->getDoctrine()->getManager();
@@ -67,15 +70,15 @@ class TravailController extends Controller
      * @Route("/{id}", name="fiche_chantier_show")
      * @Method("GET")
      */
-    public function showAction(Travail $travail)
+    public function showAction(Travail $travail, Request $request)
     {
         $deleteForm = $this->createDeleteForm($travail);
-        $em = $this->getDoctrine()->getManager();
-        // $commentaire = $em->getRepository('AppBunble:Commentaire')->findAll();
+            $em = $this->getDoctrine()->getManager();
+            $client = $em->getRepository('AppBundle:Client')->findAll();
 
         return $this->render('Travail/show.html.twig', array(
             'travail' => $travail,
-            // 'commantaire' => $commentaire, 
+            'client' => $client, 
             'delete_form' => $deleteForm->createView(),
         ));
     }

@@ -343,13 +343,14 @@ class Client
      */
     public function removeTravail(\AppBundle\Entity\Travail $travail)
     {
-        $this->travaux->removeElement($travail);
+        $this->travaux->removeTravail($travail);
     }
+
 
     /**
      * Get travail
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\ArrayCollection
      */
     public function getTravaux()
     {
