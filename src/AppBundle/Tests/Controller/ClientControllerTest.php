@@ -19,7 +19,7 @@ class Cli_clientControllerTest extends WebTestCase
 
         // Fill in the form and submit it
         $form = $crawler->selectButton('Create')->form(array(
-            'appbundle_cli_client[field_name]'  => 'Test',
+            'appbundle_client[field_name]'  => 'Test',
             // ... other fields to fill
         ));
 
@@ -33,7 +33,7 @@ class Cli_clientControllerTest extends WebTestCase
         $crawler = $client->click($crawler->selectLink('Edit')->link());
 
         $form = $crawler->selectButton('Update')->form(array(
-            'appbundle_cli_client[field_name]'  => 'Foo',
+            'appbundle_client[field_name]'  => 'Foo',
             // ... other fields to fill
         ));
 

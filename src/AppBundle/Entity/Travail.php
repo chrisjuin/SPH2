@@ -3,6 +3,8 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
 
 /**
  * Travail
@@ -110,6 +112,11 @@ class Travail
      * @ORM\JoinColumn(name="cli_id", referencedColumnName="cli_id")
      */
     private $client;
+
+    // public function __construct()
+    // {
+    //     $this->clients = new ArrayCollection(); 
+    // }
 
      /**
      * @ORM\OneToMany(targetEntity="Photo" ,mappedBy="travail")
@@ -414,30 +421,40 @@ class Travail
         return $this->dateDevis;
     }
     
+//     /**
+//      * Add client
+//      *
+//      * @param \AppBundle\Entity\Client $client
+//      *
+//      * @return Travail
+//      */
+//     public function addClient(\AppBundle\Entity\Client $client)
+//     {
+//         $this->clients[] = $client;
 
-    /**
-     * Set client
-     *
-     * @param \AppBundle\Entity\client $client
-     *
-     * @return Travail
-     */
-    public function setClient(\AppBundle\Entity\client $client = null)
-    {
-        $this->client = $client;
+//         return $this;
+//     }
 
-        return $this;
-    }
+//     /**
+//      * Remove client
+//      *
+//      * @param \AppBundle\Entity\Client $client
+//      */
+//     public function removeClient(\AppBundle\Entity\Client $client)
+//     {
+//         $this->clients->removeClient($client);
+//     }
 
-    /**
-     * Get client
-     *
-     * @return \AppBundle\Entity\client
-     */
-    public function getClient()
-    {
-        return $this->client;
-    }
+
+//     /**
+//      * Get client
+//      *
+//      * @return \Doctrine\Common\Collections\ArrayCollection
+//      */
+//     public function getClients()
+//     {
+//         return $this->clients;
+//     }
 
 }
 

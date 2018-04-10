@@ -17,14 +17,22 @@
         </li>
     </ul>
 
-    <section class="col-sm-12 contour">
-        <ul class="list-inline col-sm-12">
-            <li class="list-group-item">Numero client</li>
-            <li class="list-group-item">Nom client</li>
-            <li class="list-group-item">Prenom</li>
-        </ul> 
-        
-        
+    <div class="col-sm-12 contour">
+        <table class ="table table-bordered">
+            <tr>
+                <th>Numero client :</th>
+                <th>Nom client :</th>
+                <th>Prenom :</th>
+            </tr> 
+            
+            {# {% for client in travail.clients %}
+            <tr>
+                <td><a href="{{ path('fiche_client_show', { 'id': client.id }) }}">{{ client.id }}</a></td>
+                <td><a href="{{ path('fiche_client_show', { 'id': client.id }) }}">{{ client.nom }}</a></td>
+                <td><a href="{{ path('fiche_client_show', { 'id': client.id }) }}">{{ client.prenom }}</a></td>
+            </tr>
+            {% endfor %} #}
+        </table>
 
         <ul class="list-group col-sm-2 hidden-xs">
             <li class="list-group-item">Nature des travaux</li>
@@ -46,9 +54,9 @@
             <li><label for="note">Note</label></li>        
             <li><textarea disabled id="note" class="list-group-item col-xs-12" rows="8">{{ travail.description }}</textarea></li>
         </ul> 
-    </section>
+    </div>
     
-    <section class="col-sm-12 contour">
+    <div class="col-sm-12 contour">
         <ul class="list-group col-sm-2 hidden-xs">
             <li class="list-group-item">Garantie</li>
             <li class="list-group-item">Devis</li>
@@ -75,14 +83,14 @@
                 <li><input class="btn btn-success" type="submit" value="Enregistrer le commentaire"></li>
             </ul> 
         </form>
-    </section> #}
+    </div> #}
     
-    <section class="col-sm-12 contour">     
+    <div class="col-sm-12 contour">     
         <ul class="list-inline list-unstyled col-xs-12">
             <li class="list-group-item col-xs-2">'.$value["uti_pseudo"].'</li>
             <li class="list-group-item col-xs-10">'.$value["com_commentaire"].'</li>';
         </ul>
-    </section>
+    </div>
 </div>
 
 

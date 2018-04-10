@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Console\Input\Input;
 
 /**
- * Client controller.
+ * Client controller
  *
  * @Route("fiche_client")
  */
@@ -47,6 +47,10 @@ class ClientController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $travail = $em->getRepository('AppBundle:Travail')->find($request->get('chantier_id'));
+
+            $client->setTravail($travail); 
             $em = $this->getDoctrine()->getManager();
             $em->persist($client);
             $em->flush();
