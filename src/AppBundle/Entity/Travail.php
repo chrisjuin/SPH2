@@ -107,6 +107,10 @@ class Travail
      */
     private $dateDevis; 
     
+    /**
+     * @ORM\OneToMany(targetEntity="Commentaire" , mappedBy="travail")
+     */
+    private $commentaire;
     
     /**
      * @ORM\OneToMany(targetEntity="Photo" ,mappedBy="travail")

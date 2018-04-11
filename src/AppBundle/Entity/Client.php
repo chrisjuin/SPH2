@@ -346,7 +346,6 @@ class Client
         $this->travaux->removeTravail($travail);
     }
 
-
     /**
      * Get travail
      *

@@ -5,18 +5,27 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
+/**
+ * Commentaire Controller
+ * 
+ * @Route("commentaire")
+ */
 class CommentaireControllerController extends Controller
 {
     /**
-     * Commentaire Controller
+     * Lists all commentaire entities.
      * 
-     * @Route("commentaire")
+     * @Route("/" , name="commentaire_index")
+     * @Method("GET, POST)
      */
 
     public function indexAction()
     {
-        return $this->render('AppBundle:Commentaire:index.html.twig', array(
+        $em = $this->getDoctrine()->getManager();
 
+        $commentaire  = $em->getRepository('AppBundle:Commentaire')->findAll();
+
+        return $this->render('AppBundle:Commentaire:index.html.twig', array(    
         ));
     }
 }
