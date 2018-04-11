@@ -25,15 +25,15 @@
                 <th>Prenom :</th>
             </tr> 
             
-            {# {% for client in travail.clients %}
             <tr>
-                <td><a href="{{ path('fiche_client_show', { 'id': client.id }) }}">{{ client.id }}</a></td>
-                <td><a href="{{ path('fiche_client_show', { 'id': client.id }) }}">{{ client.nom }}</a></td>
-                <td><a href="{{ path('fiche_client_show', { 'id': client.id }) }}">{{ client.prenom }}</a></td>
+                <td>{{ travail.client.id }}</td>
+                <td>{{ travail.client.nom }}</td>
+                <td>{{ travail.client.prenom }}</td>
             </tr>
-            {% endfor %} #}
+        
         </table>
 
+            
         <ul class="list-group col-sm-2 hidden-xs">
             <li class="list-group-item">Nature des travaux</li>
             <li class="list-group-item">Prix</li>
@@ -43,7 +43,7 @@
         </ul>
         
         <ul class="list-group col-sm-4 col-xs-12">
-            <li class="list-group-item text-uppercase" id="titre">{{ travail.titre }}</li>
+            <li class="list-group-item" id="titre">{{ travail.titre }}</li>
             <li class="list-group-item" id="prix">{{ travail.prix }}</li>
             <li class="list-group-item" id="dateDevis">{% if travail.dateDevis %}{{ travail.dateDevis|date('Y-m-d') }}{% endif %}</li>
             <li class="list-group-item" id="dateDebut">{% if travail.dateDebut %}{{ travail.dateDebut|date('Y-m-d') }}{% endif %}</li>            

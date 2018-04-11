@@ -23,17 +23,6 @@ class TravailType extends AbstractType
         ->add('dateDevis')
         ; 
         
-        // if ($options['fiche_chantier_edit']){
-        //     $builder
-        //         ->add('titre')
-        //         ->add('description')
-        //         ->add('prix')
-        //         ->add('dateDebut')
-        //         ->add('modePaiment')    
-        //         ->add('facture')
-        //         ->add('devis')
-        //         ;
-        // }
     }
 
     public function setDefaultOptions(OptionsRevolverInterface $resolver)

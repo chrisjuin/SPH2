@@ -48,11 +48,11 @@ class TravailController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $client = $em->getRepository('AppBundle:Client')->find($request->get('client_id'));
-            
+            $client = $em->getRepository('AppBundle:Client')->find($request->get('utilisateur_id'));
+                
             $travail->setClient($client);
             $em = $this->getDoctrine()->getManager();
-            $em->persist($travail);
+            $em->persist($travail); 
             $em->flush();
 
             return $this->redirectToRoute('fiche_chantier_show', array('id' => $travail->getId()));
