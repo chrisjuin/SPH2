@@ -17,14 +17,14 @@
         </li>
     </ul>
 
-    <div class="col-sm-12 contour">
+    <div class="col-sm-4">
         <table class ="table table-bordered">
             <tr>
                 <th>Numero client :</th>
                 <th>Nom client :</th>
                 <th>Prenom :</th>
             </tr> 
-            
+
             <tr>
                 <td>{{ travail.client.id }}</td>
                 <td>{{ travail.client.nom }}</td>
@@ -32,8 +32,9 @@
             </tr>
         
         </table>
-
+    </div>
             
+    <div class=" col-sm-12">
         <ul class="list-group col-sm-2 hidden-xs">
             <li class="list-group-item">Nature des travaux</li>
             <li class="list-group-item">Prix</li>
@@ -76,19 +77,12 @@
             <li class="list-group-item"><a class=" btn btn-success" href="">Accéder aux photos</a></li>
         </ul> 
         
-        {# <form action="" method="post">
-            <ul class="list-group list-unstyled col-sm-6 col-xs-12">
-                <li><label for="commentaire">Ajouter un commentaire</label></li>
-                <li><textarea id="commentaire" class="list-group-item col-xs-12" rows="5" name="commentaire"></textarea></li>
-                <li><input class="btn btn-success" type="submit" value="Enregistrer le commentaire"></li>
-            </ul> 
-        </form>
-    </div> #}
+    </div> 
     
     <div class="col-sm-12 contour">     
         <ul class="list-inline list-unstyled col-xs-12">
-            <li class="list-group-item col-xs-2">'.$value["uti_pseudo"].'</li>
-            <li class="list-group-item col-xs-10">'.$value["com_commentaire"].'</li>';
+            <li class="list-group-item col-xs-2"></li>
+            <li class="list-group-item col-xs-10"></li>';
         </ul>
     </div>
 </div>

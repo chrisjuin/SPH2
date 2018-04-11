@@ -3,10 +3,12 @@
 {% block body %}
 
 <div class="container">
-    <div class="form-group">
-        <label for="commentaire">Ajouter Commentaire</label>
-        <textarea class="form-control" rows="10"></textarea>
-    </div>
-    <input type="submit" class="btn btn-success" value="enregistrer">
+    <form action="" method="POST">
+        <div class="form-group">
+            <label for="commentaire">Ajouter Commentaire</label>
+            <textarea class="form-control" rows="10"></textarea>
+        </div>
+        <input type="submit" class="btn btn-success" value="enregistrer">
+    </form>
 </div>
 {% endblock %}
