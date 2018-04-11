@@ -107,23 +107,24 @@ class Travail
      */
     private $dateDevis; 
     
-     /**
-     * @ORM\ManyToOne(targetEntity="Client" ,inversedBy="travail")
-     * @ORM\JoinColumn(name="cli_id", referencedColumnName="cli_id")
-     */
-    private $client;
-
-    // public function __construct()
-    // {
-    //     $this->clients = new ArrayCollection(); 
-    // }
-
-     /**
+    
+    /**
      * @ORM\OneToMany(targetEntity="Photo" ,mappedBy="travail")
      */
     private $photo;
-
+    
     /**
+    * @ORM\ManyToOne(targetEntity="Client")
+    * @ORM\JoinColumn(name="cli_id", referencedColumnName="cli_id")
+    */
+    private $client;
+
+    public function __construct()
+    {
+        $this->client = new ArrayCollection(); 
+    }
+    
+   /**
      * Get id
      *
      * @return int
@@ -421,40 +422,53 @@ class Travail
         return $this->dateDevis;
     }
     
-//     /**
-//      * Add client
-//      *
-//      * @param \AppBundle\Entity\Client $client
-//      *
-//      * @return Travail
-//      */
-//     public function addClient(\AppBundle\Entity\Client $client)
-//     {
-//         $this->clients[] = $client;
+    /**
+     * Add client
+     *
+     * @param \AppBundle\Entity\Client $client
+     *
+     * @return Travail
+     */
+    public function addClient(\AppBundle\Entity\Client $client)
+    {
+        $this->client[] = $client;
 
-//         return $this;
-//     }
+        return $this;
+    }
 
-//     /**
-//      * Remove client
-//      *
-//      * @param \AppBundle\Entity\Client $client
-//      */
-//     public function removeClient(\AppBundle\Entity\Client $client)
-//     {
-//         $this->clients->removeClient($client);
-//     }
+    /**
+     * Remove client
+     *
+     * @param \AppBundle\Entity\Client $client
+     */
+    public function removeClient(\AppBundle\Entity\Client $client)
+    {
+        $this->client->removeClient($client);
+    }
 
+    /**
+     * Set client
+     *
+     * @param string $client
+     *
+     * @return Travail
+     */
+    public function setClient($client)
+    {
+        $this->client = $client;
 
-//     /**
-//      * Get client
-//      *
-//      * @return \Doctrine\Common\Collections\ArrayCollection
-//      */
-//     public function getClients()
-//     {
-//         return $this->clients;
-//     }
+        return $this;
+    }
+
+    /**
+     * Get client
+     *
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
+    public function getClient()
+    {
+        return $this->client;
+    }
 
 }
 
