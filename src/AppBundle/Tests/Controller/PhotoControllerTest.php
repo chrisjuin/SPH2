@@ -8,7 +8,7 @@ class PhotoControllerTest extends WebTestCase
 {
     public function testIndex()
     {
-        $client = static::createClient();
+        $client = static::createPhoto();
 
         $crawler = $client->request('GET', 'photo');
     }
