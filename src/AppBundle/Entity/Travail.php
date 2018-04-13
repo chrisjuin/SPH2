@@ -112,6 +112,7 @@ class Travail
      */
     private $commentaire;
     
+
     /**
      * @ORM\OneToMany(targetEntity="Photo" ,mappedBy="travail")
      */

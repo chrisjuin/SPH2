@@ -5,6 +5,9 @@
 <div class="container">
     <ul>
         <li>
+            <a href="{{ path('commentaire') }}" class="btn btn-primary">Ajouter Commentaire</a>
+        </li>
+        <li>
             <a href="{{ path('fiche_chantier_index') }}" class="btn btn-warning">Retour</a>
         </li>
         <li>
@@ -66,17 +69,17 @@
         </ul>
         
         <ul class="list-group col-sm-4 col-xs-8">
-            <li class="list-group-item text-uppercase" id="garantie">{{ travail.garantie }}</li>
+            <li class="list-group-item" id="garantie">{{ travail.garantie }}</li>
             <li class="list-group-item" id="devis">{{ travail.devis }}</li>
             <li class="list-group-item" id="processVerbal">{{ travail.processVerbal }}</li>
             <li class="list-group-item" id="facture">{{ travail.facture }}</li>            
         </ul> 
         
         <ul class="list-inline text-left">
-            <li class="list-group-item col-sm-2 col-xs-12 text-uppercase">photos</li>
+            <li class="list-group-item col-sm-2 col-xs-12 ">Photos</li>
             <li class="list-group-item"><a class=" btn btn-success" href="">Accéder aux photos</a></li>
         </ul> 
-        
+    
     </div> 
     
     <div class="col-sm-12 contour">     

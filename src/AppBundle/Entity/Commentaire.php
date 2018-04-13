@@ -33,7 +33,7 @@ class Commentaire
      * @ORM\ManyToOne(targetEntity="Travail")
      * @ORM\JoinColumn(name="tra_id" , referencedColumnName="tra_id")
      */
-    private $Travail; 
+    private $travail; 
 
     /**
      * Get id
@@ -70,18 +70,16 @@ class Commentaire
         return $this->commentaire;
     }
 
-    
-
     /**
      * Set travail
      *
-     * @param \AppBundle\Entity\travail $Travail
+     * @param \AppBundle\Entity\travail $travail
      *
      * @return Commentaire
      */
-    public function setTravail(\AppBundle\Entity\travail $Travail = null)
+    public function setTravail(\AppBundle\Entity\travail $travail = null)
     {
-        $this->travail = $Travail;
+        $this->travail = $travail;
 
         return $this;
     }
