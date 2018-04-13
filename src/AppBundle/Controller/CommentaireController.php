@@ -32,7 +32,7 @@ class CommentaireController extends Controller
             $em->persist($commentaire);
             $em->flush();
         
-            // return $this->redirectToRoute(''); 
+                // return $this->redirectToRoute('fiche_chantier_show', array('id' => $travail->getId())); 
         }
     
             return $this->render('AppBundle:Commentaire:affiche.html.twig', array(
