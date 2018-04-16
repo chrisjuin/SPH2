@@ -8,7 +8,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Client
  *
- * @ORM\Table(name="Client")
+ * @ORM\Table(name="client")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ClientRepository")
  */
 class Client

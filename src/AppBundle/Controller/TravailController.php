@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Travail;
+use AppBundle\Entity\Commentaire;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -48,9 +49,8 @@ class TravailController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $client = $em->getRepository('AppBundle:Client')->find($request->get('utilisateur_id'));
-                
-            $travail->setClient($client);
+            
+            
             $em = $this->getDoctrine()->getManager();
             $em->persist($travail); 
             $em->flush();
@@ -75,9 +75,11 @@ class TravailController extends Controller
         $deleteForm = $this->createDeleteForm($travail);
             $em = $this->getDoctrine()->getManager();
             $client = $em->getRepository('AppBundle:Client')->findAll();
+            $commentaire = $em->getRepository('AppBundle:Commentaire')->findAll();
 
         return $this->render('Travail/show.html.twig', array(
             'travail' => $travail,
+            'commentaire'=> $commentaire, 
             'client' => $client, 
             'delete_form' => $deleteForm->createView(),
         ));
