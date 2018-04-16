@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Travail;
 use AppBundle\Entity\Commentaire; 
 use AppBundle\Form\CommentaireType; 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -13,32 +14,35 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Commentaire Controller
  * 
- * @Route("commentaire")
  */
 class CommentaireController extends Controller
 {
     /**
-     * @Route("/", name="commentaire")
+     * @Route("/travail/{travail_id}/commentaire", name="commentaire")
      */
-    public function AfficheAction(Request  $request)
+    public function AfficheAction(Request  $request, $travail_id)
     {
         $commentaire = new Commentaire(); 
         $form = $this->createForm (CommentaireType::class, $commentaire); 
-    
         $form->handleRequest($request); 
+
+        $em = $this->getDoctrine()->getManager();
+        $travail = $em->getRepository('AppBundle:Travail')->find('travail_id');
+        $commentaire->setTravail($travail);
+
         if($form->isSubmitted() && $form->isValid()){
 
             $em = $this->getDoctrine()->getManager(); 
             $em->persist($commentaire);
             $em->flush();
         
-                // return $this->redirectToRoute('fiche_chantier_show', array('id' => $travail->getId())); 
+            return $this->redirectToRoute('fiche_chantier_show', array('id' => $travail_id)); 
         }
     
-            return $this->render('AppBundle:Commentaire:affiche.html.twig', array(
-                'commentaire' =>$commentaire,
-                'form' => $form->createView()
-            ));
+        return $this->render('AppBundle:Commentaire:affiche.html.twig', array(
+            'commentaire' =>$commentaire,
+            'form' => $form->createView()
+        ));
     }
 
 }

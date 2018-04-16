@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Photo
  *
- * @ORM\Table(name="Photo")
+ * @ORM\Table(name="photo")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PhotoRepository")
  */
 class Photo
@@ -30,7 +30,7 @@ class Photo
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="Travail")
+     * @ORM\ManyToOne(targetEntity="Travail" ,inversedBy="photos")
      * @ORM\JoinColumn(name="tra_id" , referencedColumnName="tra_id")
      */
     private $travail; 

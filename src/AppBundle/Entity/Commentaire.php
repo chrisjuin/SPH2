@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Commentaire
  *
- * @ORM\Table(name="Commentaire")
+ * @ORM\Table(name="commentaire")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\CommentaireRepository")
  */
 class Commentaire
@@ -30,7 +30,7 @@ class Commentaire
 
     
     /**
-     * @ORM\ManyToOne(targetEntity="Travail")
+     * @ORM\ManyToOne(targetEntity="Travail" ,inversedBy="commentaires")
      * @ORM\JoinColumn(name="tra_id" , referencedColumnName="tra_id")
      */
     private $travail; 

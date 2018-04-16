@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Travail;
 use AppBundle\Entity\Client;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -48,11 +49,9 @@ class ClientController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $travail = $em->getRepository('AppBundle:Travail')->find($request->get('chantier_id'));
 
-            $client->setTravail($travail); 
             $em = $this->getDoctrine()->getManager();
-            $em->persist($client);
+            $em->persist($client);  
             $em->flush();
 
             return $this->redirectToRoute('fiche_client_show', array('id' => $client->getId()));

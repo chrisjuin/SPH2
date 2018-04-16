@@ -9,7 +9,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Travail
  *
- * @ORM\Table(name="Travail")
+ * @ORM\Table(name="travail")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\TravailRepository")
  */
 class Travail
@@ -108,25 +108,25 @@ class Travail
     private $dateDevis; 
     
     /**
-     * @ORM\OneToMany(targetEntity="Commentaire" , mappedBy="travail")
+     * @ORM\OneToMany(targetEntity="Commentaire" ,mappedBy="travail")
      */
-    private $commentaire;
+    private $commentaires;
     
-
     /**
      * @ORM\OneToMany(targetEntity="Photo" ,mappedBy="travail")
      */
-    private $photo;
+    private $photos;
     
     /**
-    * @ORM\ManyToOne(targetEntity="Client")
-    * @ORM\JoinColumn(name="cli_id", referencedColumnName="cli_id")
-    */
+     * @ORM\ManyToOne(targetEntity="Client" ,inversedBy="travaux")
+     * @ORM\JoinColumn(name="cli_id", referencedColumnName="cli_id")
+     */
     private $client;
 
     public function __construct()
     {
         $this->client = new ArrayCollection(); 
+        $this->commentaires = new ArrayCollection();
     }
     
    /**
@@ -475,5 +475,52 @@ class Travail
         return $this->client;
     }
 
+    /**
+     * Add commentaire
+     * 
+     * @param \AppBundle\Entity\Commentaire $commentaire
+     * 
+     * @return Travail
+     */
+    public function addCommentaire(\AppBundle\Entity\Commentaire $commentaire)
+    {
+        $this->commentaires[] = $commentaire;
+
+        return $this; 
+    }
+
+    /**
+         * Remove commentaire
+         *
+         * @param \AppBundle\Entity\Commentaire $commentaire
+         */
+        public function removeCommentaire(\AppBundle\Entity\Commentaire $commentaire)
+        {
+        $this->commentaires->removeCommentaire($commentaire);
+    }
+
+    /**
+     * Set commentaire
+     *
+     * @param string $commentaire
+     *
+     * @return Travail
+     */
+    public function setCommentaire($commentaire)
+    {
+        $this->commentaires[] = $commentaire;
+
+        return $this;
+    }
+
+    /**
+     * Get commentaire
+     *
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
+    public function getCommentaires()
+    {
+        return $this->commentaires;
+    }
 }
 
