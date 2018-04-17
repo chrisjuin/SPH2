@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 5.7.20, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.21, for Linux (x86_64)
 --
 -- Host: localhost    Database: SPH2
 -- ------------------------------------------------------
@@ -16,13 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `Client`
+-- Table structure for table `client`
 --
 
-DROP TABLE IF EXISTS `Client`;
+DROP TABLE IF EXISTS `client`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Client` (
+CREATE TABLE `client` (
   `cli_id` int(11) NOT NULL AUTO_INCREMENT,
   `cli_nom` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `cli_prenom` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -34,79 +34,44 @@ CREATE TABLE `Client` (
   `cli_note` longtext COLLATE utf8_unicode_ci NOT NULL,
   `cli_telephone` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`cli_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Client`
+-- Dumping data for table `client`
 --
 
-LOCK TABLES `Client` WRITE;
-/*!40000 ALTER TABLE `Client` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Client` ENABLE KEYS */;
+LOCK TABLES `client` WRITE;
+/*!40000 ALTER TABLE `client` DISABLE KEYS */;
+INSERT INTO `client` VALUES (1,'Juin','Christophe','web','a@a.com','11 Rue Du Soufflot','11000','toulouse','a','0612141618');
+/*!40000 ALTER TABLE `client` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Commentaire`
+-- Table structure for table `commentaire`
 --
 
-DROP TABLE IF EXISTS `Commentaire`;
+DROP TABLE IF EXISTS `commentaire`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Commentaire` (
+CREATE TABLE `commentaire` (
   `com_id` int(11) NOT NULL AUTO_INCREMENT,
   `tra_id` int(11) DEFAULT NULL,
   `com_commentaire` longtext COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`com_id`),
-  KEY `IDX_E16CE76BB8F9D19F` (`tra_id`),
-  CONSTRAINT `FK_E16CE76BB8F9D19F` FOREIGN KEY (`tra_id`) REFERENCES `Travail` (`tra_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  KEY `IDX_67F068BCB8F9D19F` (`tra_id`),
+  CONSTRAINT `FK_67F068BCB8F9D19F` FOREIGN KEY (`tra_id`) REFERENCES `travail` (`tra_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Commentaire`
+-- Dumping data for table `commentaire`
 --
 
-LOCK TABLES `Commentaire` WRITE;
-/*!40000 ALTER TABLE `Commentaire` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Commentaire` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `Travail`
---
-
-DROP TABLE IF EXISTS `Travail`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Travail` (
-  `tra_id` int(11) NOT NULL AUTO_INCREMENT,
-  `cli_id` int(11) DEFAULT NULL,
-  `tra_titre` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `tra_description` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `tra_prix` double NOT NULL,
-  `tra_date_debut` date NOT NULL,
-  `tra_date_rappel` date DEFAULT NULL,
-  `tra_mode_paiment` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `tra_lieux` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `tra_garantie` longtext COLLATE utf8_unicode_ci,
-  `tra_devis` longtext COLLATE utf8_unicode_ci,
-  `tra_process_verbal` longtext COLLATE utf8_unicode_ci,
-  `tra_facture` longtext COLLATE utf8_unicode_ci,
-  `tra_date_devis` date NOT NULL,
-  PRIMARY KEY (`tra_id`),
-  KEY `IDX_5F344327BC4EE2B0` (`cli_id`),
-  CONSTRAINT `FK_5F344327BC4EE2B0` FOREIGN KEY (`cli_id`) REFERENCES `Client` (`cli_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `Travail`
---
-
-LOCK TABLES `Travail` WRITE;
-/*!40000 ALTER TABLE `Travail` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Travail` ENABLE KEYS */;
+LOCK TABLES `commentaire` WRITE;
+/*!40000 ALTER TABLE `commentaire` DISABLE KEYS */;
+INSERT INTO `commentaire` VALUES (1,NULL,'commentaire'),(2,NULL,'dzdza'),(3,NULL,'zezee'),(4,NULL,'eee'),(5,NULL,'eferr'),(6,NULL,'dzzz'),(7,NULL,'ezez'),(8,NULL,'err'),(9,NULL,'err'),(10,NULL,'err'),(11,NULL,'aaa'),(12,NULL,'eee'),(13,NULL,'eee'),(14,NULL,'ee'),(15,NULL,'ee'),(16,NULL,'zz'),(17,NULL,'zz'),(18,NULL,'zzz'),(19,NULL,'aa'),(20,NULL,'eee'),(21,NULL,'zz'),(22,NULL,'fe,ftrpazoe'),(23,NULL,'zzzz'),(24,NULL,'zzz'),(25,NULL,'rrr'),(26,NULL,'sss'),(27,NULL,'ee'),(28,NULL,'ee'),(29,NULL,'fdefe');
+/*!40000 ALTER TABLE `commentaire` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -133,7 +98,7 @@ CREATE TABLE `fos_user` (
   UNIQUE KEY `UNIQ_957A647992FC23A8` (`username_canonical`),
   UNIQUE KEY `UNIQ_957A6479A0D96FBF` (`email_canonical`),
   UNIQUE KEY `UNIQ_957A6479C05FB297` (`confirmation_token`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -142,6 +107,7 @@ CREATE TABLE `fos_user` (
 
 LOCK TABLES `fos_user` WRITE;
 /*!40000 ALTER TABLE `fos_user` DISABLE KEYS */;
+INSERT INTO `fos_user` VALUES (1,'admin','admin','a@a.com','a@a.com',1,NULL,'$2y$13$AGDilWdqu0922fMsLCW4Iu1jD5aiFgRtUglsa55oWoWQgL/hYg7OS','2018-04-17 09:27:22',NULL,NULL,'a:0:{}');
 /*!40000 ALTER TABLE `fos_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -158,7 +124,7 @@ CREATE TABLE `photo` (
   `pho_url` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`pho_id`),
   KEY `IDX_14B78418B8F9D19F` (`tra_id`),
-  CONSTRAINT `FK_14B78418B8F9D19F` FOREIGN KEY (`tra_id`) REFERENCES `Travail` (`tra_id`)
+  CONSTRAINT `FK_14B78418B8F9D19F` FOREIGN KEY (`tra_id`) REFERENCES `travail` (`tra_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -170,6 +136,44 @@ LOCK TABLES `photo` WRITE;
 /*!40000 ALTER TABLE `photo` DISABLE KEYS */;
 /*!40000 ALTER TABLE `photo` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `travail`
+--
+
+DROP TABLE IF EXISTS `travail`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `travail` (
+  `tra_id` int(11) NOT NULL AUTO_INCREMENT,
+  `cli_id` int(11) DEFAULT NULL,
+  `tra_titre` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `tra_description` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `tra_prix` double NOT NULL,
+  `tra_date_debut` date NOT NULL,
+  `tra_date_rappel` date DEFAULT NULL,
+  `tra_mode_paiment` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `tra_lieux` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `tra_garantie` longtext COLLATE utf8_unicode_ci,
+  `tra_devis` longtext COLLATE utf8_unicode_ci,
+  `tra_process_verbal` longtext COLLATE utf8_unicode_ci,
+  `tra_facture` longtext COLLATE utf8_unicode_ci,
+  `tra_date_devis` date NOT NULL,
+  PRIMARY KEY (`tra_id`),
+  KEY `IDX_90897ABBBC4EE2B0` (`cli_id`),
+  CONSTRAINT `FK_90897ABBBC4EE2B0` FOREIGN KEY (`cli_id`) REFERENCES `client` (`cli_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `travail`
+--
+
+LOCK TABLES `travail` WRITE;
+/*!40000 ALTER TABLE `travail` DISABLE KEYS */;
+INSERT INTO `travail` VALUES (1,1,'toiture','aaa',680,'2013-01-01',NULL,'CB',NULL,NULL,NULL,NULL,NULL,'2013-01-01');
+/*!40000 ALTER TABLE `travail` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -180,4 +184,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-06 10:32:59
+-- Dump completed on 2018-04-17 10:11:30
