@@ -20,14 +20,14 @@ class CommentaireController extends Controller
     /**
      * @Route("/travail/{travail_id}/commentaire", name="commentaire")
      */
-    public function AfficheAction(Request  $request, $travail_id)
+    public function AfficheAction(Request $request, $travail_id)
     {
         $commentaire = new Commentaire(); 
         $form = $this->createForm (CommentaireType::class, $commentaire); 
         $form->handleRequest($request); 
 
         $em = $this->getDoctrine()->getManager();
-        $travail = $em->getRepository('AppBundle:Travail')->find('travail_id');
+        $travail = $em->getRepository('AppBundle:Travail')->find($travail_id);
         $commentaire->setTravail($travail);
 
         if($form->isSubmitted() && $form->isValid()){
