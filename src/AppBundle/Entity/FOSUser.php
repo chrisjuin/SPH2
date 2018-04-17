@@ -23,6 +23,11 @@ class FOSUser extends BaseUser
     protected $id;
 
     /**
+     * @ORM\OneToMany(targetEntity="Commentaire" ,mappedBy="fosUser")
+     */
+    private $commentaires; 
+
+    /**
      * Get id
      *
      * @return int

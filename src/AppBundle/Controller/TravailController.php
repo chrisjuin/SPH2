@@ -44,6 +44,13 @@ class TravailController extends Controller
     public function newAction(Request $request)
     {
         $travail = new Travail();
+
+        //Récup du client
+        $em = $this->getDoctrine()->getManager();
+        $client = $em->getRepository('AppBundle:Client')->find($request->query->get('utilisateur_id'));
+
+        $travail->setClient($client);
+        
         $form = $this->createForm('AppBundle\Form\TravailType', $travail);
         $form->handleRequest($request);
 
