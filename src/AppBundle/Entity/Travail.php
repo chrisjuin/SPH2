@@ -125,7 +125,6 @@ class Travail
 
     public function __construct()
     {
-        $this->client = new ArrayCollection(); 
         $this->commentaires = new ArrayCollection();
     }
     
@@ -427,34 +426,34 @@ class Travail
         return $this->dateDevis;
     }
     
-    /**
-     * Add client
-     *
-     * @param \AppBundle\Entity\Client $client
-     *
-     * @return Travail
-     */
-    public function addClient(\AppBundle\Entity\Client $client)
-    {
-        $this->client[] = $client;
+    // /**
+    //  * Add client
+    //  *
+    //  * @param \AppBundle\Entity\Client $client
+    //  *
+    //  * @return Travail
+    //  */
+    // public function addClient(\AppBundle\Entity\Client $client)
+    // {
+    //     $this->client[] = $client;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
-    /**
-     * Remove client
-     *
-     * @param \AppBundle\Entity\Client $client
-     */
-    public function removeClient(\AppBundle\Entity\Client $client)
-    {
-        $this->client->removeClient($client);
-    }
+    // /**
+    //  * Remove client
+    //  *
+    //  * @param \AppBundle\Entity\Client $client
+    //  */
+    // public function removeClient(\AppBundle\Entity\Client $client)
+    // {
+    //     $this->client->removeClient($client);
+    // }
 
     /**
      * Set client
      *
-     * @param string $client
+     * @param \AppBundle\Entity\Client $client
      *
      * @return Travail
      */
@@ -468,7 +467,7 @@ class Travail
     /**
      * Get client
      *
-     * @return \Doctrine\Common\Collections\ArrayCollection
+     * @return \AppBundle\Entity\Client
      */
     public function getClient()
     {
@@ -490,12 +489,12 @@ class Travail
     }
 
     /**
-         * Remove commentaire
-         *
-         * @param \AppBundle\Entity\Commentaire $commentaire
-         */
-        public function removeCommentaire(\AppBundle\Entity\Commentaire $commentaire)
-        {
+     * Remove commentaire
+     *
+     * @param \AppBundle\Entity\Commentaire $commentaire
+     */
+    public function removeCommentaire(\AppBundle\Entity\Commentaire $commentaire)
+    {
         $this->commentaires->removeCommentaire($commentaire);
     }
 

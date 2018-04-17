@@ -33,7 +33,6 @@ class TravailType extends AbstractType
         
     }
     
-
     /**
      * {@inheritdoc}
      */

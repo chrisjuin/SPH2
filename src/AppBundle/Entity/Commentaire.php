@@ -29,10 +29,15 @@ class Commentaire
      */
     private $commentaire;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="FOSUser" ,inversedBy="commentaires")
+     * @ORM\JoinColumn(name="fos_id" , referencedColumnName="fos_id")
+     */
+    private $fosUser;
     
     /**
      * @ORM\ManyToOne(targetEntity="Travail" ,inversedBy="commentaires")
-     * @ORM\JoinColumn(name="tra_id" , referencedColumnName="tra_id")
+     * @ORM\JoinColumn(name="tra_id" , referencedColumnName="tra_id" , onDelete="CASCADE")
      */
     private $travail; 
 
@@ -93,5 +98,29 @@ class Commentaire
     public function getTravail()
     {
         return $this->travail;
+    }
+
+    /**
+     * Set fosUser
+     *
+     * @param \AppBundle\Entity\FOSUser $fosUser
+     *
+     * @return Commentaire
+     */
+    public function setFosUser(\AppBundle\Entity\FOSUser $fosUser = null)
+    {
+        $this->fosUser = $fosUser;
+
+        return $this;
+    }
+
+    /**
+     * Get fosUser
+     *
+     * @return \AppBundle\Entity\FOSUser
+     */
+    public function getFosUser()
+    {
+        return $this->fosUser;
     }
 }

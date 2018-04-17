@@ -30,6 +30,10 @@ class CommentaireController extends Controller
         $travail = $em->getRepository('AppBundle:Travail')->find($travail_id);
         $commentaire->setTravail($travail);
 
+        $fosUser = $this->get('security.token_storage')->getToken()->getUser();
+        $commentaire->setFOSUser($fosUser);
+        
+
         if($form->isSubmitted() && $form->isValid()){
 
             $em = $this->getDoctrine()->getManager(); 
