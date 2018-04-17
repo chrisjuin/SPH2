@@ -4,43 +4,5 @@
 
 {% block body %}
 
-<div class="container , line">
-    <div class="row">
-        <img src="{{ asset('web/Logo_SPH.png') }}" alt="Logo SPH">    
-    </div> 
-
-        <div class="row">
-                <div class="col-sm-4 col-sm-offset-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading text-center">
-                            <h3 class="panel-title">Identification</h3>
-                        </div>
-                        <div class="panel-body">
-                            <form method="post" role="form">
-                                <fieldset>
-                                    
-                                    <div class="form-group">
-                                        <input class="form-control" placeholder="identifiant" name="co_pseudo" type="text" autofocus required>
-                                    </div>    
-                                    <div class="form-group">
-                                        <input class="form-control" placeholder="Mot de passe" name="co_password" type="password" required>
-                                    </div>
-                                        <div>
-                                    <input name="valider" type="submit" class="btn btn-success btn-block" value="Valider">
-                                    </div>
-                                </fieldset>
-                            </form>
-                                {# <ul>
-                                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                                        <li><a href="{{ path('fiche_chantier_show' ,  { 'id': tRA_travail.id }) }}"></a></li>
-                                    {% endif %} 
-                                </ul>    #}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </div>
-
 {% endblock %}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 

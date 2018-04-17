@@ -6,15 +6,14 @@
     <h2 class="Bottom">Detail Du Client</h2>
 </div>
 
-<div class="container">
-    <form action="" method="post">
+    <div class="container">
         <div class="col-xs-12">
             <div class="col-sm-2 hidden-xs">
                 <label for="id" class="list-group-item">Numero client</label>
                 <label for="nom" class="list-group-item">Nom</label>
                 <label for="prenom" class="list-group-item">Prenom</label>
                 <label for="provenance" class="list-group-item">Provenance</label>
-            </div>
+            </div>  
             
             <div class="col-sm-4 col-xs-12">
                 <input id="id" name="id" disabled="disabled" class="list-group-item col-xs-12" value="{{ client.id }}">
@@ -22,7 +21,7 @@
                 <input id="prenom" name="prenom" disabled="disabled" class="list-group-item col-xs-12" value="{{ client.prenom }}">
                 <input id="provenance" name="provenance" disabled="disabled" class="list-group-item col-xs-12" value="{{ client.provenance }}">
             </div>
-        </div>
+        </div>  
         
         <div class="col-xs-12">
             <div class="col-sm-2 hidden-xs, top">
@@ -31,7 +30,7 @@
                     <label for="cp" class="list-group-item">Code Postal</label>
                     <label for="ville" class="list-group-item">Ville</label>
                     <label for="mail" class="list-group-item">Email</label>                
-            </div>
+            </div>  
             
             <div class="col-sm-4 col-xs-12, top">
                     <input id="tel" name="tel" disabled="disabled" class="list-group-item col-xs-12" value="{{ client.telephone }}">
@@ -39,15 +38,14 @@
                     <input id="cp" name="cp" disabled="disabled" class="list-group-item col-xs-12" value="{{ client.codePostal }}">
                     <input id="ville" name="ville" disabled="disabled" class="list-group-item col-xs-12" value="{{ client.ville }}">
                     <input id="email" name="email" disabled="disabled" class="list-group-item col-xs-12" value="{{ client.email }}">
-            </div>
+            </div>  
             
             <div class="col-sm-6 col-xs-12">
                 <label for="note">Note</label>
                 <textarea name="note" disabled="disabled" id="note" class="form-control"  rows="9">{{ client.note }}</textarea>
             </div>
-        </div>
-
-        
+        </div>  
+    
         <div class="col-sm-6 col-xs-12">
             <a class="btn btn-success" type="submit" href="{{ path('fiche_client_edit', {'id': client.id })}} ">Modifier</a>
             <a class="btn btn-primary" href="{{ path('fiche_chantier_new',{'utilisateur_id': client.id}) }}">Ajouter un chantier</a>
@@ -55,18 +53,16 @@
                 {{ form_start(delete_form) }}
                 <input type="submit" value="Supprimer" class="btn btn-danger">
             {{ form_end(delete_form) }}
-        </div>
+        </div>  
         
         <div class="col-sm-offset-2 col-sm-6 col-xs-12">
-            <br/>
-            
+            <br/>   
             <table class="table table-bordered">
                 <tr>
                     <th>Debut Travaux</th>                                   
                     <th>Nature des travaux</th>
                     <th>Prix €</th>
-                </tr>
-            
+                </tr>   
                 {% for travail in client.travaux %}
                 <tr>
                     <td><a href="{{ path('fiche_chantier_show', { 'id': travail.id }) }}">{% if travail.dateDebut %}{{ travail.dateDebut|date('Y-m-d') }}{% endif %}</a></td>
@@ -76,7 +72,7 @@
                 {% endfor %}
             </table>
         </div>
-    </form>
-</div>
+    </div>
+
 
 {% endblock %}
