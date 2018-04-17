@@ -1,39 +1,40 @@
 {% block body %}
-    <div class="container">
-        <nav class="navbar navbar-default">
-            <div class="navbar-header">
-                <div class="noPadding">
-                    <a href="{{ path('fiche_client_index') }}">
-                        <img src="{{ asset('sph.ico')}}"></a>
-                </div>
+
+<div class="container">
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <div class="noPadding">
+                <a href="{{ path('fiche_client_index') }}">
+                    <img src="{{ asset('sph.ico')}}"></a>
             </div>
-            
-                
-            <div class="col-xs-2">
-                <div class="nav navbar-nav">
-                    <li class="hover"><a href="{{ path('fiche_client_new') }}">Ajouter client</a></li>
-                </div>
+        </div>
+        
+        <div class="col-xs-2">
+            <div class="nav navbar-nav">
+                <li class="hover"><a href="{{ path('fiche_client_new') }}">Ajouter client</a></li>
             </div>
-            
-                <form class="navbar-form navbar-left" action="/action_page.php">
-                    <div class="form-group">
-                        <input type="text" name="search" class="form-control" size="30" placeholder="Recherche">
-                    </div>
-                    <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-search"></i></button>
-                </form>
-            
-            <div class="navbar-form  navbar-right">
-                <div class="dropdown">
-                    <button class="btn btn-success btn btn-block dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Parametres 
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{ path('fos_user_security_logout') }}">Deconnexion</a></li>
-                    </ul>  
+        </div>
+        
+            <form class="navbar-form navbar-left" action="/action_page.php">
+                <div class="form-group">
+                    <input type="text" name="search" class="form-control" size="30" placeholder="Recherche">
                 </div>
+                <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-search"></i></button>
+            </form>
+        
+        <div class="navbar-form  navbar-right">
+            <div class="dropdown">
+                <button class="btn btn-success btn btn-block dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Parametres 
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="{{ path('fos_user_security_logout') }}">Deconnexion</a></li>
+                </ul>  
             </div>
-        </nav> 
-    </div>  
+        </div>
+    </nav> 
+</div>  
+
 {% endblock   %}
 

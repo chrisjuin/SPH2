@@ -1,56 +1,57 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}     
-    <div class="container">
-        {{ form_start(form) }}
-            <div class="row">
-                <div class="col-sm-4 , line">
-                    {{ form_label(form.titre, 'Natures des travaux :') }}  
-                    {{ form_errors(form.titre) }}    
-                    {{ form_widget(form.titre, {'attr': {'class': 'form-control', 'placeholder': 'Natures des travaux' } } ) }}
-                </div>
-                
-                <div class="col-sm-2 col-xs-12 , line">
-                    {{ form_label(form.dateDevis, 'Date Devis :') }}  
-                    {{ form_errors(form.dateDevis) }}    
-                    {{ form_widget(form.dateDevis) }}
-                </div>
-                
-                <div class="col-sm-2 col-xs-12 , line">
-                    {{ form_label(form.dateDebut, 'Date de debut :') }}  
-                    {{ form_errors(form.dateDebut) }}    
-                    {{ form_widget(form.dateDebut) }}
-                </div>
-                
-                <div class="col-sm-2 col-xs-12 , line">
-                    {{ form_label(form.prix, 'Montant € :')}}
-                    {{ form_errors(form.prix) }}
-                    {{ form_widget(form.prix, {'attr': {'class': 'form-control', 'placeholder': '€'}} )}}
-                </div>
-                
-                <div class="col-sm-2 col-xs-12 , line">
-                    {{ form_label(form.modePaiment, 'Moyen de paiment :') }}
-                    {{ form_errors(form.modePaiment) }}
-                    {{form_widget(form.modePaiment, { 'attr': {'class': 'form-control', 'placeholder': 'Moyen de paiment'} } )}}
-                </div>
+    
+<div class="container">
+    {{ form_start(form) }}
+        <div class="row">
+            <div class="col-sm-4 , line">
+                {{ form_label(form.titre, 'Natures des travaux :') }}  
+                {{ form_errors(form.titre) }}    
+                {{ form_widget(form.titre, {'attr': {'class': 'form-control', 'placeholder': 'Natures des travaux' } } ) }}
             </div>
             
-            <div class="row">
-                <div class="col-xs-12">
-                    {{ form_label(form.description, 'NOTE :') }}
-                    {{ form_errors(form.description) }}
-                    {{ form_widget(form.description, { 'attr': { 'textarea':'rows', 'rows':'10', 'class': 'form-control'} }) }}
-                </div>
-            </div> 
-    
-            <div class="row, top">       
-                <div class="col-sm-2 col-xs-12">
-                    <input type="submit" value="Enregistrer" class="btn btn-success btn-block">
-                    <a href="{{ path('fiche_chantier_index') }}" class="btn btn-warning btn-block">Retour</a>
-                </div>
+            <div class="col-sm-2 col-xs-12 , line">
+                {{ form_label(form.dateDevis, 'Date Devis :') }}  
+                {{ form_errors(form.dateDevis) }}    
+                {{ form_widget(form.dateDevis) }}
             </div>
-        {{ form_end(form) }}
-    </div> 
+            
+            <div class="col-sm-2 col-xs-12 , line">
+                {{ form_label(form.dateDebut, 'Date de debut :') }}  
+                {{ form_errors(form.dateDebut) }}    
+                {{ form_widget(form.dateDebut) }}
+            </div>
+            
+            <div class="col-sm-2 col-xs-12 , line">
+                {{ form_label(form.prix, 'Montant € :')}}
+                {{ form_errors(form.prix) }}
+                {{ form_widget(form.prix, {'attr': {'class': 'form-control', 'placeholder': '€'}} )}}
+            </div>
+            
+            <div class="col-sm-2 col-xs-12 , line">
+                {{ form_label(form.modePaiment, 'Moyen de paiment :') }}
+                {{ form_errors(form.modePaiment) }}
+                {{form_widget(form.modePaiment, { 'attr': {'class': 'form-control', 'placeholder': 'Moyen de paiment'} } )}}
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-xs-12">
+                {{ form_label(form.description, 'NOTE :') }}
+                {{ form_errors(form.description) }}
+                {{ form_widget(form.description, { 'attr': { 'textarea':'rows', 'rows':'10', 'class': 'form-control'} }) }}
+            </div>
+        </div> 
+
+        <div class="row, top">       
+            <div class="col-sm-2 col-xs-12">
+                <input type="submit" value="Enregistrer" class="btn btn-success btn-block">
+                <a href="{{ path('fiche_chantier_index') }}" class="btn btn-warning btn-block">Retour</a>
+            </div>
+        </div>
+    {{ form_end(form) }}
+</div> 
     
 {% endblock %}
         
