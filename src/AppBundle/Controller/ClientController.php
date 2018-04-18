@@ -23,11 +23,17 @@ class ClientController extends Controller
      * @Route("/", name="fiche_client_index")
      * @Method("GET")
      */
-    public function indexAction()
+    public function indexAction( Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
+        $search = $request->get('search');  
 
-        $client = $em->getRepository('AppBundle:Client')->findAll();
+        $em = $this->getDoctrine()->getManager();
+        if ( empty($search) ) {
+            $client = $em->getRepository('AppBundle:Client')->findAll();
+        }
+        else {
+            $client = $em->getRepository('AppBundle:Client')->findClient($search);
+        }
 
         return $this->render('Client/index.html.twig', array(
             'clients' => $client,
