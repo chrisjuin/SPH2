@@ -73,3 +73,5 @@ th {
 .Bottom {
     margin-bottom: 40px;
 }
+
+.dataTables_filter, .dataTables_info { display: none; }
