@@ -10,5 +10,15 @@ namespace AppBundle\Repository;
  */
 class ClientRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findClient( $search  ) 
+    {
+        $qb = $this->createQueryBuilder('client'); 
 
+        $qb->where('client.nom LIKE :nom')
+        ->orWhere('client.prenom LIKE :nom')
+            ->setParameter('nom', '%'.$search.'%'); 
+
+        return $qb->getQuery()->getResult(); 
+
+    }
 }
