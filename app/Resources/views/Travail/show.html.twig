@@ -6,17 +6,13 @@
     <ul>
         <li>
             <a href="{{ path('commentaire', { 'travail_id': travail.id}) }}" class="btn btn-primary">Ajouter Commentaire</a>
-        </li>
-        
-        <li>
             <a href="{{ path('fiche_chantier_index') }}" class="btn btn-warning">Retour</a>
         </li>
-        
+    </ul>
+    
+    <ul>
         <li>
             <a href="{{ path('fiche_chantier_edit', { 'id': travail.id }) }}" class="btn btn-success">Modifier</a>
-        </li>
-        
-        <li>
             {{ form_start(delete_form) }}
                 <input type="submit" value="Supprimer" class="btn btn-danger">
             {{ form_end(delete_form) }}
@@ -77,11 +73,7 @@
             <li class="list-group-item" id="facture">{{ travail.facture }}</li>            
         </ul> 
         
-        <ul class="list-inline text-left">
-            <li class="list-group-item col-sm-2 col-xs-12 ">Photos</li>
-            <li class="list-group-item"><a class=" btn btn-success" href="">Accéder aux photos</a></li>
-        </ul> 
-    
+        <a class=" btn btn-success" href="{{path("app_photo_index") }}">Accéder aux photos</a>
     </div> 
     
     <div class="col-sm-10">     

@@ -21,6 +21,7 @@ class TravailType extends AbstractType
         ->add('dateDebut')
         ->add('modePaiment')
         ->add('dateDevis')
+        // ->add('lieux')
         ; 
         
     }

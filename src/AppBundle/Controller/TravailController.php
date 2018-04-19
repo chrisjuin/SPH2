@@ -104,7 +104,7 @@ class TravailController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('fiche_chantier_edit', array('id' => $travail->getId()));
+            return $this->redirectToRoute('fiche_chantier_show', array('id' => $travail->getId()));
         }
 
         return $this->render('Travail/edit.html.twig', array(

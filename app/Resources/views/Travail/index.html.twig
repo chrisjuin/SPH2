@@ -16,11 +16,6 @@
                         <th>Date rappel</th>
                         <th>Mode paiment</th>
                         <th>Lieux</th>
-                        <th>Garantie</th>
-                        <th>Devis</th>
-                        <th>Process verbal</th>
-                        <th>Facture</th>
-                        
                     </tr>
                 </thead>
                 
@@ -35,10 +30,6 @@
                         <td><a href="{{ path('fiche_chantier_show', { 'id': travail.id }) }}">{% if travail.dateRappel %}{{ travail.dateRappel|date('Y-m-d') }}{% endif %}</a></td>
                         <td><a href="{{ path('fiche_chantier_show', { 'id': travail.id }) }}">{{ travail.modePaiment }}</a></td>
                         <td><a href="{{ path('fiche_chantier_show', { 'id': travail.id }) }}">{{ travail.lieux }}</a></td>
-                        <td><a href="{{ path('fiche_chantier_show', { 'id': travail.id }) }}">{{ travail.garantie }}</a></td>
-                        <td><a href="{{ path('fiche_chantier_show', { 'id': travail.id }) }}">{{ travail.devis }}</a></td>
-                        <td><a href="{{ path('fiche_chantier_show', { 'id': travail.id }) }}">{{ travail.processVerbal }}</a></td>
-                        <td><a href="{{ path('fiche_chantier_show', { 'id': travail.id }) }}">{{ travail.facture }}</a></td>
                     </tr>
                 {% endfor %}
                 </tbody>
