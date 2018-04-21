@@ -21,7 +21,7 @@
     <div class="row">
         <div class="col-sm-3">
             <input  type="submit" value="Enregistrer" class="btn btn-success btn-block">
-            <a href="{{ path('fiche_chantier_index') }}" class="btn btn-warning btn-block">Retour</a>
+            <a href="{{ path('fiche_chantier_show', {'id': commentaire.travail.id}) }}" class="btn btn-warning btn-block">Retour</a>
         </div>
     </div>
 </div>

@@ -54,7 +54,7 @@
         <div class="row, top">       
             <div class="col-sm-2 col-xs-12">
                 <input type="submit" value="Enregistrer" class="btn btn-success btn-block">
-                <a href="{{ path('fiche_chantier_index') }}" class="btn btn-warning btn-block">Retour</a>
+                <a href="{{ path('fiche_client_show', {'id': travail.client.id}) }}" class="btn btn-warning btn-block">Retour</a>
             </div>
         </div>
     {{ form_end(form) }}
